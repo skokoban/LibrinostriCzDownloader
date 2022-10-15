@@ -1,0 +1,22 @@
+plugins {
+    id 'java'
+}
+
+group 'sk.dorusak'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.jdom:jdom2:2.0.6.1'
+    implementation 'org.jsoup:jsoup:1.15.3'
+    implementation 'org.mockito:mockito-junit-jupiter:4.8.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+}
+
+test {
+    useJUnitPlatform()
+}
