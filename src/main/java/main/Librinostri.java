@@ -13,6 +13,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
 /**
  * The <code>Librinostri</code> class represents website librinostri.catholica.cz where are stores e-books
@@ -64,13 +65,15 @@ public class Librinostri {
             Element            rootElement    = document.getRootElement();
             Element            elementChannel = rootElement.getChild("channel");
             List<Element>      listItems      = elementChannel.getChildren();         // ziskam zoznam vsetkych potomkov
-            // samotne hladanie knih. prvi 4 potomci ma nezaujimaju. preskocit. i=4
-            for (int i = 4; i < listItems.size(); i++) {
-                List<Element>     item          = listItems.get(i).getChildren();
-                String            title         = item.get(0).getValue();
-                String            bookLink      = item.get(1).getValue();
+            for (Element listItem : listItems) {
+                if (!Objects.equals(listItem.getName(), "item")) {
+                    continue;
+                }
+                List<Element> item = listItem.getChildren();
+                String title = item.get(0).getValue();
+                String bookLink = item.get(1).getValue();
                 ArrayList<String> downloadLinks = parseDownloadLinks(bookLink);
-                Book              book          = new Book(title, downloadLinks);      // vytvor knihu
+                Book book = new Book(title, downloadLinks);
                 BOOKS_INFO.add(book);
             }
         }
