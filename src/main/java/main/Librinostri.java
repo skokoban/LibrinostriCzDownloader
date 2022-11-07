@@ -24,8 +24,9 @@ public class Librinostri {
 /*======================================================================================================================
                                                     Attributes
 ======================================================================================================================*/
-    private final LinkedList<Book> BOOKS_INFO = new LinkedList<>();
-    private final String           URL_BOOKS_INFO = "http://librinostri.catholica.cz/rss.php";
+    private final LinkedList<Book> BOOKS_INFO           = new LinkedList<>();
+    private final String           URL_BOOKS_INFO       = "http://librinostri.catholica.cz/rss.php";
+    private final String           ELEMENT_ITEM_TO_FIND = "item";
 
 /*======================================================================================================================
                                                 Constructors
@@ -66,14 +67,14 @@ public class Librinostri {
             Element            elementChannel = rootElement.getChild("channel");
             List<Element>      listItems      = elementChannel.getChildren();         // ziskam zoznam vsetkych potomkov
             for (Element listItem : listItems) {
-                if (!Objects.equals(listItem.getName(), "item")) {
+                if (!Objects.equals(listItem.getName(), ELEMENT_ITEM_TO_FIND)) {
                     continue;
                 }
-                List<Element> item = listItem.getChildren();
-                String title = item.get(0).getValue();
-                String bookLink = item.get(1).getValue();
+                List<Element>     item          = listItem.getChildren();
+                String            title         = item.get(0).getValue();
+                String            bookLink      = item.get(1).getValue();
                 ArrayList<String> downloadLinks = parseDownloadLinks(bookLink);
-                Book book = new Book(title, downloadLinks);
+                Book              book          = new Book(title, downloadLinks);
                 BOOKS_INFO.add(book);
             }
         }

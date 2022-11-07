@@ -7,7 +7,9 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
+import org.junit.runner.RunWith;
 import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@RunWith(MockitoJUnitRunner.class)
 public class LibrinostriTest {
 
 /*======================================================================================================================
@@ -49,7 +52,6 @@ public class LibrinostriTest {
         Librinostri librinostriMock = Mockito.mock(Librinostri.class);
         when(librinostriMock.parseDownloadLinks("http://librinostri.catholica.cz/kniha/2690-pod-sluncem-satanovym"))
                 .thenReturn(pdfFileLinks);
-        Librinostri librinostri = new Librinostri();
-        assertEquals(20, librinostri.getBOOKS_INFO().size());
+        assertEquals(2, librinostriMock.getBOOKS_INFO().size());
     }
 }
