@@ -16,10 +16,8 @@ public class Book {
                                                 Attributes
 ======================================================================================================================*/
 
-    private final String            BOOKS_MAIN_FOLDER    = "Book";
     private final String            TITLE;
     private final ArrayList<String> DOWNLOAD_LINKS;             // kniha moze byt rozdelena na viac casti
-    private       ArrayList<String> notDownloadedPDFsYet;       // aby som vedel, ktore mam stiahnut
 
 /*======================================================================================================================
                                                 Constructor
@@ -28,12 +26,13 @@ public class Book {
     /**
      * Construct <code>Book</code> with given attributes. Avoid title of special characters for purposes of
      * creating directory from that title.
-     * @param title title of book
-     * @param downloadLinks links from where books can be downloaded
+     *
+     * @param title         title of book
+     * @param downloadLinks links from where single pdf files can be downloaded
      */
     public Book(String title, ArrayList<String> downloadLinks) {
-        this.TITLE          = replaceSpecChars(title);
-        this.DOWNLOAD_LINKS = downloadLinks;
+        TITLE          = replaceSpecChars(title);
+        DOWNLOAD_LINKS = downloadLinks;
     }
 
 /*======================================================================================================================
@@ -46,18 +45,6 @@ public class Book {
 
     public ArrayList<String> getDOWNLOAD_LINKS() {
         return DOWNLOAD_LINKS;
-    }
-
-    public ArrayList<String> getNotDownloadedPDFsYet() {
-        return notDownloadedPDFsYet;
-    }
-
-/*======================================================================================================================
-                                                Setters
-======================================================================================================================*/
-
-    public void setNotDownloadedPDFsYet(ArrayList<String> notDownloadedPDFsYet) {
-        this.notDownloadedPDFsYet = notDownloadedPDFsYet;
     }
 
 /*======================================================================================================================

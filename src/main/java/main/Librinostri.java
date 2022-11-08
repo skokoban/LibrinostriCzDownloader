@@ -74,7 +74,7 @@ public class Librinostri {
                 String            title         = item.get(0).getValue();
                 String            bookLink      = item.get(1).getValue();
                 ArrayList<String> downloadLinks = parseDownloadLinks(bookLink);
-                Book              book          = new Book(title, downloadLinks);
+                Book              book          = new Book(title, link, downloadLinks);
                 BOOKS_INFO.add(book);
             }
         }

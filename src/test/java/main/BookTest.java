@@ -29,7 +29,7 @@ class BookTest {
     }
 
     static Book createTestBook() {
-        Book testBook = new Book("Test", downloadLinks);
+        Book testBook = new Book("Test", link, downloadLinks);
         testBook.setNotDownloadedPDFsYet(notDownloadedFiles);
         return testBook;
     }
@@ -42,21 +42,21 @@ class BookTest {
     @Test
     @DisplayName("parse empty string as empty string")
     void PassWhenParseEmptyStringAsString() {
-        Book book = new Book("", downloadLinks);
+        Book book = new Book("", link, downloadLinks);
         assertEquals("", book.getTITLE());
     }
 
     @Test
     @DisplayName("parse space as _")
     void PassWhenParseSpaceAsSpace() {
-        Book book = new Book(" ", downloadLinks);
+        Book book = new Book(" ", link, downloadLinks);
         assertEquals("_", book.getTITLE());
     }
     @Test
     @DisplayName("parse spec chars to normal")
     void PassWhenParseSpecCharsToNormal() {
         Book book = new Book(";+ľščťžýáíé=´äú?ň§ô,.-1+-*/&@#!_)/(PÓ",
-                             downloadLinks);
+                link, downloadLinks);
         assertEquals("lsctzyaieauno1_PO", book.getTITLE());
     }
 /*======================================================================================================================

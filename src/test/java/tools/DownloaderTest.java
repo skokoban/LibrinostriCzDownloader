@@ -3,7 +3,6 @@ package tools;
 import main.Book;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.mockito.MockedConstruction;
 import org.mockito.Mockito;
 
 import java.io.File;
@@ -32,7 +31,7 @@ public class DownloaderTest {
     ArrayList<Book> getTestBook() {
         ArrayList<String> testDownloadLinks = new ArrayList<>();
         testDownloadLinks.add("testLink");
-        Book testBook = new Book("Test Book", testDownloadLinks);
+        Book testBook = new Book("Test Book", link, testDownloadLinks);
         ArrayList<Book> testBooks = new ArrayList<>();
         testBooks.add(testBook);
         return testBooks;

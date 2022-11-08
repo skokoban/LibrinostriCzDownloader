@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add classes XMLParser and RSSDownloader with necessary methods.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Remove getItemsCount method.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/BookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -239,7 +244,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667820315935</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Remove getItemsCount method.">
+      <created>1667905752089</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1667905752089</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,7 +269,8 @@
     <MESSAGE value="initial commit." />
     <MESSAGE value="modify finding items in cycle in parseLatestBooks method." />
     <MESSAGE value="Add classes XMLParser and RSSDownloader with necessary methods." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add classes XMLParser and RSSDownloader with necessary methods." />
+    <MESSAGE value="Remove getItemsCount method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove getItemsCount method." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

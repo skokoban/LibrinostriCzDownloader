@@ -6,6 +6,8 @@ import org.jsoup.select.Elements;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class DownloadLinksParser {
     /**
@@ -14,8 +16,11 @@ public class DownloadLinksParser {
      * @return list of Strings with URLs to direct download PDFs.
      * @throws IOException if link to the book is not reachable.
      */
-    public ArrayList<String> parseDownloadLinks(String bookLink) throws IOException {
-        ArrayList<String> downloadLinks    = new ArrayList<>();
+    public ArrayList<String> parseDownloadLinks(String booksInfo) throws IOException {
+        Map<String, ArrayList<String>> books = new HashMap<>();
+        for (String bookLink: booksInfo.) {
+
+        }
         Document document         = Jsoup.connect(bookLink).get();
         Elements elementsDownload = document.select(".download");
         for (org.jsoup.nodes.Element link : elementsDownload) {
