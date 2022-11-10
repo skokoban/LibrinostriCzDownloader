@@ -10,10 +10,10 @@ import java.util.Map;
 
 public class FileCreator {
     /**
-     *
-     * @param book
-     * @param DLDest
-     * @return
+     * Create the <code>File</code> apropriate to with name to downloadLinks provided by <code>Book</code> class.
+     * @param book the book from which you want to crate files for every download link
+     * @param DLDest path to directory where files should be strored
+     * @return Map of download links linked to files.
      */
     public Map<String, File> createFiles(Book book, Path DLDest) {
         Map<String, File> fileMap = new HashMap<>();

@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="progres..">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/FileChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/FileCreatorTest.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add Filecreator class.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tools/FileCheckerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/FileChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/FileChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667948446794</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Add Filecreator class.">
+      <created>1668074374551</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1668074374551</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -277,7 +284,8 @@
     <MESSAGE value="Add classes XMLParser and RSSDownloader with necessary methods." />
     <MESSAGE value="Remove getItemsCount method." />
     <MESSAGE value="progres.." />
-    <option name="LAST_COMMIT_MESSAGE" value="progres.." />
+    <MESSAGE value="Add Filecreator class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add Filecreator class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

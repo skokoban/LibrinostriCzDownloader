@@ -71,7 +71,7 @@ public class Book {
         ArrayList<String> downloadedPDFs = new ArrayList<>();
         HttpURLConnection connection;
         for (String fileName: notDownloadedPDFsYet) {       // prechadzam vsetky nestiahnute subory
-            for (String link : DOWNLOAD_LINKS) {            // najde link k prisluchajucemu nazvu suboru.
+            for (String link : DOWNLOAD_LINKS) {            // najde link k prisluchajucemu nazvu suboru
                 if (link.contains(fileName)) {
                     try {
                         createBookFolder();

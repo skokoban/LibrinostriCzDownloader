@@ -1,14 +1,16 @@
 package tools;
 
 import java.io.File;
+import java.nio.file.Files;
 import java.util.Iterator;
 import java.util.Map;
 
 public class FileChecker {
-    public void deleteExistingFiles(Map<String, File> fileMap) {
+    public void deleteEntriesOfExistingFiles(Map<String, File> fileMap) {
         for (Map.Entry<String, File> fileEntry : fileMap.entrySet()) {
-            fileEntry.getKey();
-            fileEntry.getValue();
+            if (fileEntry.getValue().exists()) {
+                fileMap.remove(fileEntry.getKey(), fileEntry.getValue());
+            }
         }
     }
 }
