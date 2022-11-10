@@ -9,6 +9,7 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -23,7 +24,7 @@ public class XMLParser {
 /*======================================================================================================================
                                                     Methods
 ======================================================================================================================*/
-    public ArrayList<Book> pasreBooks(File xml) throws XPathExpressionException {
+    public ArrayList<Book> pasreBooks(File xml) throws XPathExpressionException, IOException {
         NodeList nList = (NodeList) xpath.evaluate("/rss/channel/item", inputSource, XPathConstants.NODESET);
         int itemsCount = nList.getLength();
         ArrayList<Book> booksInfo = new ArrayList<>();

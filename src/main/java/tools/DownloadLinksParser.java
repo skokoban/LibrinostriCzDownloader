@@ -17,11 +17,8 @@ public class DownloadLinksParser {
      * @throws IOException if link to the book is not reachable.
      */
     public ArrayList<String> parseDownloadLinks(String booksInfo) throws IOException {
-        Map<String, ArrayList<String>> books = new HashMap<>();
-        for (String bookLink: booksInfo.) {
-
-        }
-        Document document         = Jsoup.connect(bookLink).get();
+        ArrayList<String> downloadLinks = new ArrayList<>();
+        Document document         = Jsoup.connect(booksInfo).get();
         Elements elementsDownload = document.select(".download");
         for (org.jsoup.nodes.Element link : elementsDownload) {
             downloadLinks.add(link.attr("abs:href"));
