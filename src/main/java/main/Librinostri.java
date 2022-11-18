@@ -32,9 +32,6 @@ public class Librinostri {
                                                 Constructors
 ======================================================================================================================*/
 
-    public Librinostri() {
-        parseLatestBooks();
-    }
 
 /*======================================================================================================================
                                                 Getters
@@ -46,42 +43,6 @@ public class Librinostri {
 /*======================================================================================================================
                                                 Methods
 ======================================================================================================================*/
-    /**
-     * Method parse list of object of class Book with information about new added e-books
-     * from website librinostri.catholica.cz.
-     * Information are parsed from xml document
-     * stored on <a href="http://librinostri.catholica.cz/rss.php">librinostri.catholica.cz/rss.php</a>.
-     */
-    public void parseLatestBooks() {
-        SAXBuilder saxBuilder = new SAXBuilder();           // spracovanie XML
-        URL        url        = null;
-        try {
-            url = new URL(URL_BOOKS_INFO);
-        }
-        catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-        try {                                     // zlozitym sposobom vo vetveni postupne najdem knihy pod znackou item
-            org.jdom2.Document document       = saxBuilder.build(url);
-            Element            rootElement    = document.getRootElement();
-            Element            elementChannel = rootElement.getChild("channel");
-            List<Element>      listItems      = elementChannel.getChildren();         // ziskam zoznam vsetkych potomkov
-            for (Element listItem : listItems) {
-                if (!Objects.equals(listItem.getName(), ELEMENT_ITEM_TO_FIND)) {
-                    continue;
-                }
-                List<Element>     item          = listItem.getChildren();
-                String            title         = item.get(0).getValue();
-                String            bookLink      = item.get(1).getValue();
-                ArrayList<String> downloadLinks = parseDownloadLinks(bookLink);
-                Book              book          = new Book(title, link, downloadLinks);
-                BOOKS_INFO.add(book);
-            }
-        }
-        catch (JDOMException | IOException e) {
-            e.printStackTrace();
-        }
-    }
     /**
      * Inspect the book subsite for download links to all PDF´s related to the book.
      * @param bookLink URL to information about the book on librinostri.catholica.cz.

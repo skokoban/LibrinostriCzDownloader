@@ -67,56 +67,6 @@ public class Book {
      * Save book to hard drive. Saves only files which are not already downloaded.
      * @return ArrayList of downloaded PDF files.
      */
-    public ArrayList<String> saveToHDD() {
-        ArrayList<String> downloadedPDFs = new ArrayList<>();
-        HttpURLConnection connection;
-        for (String fileName: notDownloadedPDFsYet) {       // prechadzam vsetky nestiahnute subory
-            for (String link : DOWNLOAD_LINKS) {            // najde link k prisluchajucemu nazvu suboru
-                if (link.contains(fileName)) {
-                    try {
-                        createBookFolder();
-                        File PDFFile = createPDFFilePath(fileName);
-                        if (checkFileExistence(PDFFile)) {
-                            continue;
-                        }
-                        connection = (HttpURLConnection) new URL(link).openConnection();
-                        connection.connect();
-                        if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                            continue;
-                        }
-                        InputStream  input  = connection.getInputStream();                // stiahnutie suboru
-                        OutputStream output = new FileOutputStream(PDFFile);
-                        byte[]       data   = new byte[4096];
-                        int          count;
-                        while ((count = input.read(data)) != -1) {
-                            output.write(data, 0, count);
-                        }
-                        output.close();
-                        downloadedPDFs.add(fileName);
-                    }
-                    catch (IOException e) {
-                        e.printStackTrace();
-                    }
-                    DOWNLOAD_LINKS.remove(link);
-                }
-            }
-        }
-        return downloadedPDFs;
-    }
-
-    public void createBookFolder() {
-        File file = new File(BOOKS_MAIN_FOLDER + File.separator + TITLE);
-        file.mkdirs();
-    }
-
-    public File createPDFFilePath(String fileName) {
-        return new File(BOOKS_MAIN_FOLDER + File.separator + TITLE + File.separator + fileName);
-    }
-
-    protected boolean checkFileExistence(File fileName) {
-        return fileName.exists();
-    }
-
     public String toString() {
         return TITLE;
     }

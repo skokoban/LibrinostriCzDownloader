@@ -9,6 +9,6 @@ public class XMLParserTest {
     public void test() throws XPathExpressionException {
         RSSDownloader rssDownloader = new RSSDownloader();
         XMLParser xmlParser = new XMLParser();
-        System.out.println(xmlParser.pasreBooks(rssDownloader.downloadRSS()));
+        //System.out.println(xmlParser.pasreBooks(rssDownloader.downloadRSS()));
     }
 }

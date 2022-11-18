@@ -1,7 +1,6 @@
 package tools;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -10,18 +9,25 @@ public class RSSDownloader {
 /*======================================================================================================================
                                                 Attributes
 ======================================================================================================================*/
-    private final String RSSURL = "http://librinostri.catholica.cz/rss.php";
+    private final String FILE_NAME = "rss.xml";
 /*======================================================================================================================
                                                 Methods
 ======================================================================================================================*/
-    public File downloadRSS() {
-        File rssFile = new File("rss.xml");
+    public File downloadRSS(URL RSSURL) {
+        File rssFile = new File(FILE_NAME);
         if (rssFile.exists()) {
             rssFile.delete();
         }
         try {
-            URL url = new URL(RSSURL);
-            Files.copy(url.openStream(), Paths.get("rss.xml"));
+            InputStreamReader inputStreamReader = new InputStreamReader(RSSURL.openStream());
+            BufferedReader    reader            = new BufferedReader(inputStreamReader);
+            FileWriter        writer            = new FileWriter(FILE_NAME);
+
+            String inputLine;
+            while ((inputLine = reader.readLine()) != null) {
+                writer.write(inputLine);
+            }
+            reader.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

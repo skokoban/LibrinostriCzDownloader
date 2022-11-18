@@ -10,6 +10,7 @@ import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.io.IOException;
+import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -20,7 +21,6 @@ public class XMLParser {
 ======================================================================================================================*/
     XPath xpath = XPathFactory.newInstance().newXPath();
     InputSource inputSource = new InputSource("rss.xml");
-
 /*======================================================================================================================
                                                     Methods
 ======================================================================================================================*/
@@ -40,4 +40,9 @@ public class XMLParser {
         }
         return booksInfo;
     }
+    public String replaceSpecChars(String badTitle) {
+        String replacedSpaces = Normalizer.normalize(badTitle, Normalizer.Form.NFD).replaceAll(" ", "_");
+        return Normalizer.normalize(replacedSpaces, Normalizer.Form.NFD).replaceAll("\\W", "");
+    }
+
 }

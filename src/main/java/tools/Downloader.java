@@ -20,7 +20,8 @@ public class Downloader {
                 // nepodarilo sa spojenie
                 throw new IOException("HTTP error code " + connection.getResponseCode());
             }
-            InputStream input  = connection.getInputStream();                // stiahnutie suboru
+                // stiahnutie suboru
+            InputStream input  = connection.getInputStream();
             OutputStream output = new FileOutputStream(fileEntry.getValue());
             byte[]       data   = new byte[4096];
             int          count;

@@ -21,53 +21,9 @@ public class DownloaderTest {
                                                 Prepare methods
 ======================================================================================================================*/
 
-    ArrayList<String> getTestNames() {
-        ArrayList<String> names = new ArrayList<>();
-        names.add("test1");
-        names.add("test2");
-        return names;
-    }
-
-    ArrayList<Book> getTestBook() {
-        ArrayList<String> testDownloadLinks = new ArrayList<>();
-        testDownloadLinks.add("testLink");
-        Book testBook = new Book("Test Book", link, testDownloadLinks);
-        ArrayList<Book> testBooks = new ArrayList<>();
-        testBooks.add(testBook);
-        return testBooks;
-    }
-
 /*======================================================================================================================
                                                 Test methods
 ======================================================================================================================*/
-
-    @Test
-    @DisplayName("writing names to file works")
-    void passWhenWritingNamesToFileWorks() {
-        Downloader downloader = new Downloader();
-        assertTrue(downloader.writeNameToFile(getTestNames()));
-        deleteTestFile(downloader.getDOWNLOADED_PDFS_FILE_PATH());
-    }
-
-    @Test
-    @DisplayName("downloading books")
-    void passWhenDownloadingBooksWorks() {
-        ArrayList<String> downlaodedPDFFilesTest = new ArrayList<>();
-        downlaodedPDFFilesTest.add("testName");
-
-        Book bookMock = Mockito.mock(Book.class);
-        when(bookMock.saveToHDD()).thenReturn(downlaodedPDFFilesTest);
-
-        Downloader downloader = new Downloader();
-        downloader.downloadBooks(getTestBook());
-        try {
-            assertEquals("testName", Files.readString(Path.of(downloader.getDOWNLOADED_PDFS_FILE_PATH())));
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        deleteTestFile(downloader.getDOWNLOADED_PDFS_FILE_PATH());
-    }
-
 /*======================================================================================================================
                                                 After methods
 ======================================================================================================================*/

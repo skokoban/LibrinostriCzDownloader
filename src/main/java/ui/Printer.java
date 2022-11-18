@@ -33,17 +33,6 @@ public class Printer {
         System.out.println(Strings.UPDATER_INTRO.getText());
     }
 
-    public static void printNewBooks(LinkedList<Book> newBooks) {
-        for (Book book: newBooks)
-        {
-            System.out.println("\n" + book.getTITLE());
-            for (String PDFFile: book.getNotDownloadedPDFsYet())
-            {
-                System.out.println("- " + PDFFile);
-            }
-        }
-    }
-
     public static void printFileCannotBeCreated() {
         System.out.println(Strings.CANNOT_CREATE_NEW_FILE.getText());
     }

@@ -57,35 +57,14 @@ public class TaskStarter {
 
     public void parseArgs(String[] args) {
         switch (args[0]) {
-            case ARG_UPDATE   -> update();
-            case ARG_DOWNLOAD -> download();
             case ARG_HELP     -> Printer.printHelp();
             default           -> Printer.printUnknownArgumentError();
         }
     }
 
-    public void update() {
-        Updater updater = new Updater();
-        updater.printNewBooks();
-        Printer.printAskDownload();
-        try {
-            if (Objects.equals(handleLineEntered(), "y")) {
-                download();
-            }
-        }
-        catch (NoSuchElementException ignored) {
-            System.exit(0);
-        }
-    }
-
-    public void download() {
-        new Downloader().downloadBooks(new Updater().getNEW_BOOKS());
-    }
 
     public void functionExecutor(int selection) {
         switch (selection) {
-            case 1 -> update();
-            case 2 -> download();
             case 3 -> Printer.printHelp();
             default -> {
             }
