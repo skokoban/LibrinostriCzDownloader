@@ -7,6 +7,7 @@ import org.xml.sax.InputSource;
 import javax.xml.xpath.XPathExpressionException;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,5 +19,20 @@ public class XMLParserTest {
     public void passWhenCountOfItemIsTwo() throws XPathExpressionException, IOException {
         XMLParser xmlParser = new XMLParser();
         assertEquals(2, xmlParser.pasreBooks(testXMLFile).size());
+    }
+
+    @Test
+    @DisplayName("Title equivalence")
+    public void passWhenTitleIsCorrect() throws XPathExpressionException, IOException {
+        XMLParser xmlParser = new XMLParser();
+        assertEquals("Testovaci_titul_1", xmlParser.pasreBooks(testXMLFile).get(0).getTITLE());
+    }
+
+    @Test
+    @DisplayName("Link equivalence")
+    public void passWhenLinkIsCorrect() throws XPathExpressionException, IOException {
+        XMLParser xmlParser = new XMLParser();
+        ArrayList<String> downloadLinks = xmlParser.pasreBooks(testXMLFile).get(1).getDOWNLOAD_LINKS();
+        assertEquals("Testovaci_titul_1", downloadLinks.get(0));
     }
 }

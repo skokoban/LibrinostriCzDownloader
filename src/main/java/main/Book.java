@@ -1,8 +1,5 @@
 package main;
 
-import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.Normalizer;
 import java.util.ArrayList;
 
@@ -17,7 +14,8 @@ public class Book {
 ======================================================================================================================*/
 
     private final String            TITLE;
-    private final ArrayList<String> DOWNLOAD_LINKS;             // kniha moze byt rozdelena na viac casti
+    private final String            LINK;
+    private       ArrayList<String> DOWNLOAD_LINKS;             // kniha moze byt rozdelena na viac casti preto viac linkov
 
 /*======================================================================================================================
                                                 Constructor
@@ -27,11 +25,17 @@ public class Book {
      * Construct <code>Book</code> with given attributes. Avoid title of special characters for purposes of
      * creating directory from that title.
      *
-     * @param title         title of book
-     * @param downloadLinks links from where single pdf files can be downloaded
+     * @param title title of book
+     * @param link
      */
-    public Book(String title, ArrayList<String> downloadLinks) {
-        TITLE          = replaceSpecChars(title);
+    public Book(String title, String link) {
+        TITLE = replaceSpecChars(title);
+        LINK  = link;
+    }
+
+    public Book(String title, String link, ArrayList<String> downloadLinks) {
+        TITLE = replaceSpecChars(title);
+        LINK  = link;
         DOWNLOAD_LINKS = downloadLinks;
     }
 
@@ -41,6 +45,10 @@ public class Book {
 
     public String getTITLE() {
         return TITLE;
+    }
+
+    public String getLINK() {
+        return LINK;
     }
 
     public ArrayList<String> getDOWNLOAD_LINKS() {
@@ -58,7 +66,7 @@ public class Book {
      * @param badTitle string to be converted
      * @return clear string without special chars
      */
-    public String replaceSpecChars(String badTitle) {
+    protected String replaceSpecChars(String badTitle) {
         String replacedSpaces = Normalizer.normalize(badTitle, Normalizer.Form.NFD).replaceAll(" ", "_");
         return Normalizer.normalize(replacedSpaces, Normalizer.Form.NFD).replaceAll("\\W", "");
     }

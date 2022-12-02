@@ -9,7 +9,7 @@
         <description>Test description</description>
         <language>cs</language>
         <item>
-            <title>Test title 1</title>
+            <title>Testovací titul 1</title>
             <link>http://test1.link</link>
             <description><![CDATA[test description 1.]]></description>
             <pubDate>Wed, 28 Sep 2022 00:00:00 GMT+1</pubDate>
