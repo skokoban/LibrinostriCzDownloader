@@ -3,14 +3,12 @@ package tools;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.io.*;
+import java.io.File;
 import java.net.URL;
-import java.nio.file.Files;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RSSDownloaderTest {

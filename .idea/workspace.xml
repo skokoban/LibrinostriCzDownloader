@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add XMLParser one test">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Complet xmlparser.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/rss.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/rss.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/FileCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/FileCreatorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,8 +86,8 @@
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.XMLParserTest.passWhenLinkIsCorrect">
-    <configuration name="RSSDownloaderTest.passWhenFileLengthIsNotZero" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.FileCreatorTest">
+    <configuration name="DownloadLinksParserTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -102,7 +100,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tools.RSSDownloaderTest.passWhenFileLengthIsNotZero&quot;" />
+            <option value="&quot;tools.DownloadLinksParserTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -112,7 +110,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="RSSDownloaderTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FileCreatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -125,7 +123,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tools.RSSDownloaderTest.test&quot;" />
+            <option value="&quot;tools.FileCreatorTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -135,7 +133,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="XMLParserTest.passWhenCountOfItemIsTwo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FileCreatorTest.passWhenAdditionOfLinksAndFilesTOArrayWorks" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -148,7 +146,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tools.XMLParserTest.passWhenCountOfItemIsTwo&quot;" />
+            <option value="&quot;tools.FileCreatorTest.passWhenAdditionOfLinksAndFilesTOArrayWorks&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -158,7 +156,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="XMLParserTest.passWhenLinkIsCorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FileCreatorTest.passWhenCreatingFileNameWorks" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -171,7 +169,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tools.XMLParserTest.passWhenLinkIsCorrect&quot;" />
+            <option value="&quot;tools.FileCreatorTest.passWhenCreatingFileNameWorks&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -181,7 +179,7 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="XMLParserTest.passWhenTitleIsCorrect" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="FileCreatorTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -194,7 +192,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tools.XMLParserTest.passWhenTitleIsCorrect&quot;" />
+            <option value="&quot;tools.FileCreatorTest.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -206,11 +204,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.XMLParserTest.passWhenLinkIsCorrect" />
-        <item itemvalue="Gradle.XMLParserTest.passWhenTitleIsCorrect" />
-        <item itemvalue="Gradle.XMLParserTest.passWhenCountOfItemIsTwo" />
-        <item itemvalue="Gradle.RSSDownloaderTest.passWhenFileLengthIsNotZero" />
-        <item itemvalue="Gradle.RSSDownloaderTest.test" />
+        <item itemvalue="Gradle.FileCreatorTest" />
+        <item itemvalue="Gradle.FileCreatorTest.passWhenCreatingFileNameWorks" />
+        <item itemvalue="Gradle.FileCreatorTest.passWhenAdditionOfLinksAndFilesTOArrayWorks" />
+        <item itemvalue="Gradle.FileCreatorTest.test" />
+        <item itemvalue="Gradle.DownloadLinksParserTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669550935663</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Complet xmlparser.">
+      <created>1669975609313</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669975609313</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -310,7 +315,8 @@
     <MESSAGE value="Add FileChecker and Downloader classes." />
     <MESSAGE value="Many changes" />
     <MESSAGE value="Add XMLParser one test" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add XMLParser one test" />
+    <MESSAGE value="Complet xmlparser." />
+    <option name="LAST_COMMIT_MESSAGE" value="Complet xmlparser." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
