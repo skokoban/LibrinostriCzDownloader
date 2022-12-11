@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class FileCreatorTest {
+public class PDFFileTest {
     ArrayList<Book> makeBooks() {
         ArrayList<String> dlLinks = new ArrayList<>();
         dlLinks.add("testFile1/testFile1");
@@ -27,14 +27,14 @@ public class FileCreatorTest {
     @Test
     @DisplayName("Add two elements works")
     void passWhenAdditionOfLinksAndFilesTOArrayWorks() {
-        FileCreator fileCreator = new FileCreator();
+        PDFFile fileCreator = new PDFFile();
         assertEquals(2, fileCreator.createFiles(makeBooks(), getDlDestination()).size());
     }
 
     @Test
     @DisplayName("Creating Filename from hypertext link")
     void passWhenCreatingFileNameWorks() {
-        FileCreator fileCreator = new FileCreator();
+        PDFFile fileCreator = new PDFFile();
         assertEquals("src/test/resources/testTitle/testFile1", fileCreator.createFiles(makeBooks(), getDlDestination()).get("testFile1/testFile1").toString());
     }
 }

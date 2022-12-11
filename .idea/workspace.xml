@@ -4,12 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Complet xmlparser.">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Finish FileCreator class and appropriate tests.">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/FileCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/FileCreatorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/FileChecker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/FileCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/FileCreatorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/PDFFileTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669975609313</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Finish FileCreator class and appropriate tests.">
+      <created>1670155929680</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670155929680</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -316,7 +323,8 @@
     <MESSAGE value="Many changes" />
     <MESSAGE value="Add XMLParser one test" />
     <MESSAGE value="Complet xmlparser." />
-    <option name="LAST_COMMIT_MESSAGE" value="Complet xmlparser." />
+    <MESSAGE value="Finish FileCreator class and appropriate tests." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finish FileCreator class and appropriate tests." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

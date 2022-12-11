@@ -3,25 +3,24 @@ package tools;
 import main.Book;
 
 import java.io.File;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FileCreator {
+public class PDFFile {
     /**
      * Create the <code>File</code> apropriate to with name to downloadLinks provided by <code>Book</code> class.
      * @param books the book from which you want to crate files for every download link
      * @param DLDest path to directory where files should be strored
-     * @return Map of download links linked to files.
+     * @return Map of download links related to files.
      */
     public Map<String, File> createFiles(ArrayList<Book> books, Path DLDest) {
         Map<String, File> fileMap = new HashMap<>();
         for (Book book: books) {
             for (String dLink: book.getDOWNLOAD_LINKS()) {
                 if (!dLink.contains("/")) {
-                    System.out.println("Error: Not valid link:" + dLink);
+                    System.out.println("Error: Not valid link " + dLink);
                     continue;
                 }
                 int lastDivider = dLink.lastIndexOf("/");
@@ -31,5 +30,13 @@ public class FileCreator {
             }
         }
         return fileMap;
+    }
+
+    public void deleteEntriesOfExistingFiles(Map<String, File> fileMap) {
+        for (Map.Entry<String, File> fileEntry : fileMap.entrySet()) {
+            if (fileEntry.getValue().exists()) {
+                fileMap.remove(fileEntry.getKey(), fileEntry.getValue());
+            }
+        }
     }
 }
