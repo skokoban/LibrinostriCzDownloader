@@ -32,4 +32,5 @@ public class XMLParser {
         }
         return booksInfo;
     }
+    //todo treba odstranit zdrojovy xml po spracovani
 }

@@ -1,19 +1,10 @@
 package tools;
 
-import main.Book;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.DisplayName;
 import org.mockito.Mockito;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.util.ArrayList;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mockConstruction;
-import static org.mockito.Mockito.when;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class DownloaderTest {
 
@@ -24,11 +15,12 @@ public class DownloaderTest {
 /*======================================================================================================================
                                                 Test methods
 ======================================================================================================================*/
+    @Test
+    @DisplayName("Completed download.")
+    public void passWhenFileIsDownloaded() {
+        assertTrue(new Downloader().downloadTxtFile(Mockito.any(), Mockito.anyString()));
+    }
 /*======================================================================================================================
                                                 After methods
 ======================================================================================================================*/
-
-    private void deleteTestFile(String downloaded_pdfs_file_path) {
-        new File(downloaded_pdfs_file_path).delete();
-    }
 }

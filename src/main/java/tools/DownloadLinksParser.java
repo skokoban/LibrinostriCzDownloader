@@ -1,6 +1,7 @@
 package tools;
 
 import main.Book;
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -27,7 +28,8 @@ public class DownloadLinksParser {
     public ArrayList<Book> parseDownloadLinks(ArrayList<Book> books) throws IOException {
         ArrayList<Book> finalBooks = new ArrayList<>();
         for (Book book: books) {
-            Document document         = Jsoup.connect(book.getLINK()).get();
+            Connection connection     = Jsoup.connect(book.getLINK());
+            Document   document       = connection.get();
             Elements elementsDownload = document.select(DOWNLOAD_ELEMENT_NAME);
             ArrayList<String> dLinks  = new ArrayList<>();
             for (Element link : elementsDownload) {
