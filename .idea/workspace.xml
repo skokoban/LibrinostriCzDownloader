@@ -4,16 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="FileChecker and FileCreator merged to one class PDFFile.">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="modified whole project 12.12.2022.">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/marceld.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/Executor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tools/TaskExecutorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/RSSDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/TaskStarter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/TaskExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/BookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/PDFFileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/PDFFileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/rss.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/rss.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,151 +90,120 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "/home/marceld/Dokumenty/IdeaProjects/powermock-examples-maven/tutorial",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4204436",
-    "settings.editor.selected.configurable": "reference.idesettings.debugger.capture"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/marceld/Dokumenty/IdeaProjects/powermock-examples-maven/tutorial&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4204436&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;proofread&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.DownloaderTest.passWhenFileIsDownloaded">
-    <configuration name="DownloaderTest.passWhenFileIsDownloaded" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tools.DownloaderTest.passWhenFileIsDownloaded&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="LibrinostriCzDownloader.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="FileCreatorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tools.FileCreatorTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="BookTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.BookTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="FileCreatorTest.passWhenAdditionOfLinksAndFilesTOArrayWorks" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tools.FileCreatorTest.passWhenAdditionOfLinksAndFilesTOArrayWorks&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="DownloaderTest.passWhenCopyTextLinesWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenCopyTextLinesWorks" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="FileCreatorTest.passWhenCreatingFileNameWorks" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tools.FileCreatorTest.passWhenCreatingFileNameWorks&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="DownloaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
-    <configuration name="FileCreatorTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tools.FileCreatorTest.test&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
+    <configuration name="TaskExecutorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.TaskExecutorTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.BookTest.test" />
+      <item itemvalue="JUnit.TaskExecutorTest.test" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenCopyTextLinesWorks" />
+      <item itemvalue="JUnit.DownloaderTest.test" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.DownloaderTest.passWhenFileIsDownloaded" />
-        <item itemvalue="Gradle.FileCreatorTest" />
-        <item itemvalue="Gradle.FileCreatorTest.passWhenCreatingFileNameWorks" />
-        <item itemvalue="Gradle.FileCreatorTest.passWhenAdditionOfLinksAndFilesTOArrayWorks" />
-        <item itemvalue="Gradle.FileCreatorTest.test" />
+        <item itemvalue="JUnit.BookTest.test" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.TaskExecutorTest.test" />
+        <item itemvalue="JUnit.DownloaderTest.test" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenCopyTextLinesWorks" />
       </list>
     </recent_temporary>
   </component>
@@ -313,7 +300,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670780270889</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="modified whole project 12.12.2022.">
+      <created>1670884318642</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670884318642</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -340,18 +334,8 @@
     <MESSAGE value="Complet xmlparser." />
     <MESSAGE value="Finish FileCreator class and appropriate tests." />
     <MESSAGE value="FileChecker and FileCreator merged to one class PDFFile." />
-    <option name="LAST_COMMIT_MESSAGE" value="FileChecker and FileCreator merged to one class PDFFile." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="modified whole project 12.12.2022." />
+    <option name="LAST_COMMIT_MESSAGE" value="modified whole project 12.12.2022." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

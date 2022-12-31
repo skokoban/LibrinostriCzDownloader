@@ -1,8 +1,7 @@
 package ui;
 
-import main.Book;
-
-import java.util.LinkedList;
+import java.io.File;
+import java.util.Map;
 
 public class Printer {
 
@@ -43,5 +42,30 @@ public class Printer {
 
     public static void printCannotWriteToFile() {
         System.out.println(Strings.CANNOT_WRITE_TO_FILE.getText());
+    }
+
+    public static void printAbout() {
+        System.out.println(Strings.ABOUT.getText());
+    }
+
+    public static void printNamesOfDownlaodedPDFs(Map<String, File> fileMap) {
+        for (Map.Entry<String, File> pdf: fileMap.entrySet()) {
+            String fileURL  = pdf.getKey();
+            int lastDivider = fileURL.lastIndexOf("/");
+            String fileName = fileURL.substring(lastDivider+1);
+            System.out.println(fileName);
+        }
+    }
+
+    public static void printOK() {
+        System.out.println(Strings.OK.getText());
+    }
+
+    public static void printDownloading(File PDFFileName) {
+        System.out.print(Strings.DOWNLOADING.getText() + PDFFileName);
+    }
+
+    public static void printNewDownloadLocAsking() {
+        System.out.print(Strings.NEW_BOOKS_FOLDER.getText());
     }
 }

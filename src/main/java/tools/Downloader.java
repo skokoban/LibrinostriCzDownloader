@@ -1,20 +1,30 @@
 package tools;
 
+import ui.Printer;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.Map;
 
 public class Downloader {
 /*======================================================================================================================
-                                                Attributes
-======================================================================================================================*/
-/*======================================================================================================================
                                                 Methods
 ======================================================================================================================*/
-    public void downloadFile(Map<String, File> fileMap) throws IOException {
+
+    /**
+     * Downloads files from given URL to given File.
+     * @param fileMap with key of URL in String format. Value should be File object where file will be stored.
+     * @throws IOException if when downloading fails.
+     */
+    public void downloadFiles(Map<String, File> fileMap) throws IOException {
         for (Map.Entry<String, File> fileEntry: fileMap.entrySet()) {
-            HttpURLConnection connection = (HttpURLConnection) new URL(fileEntry.getValue().getAbsolutePath()).openConnection();
+            Printer.printDownloading(fileEntry.getValue());
+
+            URL url = new URL(fileEntry.getKey());
+
+            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.connect();
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 // nepodarilo sa spojenie
@@ -29,36 +39,32 @@ public class Downloader {
                 output.write(data, 0, count);
             }
             output.close();
+            Printer.printOK();
         }
     }
 
     /**
      * Copy text content from remote file to local file. Copying is proceeded by single line systematically.
-     * @param url link to remote text file
+     * @param url  link to remote text file
      * @param path string where local file should be located
-     * @return true if whole content was copied, false otherwise.
      */
-    public boolean downloadTxtFile(URL url, String path) {
-/*
-        File txtFile = new File(path);
-        if (txtFile.exists()) {
-            txtFile.delete();
-        }
-*/
+    public void downloadTxtFile(URL url, File xmlTempFile) {
         try {
-            InputStreamReader inputStreamReader = new InputStreamReader(url.openStream());
-            BufferedReader    reader            = new BufferedReader(inputStreamReader);
-            FileWriter        writer            = new FileWriter(path);
+            InputStreamReader    inputStreamReader = new InputStreamReader(url.openStream());
+            BufferedReader       reader            = new BufferedReader(inputStreamReader);
+            FileOutputStream     fileOutputStream  = new FileOutputStream(xmlTempFile);
+            BufferedOutputStream bos               = new BufferedOutputStream(fileOutputStream);
 
-            String inputLine;
-            while ((inputLine = reader.readLine()) != null) {
-                writer.write(inputLine);
+            String line;
+            while ((line = reader.readLine()) != null) {
+                byte[] buffer;
+                buffer = line.getBytes(StandardCharsets.UTF_8);
+                bos.write(buffer);
+                bos.write("\n".getBytes());
             }
-            reader.close();
-            return true;
+            bos.close();
         } catch (IOException e) {
             e.printStackTrace();
-            return false;
         }
     }
 

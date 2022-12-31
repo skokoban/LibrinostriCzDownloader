@@ -3,11 +3,7 @@ package main;
 import org.jdom2.Document;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
-import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
@@ -18,8 +14,6 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
-@TestInstance(TestInstance.Lifecycle.PER_CLASS)
-@RunWith(MockitoJUnitRunner.class)
 public class LibrinostriTest {
 
 /*======================================================================================================================
@@ -33,7 +27,6 @@ public class LibrinostriTest {
 /*======================================================================================================================
                                              Methods
 ======================================================================================================================*/
-    @BeforeAll
     void init() {
         SAXBuilder saxBuilder = new SAXBuilder();
         try {
@@ -45,7 +38,6 @@ public class LibrinostriTest {
         pdfFileLinks.add("test2");
     }
     @Test
-    @DisplayName("Add books works")
     void passWhenAddBooksWorks() throws IOException, JDOMException {
         SAXBuilder saxBuilderMock = Mockito.mock(SAXBuilder.class);
         when(saxBuilderMock.build("http://librinostri.catholica.cz/rss.php")).thenReturn(rssDocument);

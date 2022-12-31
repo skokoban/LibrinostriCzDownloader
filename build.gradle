@@ -12,10 +12,11 @@ repositories {
 dependencies {
     implementation 'org.jdom:jdom2:2.0.6.1'
     implementation 'org.jsoup:jsoup:1.15.3'
-    implementation 'org.mockito:mockito-junit-jupiter:4.8.0'
+    testImplementation 'org.mockito:mockito-junit-jupiter:4.8.0'
+    testImplementation 'org.mockito:mockito-inline:4.8.0'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
-    testImplementation 'junit:junit:4.13.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
+    testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
+    testImplementation 'org.powermock:powermock-module-junit4:2.0.9'
 }
 
 test {

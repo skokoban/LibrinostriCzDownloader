@@ -1,9 +1,10 @@
 package main;
 
-import tools.TaskStarter;
+import tools.TaskExecutor;
 
 public class Main {
     public static void main(String[] args) {
-        new TaskStarter(args);
+        TaskExecutor executor = new TaskExecutor();
+        executor.runTask(args);
     }
 }

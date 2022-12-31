@@ -1,16 +1,9 @@
 package tools;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.io.File;
-import java.net.URL;
 
-import static org.mockito.Mockito.mock;
-
-@RunWith(MockitoJUnitRunner.class)
 public class RSSDownloaderTest {
 
     private final String URL = "http://librinostri.catholica.cz/rss.php";

@@ -29,12 +29,12 @@ public class Book {
      * @param link
      */
     public Book(String title, String link) {
-        TITLE = replaceSpecChars(title);
+        TITLE = normalizeBookName(title);
         LINK  = link;
     }
 
     public Book(String title, String link, ArrayList<String> downloadLinks) {
-        TITLE = replaceSpecChars(title);
+        TITLE = normalizeBookName(title);
         LINK  = link;
         DOWNLOAD_LINKS = downloadLinks;
     }
@@ -66,9 +66,16 @@ public class Book {
      * @param badTitle string to be converted
      * @return clear string without special chars
      */
-    protected String replaceSpecChars(String badTitle) {
-        String replacedSpaces = Normalizer.normalize(badTitle, Normalizer.Form.NFD).replaceAll(" ", "_");
-        return Normalizer.normalize(replacedSpaces, Normalizer.Form.NFD).replaceAll("\\W", "");
+    protected String normalizeBookName(String badTitle) {
+        String replaceSpaces = Normalizer.normalize(badTitle, Normalizer.Form.NFD).replaceAll(" ", "_");
+        String goodName = Normalizer.normalize(replaceSpaces, Normalizer.Form.NFD).replaceAll("\\W","");
+        String finalName;
+        if(goodName.length() > 255) {
+            finalName = goodName.substring(0, 255);
+        } else {
+            finalName = goodName;
+        }
+        return finalName;
     }
 
     /**

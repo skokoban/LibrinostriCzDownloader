@@ -2,9 +2,9 @@ package ui;
 
 public enum Strings {
 
-/*--------------------------------------------------------------------------------------------------
-                                            Attributes
---------------------------------------------------------------------------------------------------*/
+/*======================================================================================================================
+                                                    Attributes
+======================================================================================================================*/
 
             // strings for printing
     UNKNOWN_ARGS_ERROR("Unknown arguments. Use ´help´ argument to see available commands."),
@@ -20,20 +20,35 @@ public enum Strings {
 
     HELP("""
             List of available commands:
-             help     - show this help.
-             update   - check for new added files.
-             download - download all newly addded files."""),
+             help     - show this help
+             download - download all newly addded files
+             path     - change path to download folder
+             about    - information about this aplication.
+             
+             Usage: command """),
+
+    ABOUT("""
+            Librinosti.cz PDF File downloader v.0.22.12.18
+            created by Marcel Dorušák."""),
+
+    OK(" OK"),
+
+    DOWNLOADING("downloading: "),
+
+    NEW_BOOKS_FOLDER("Please type path for downloaded books: "),
 
     MENU("""
 
             ==================================================================================
-            This program allows you simply check for new added files on librinostri.catholica.cz.
-            You can also download new PDF files recently added to this site for download.
+            This program allows you automatically download all new added files on librinostri.catholica.cz.
+            
             Enter number you want to do.
             ==================================================================================
-            1. check for updates on website\s
-            2. download new pdf(s) from websites\s
-            3. help
+            1. download new pdf files from websites\s
+            2. change folder for downloaded books\s
+            2. print help\s
+            3. print about\s
+            5. exit
             =================================================================================="""),
 
     UPDATER_INTRO("List of new books:");
@@ -41,17 +56,17 @@ public enum Strings {
             // field
     private final String text;
 
-/*--------------------------------------------------------------------------------------------------
-                                            Constructor
---------------------------------------------------------------------------------------------------*/
+/*======================================================================================================================
+                                                    Constructors
+======================================================================================================================*/
 
     Strings(String text) {
         this.text = text;
     }
 
-/*--------------------------------------------------------------------------------------------------
-                                            Getter
---------------------------------------------------------------------------------------------------*/
+/*======================================================================================================================
+                                                    Getters
+======================================================================================================================*/
 
     public String getText() {
         return text;
