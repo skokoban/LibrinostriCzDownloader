@@ -1,52 +1,51 @@
 package tools;
 
-import ui.Printer;
-
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
 
 public class Downloader {
+/*======================================================================================================================
+                                                Attributes
+======================================================================================================================*/
+    private final int BYTE_ARRAY_SIZE = 4096;
+    private final int ERROR_VALUE = -1;
+    private final int OFFSET_VALUE = 0;
 /*======================================================================================================================
                                                 Methods
 ======================================================================================================================*/
 
     /**
      * Downloads files from given URL to given File.
-     * @param fileMap with key of URL in String format. Value should be File object where file will be stored.
-     * @throws IOException if when downloading fails.
+     *
+     * @param connection connection to URL
+     * @param pdf        File object where downlaoded file be stored
+     * @return
+     * @throws IOException when downloading fails.
      */
-    public void downloadFiles(Map<String, File> fileMap) throws IOException {
-        for (Map.Entry<String, File> fileEntry: fileMap.entrySet()) {
-            Printer.printDownloading(fileEntry.getValue());
-
-            URL url = new URL(fileEntry.getKey());
-
-            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+    public boolean downloadFile(HttpURLConnection connection, File pdf) throws IOException {
             connection.connect();
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
                 // nepodarilo sa spojenie
-                throw new IOException("HTTP error code " + connection.getResponseCode());
+                return false;
             }
                 // stiahnutie suboru
-            InputStream input  = connection.getInputStream();
-            OutputStream output = new FileOutputStream(fileEntry.getValue());
-            byte[]       data   = new byte[4096];
+            InputStream input   = connection.getInputStream();
+            OutputStream output = new FileOutputStream(pdf);
+            byte[]       data   = new byte[BYTE_ARRAY_SIZE];
             int          count;
-            while ((count = input.read(data)) != -1) {
-                output.write(data, 0, count);
+            while ((count = input.read(data)) != ERROR_VALUE) {
+                output.write(data, OFFSET_VALUE, count);
             }
             output.close();
-            Printer.printOK();
-        }
+            return true;
     }
 
     /**
      * Copy text content from remote file to local file. Copying is proceeded by single line systematically.
      * @param url  link to remote text file
-     * @param path string where local file should be located
+     * @param xmlTempFile File where local file should be located
      */
     public void downloadTxtFile(URL url, File xmlTempFile) {
         try {

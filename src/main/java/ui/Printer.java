@@ -68,4 +68,16 @@ public class Printer {
     public static void printNewDownloadLocAsking() {
         System.out.print(Strings.NEW_BOOKS_FOLDER.getText());
     }
+
+    public static void printDownloadingError() {
+        System.out.println(Strings.ERROR_DOWNLOADING.getText());
+    }
+
+    public static void printNoNewFiles() {
+        System.out.println(Strings.NO_NEW_FILES.getText());
+    }
+
+    public static void printInvalidOptionEntered() {
+        System.out.println(Strings.ERROR_INVALID_MENU_OPTION.getText());
+    }
 }

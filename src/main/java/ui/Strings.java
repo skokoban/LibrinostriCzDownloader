@@ -25,7 +25,7 @@ public enum Strings {
              path     - change path to download folder
              about    - information about this aplication.
              
-             Usage: command """),
+             Usage: command"""),
 
     ABOUT("""
             Librinosti.cz PDF File downloader v.0.22.12.18
@@ -37,19 +37,24 @@ public enum Strings {
 
     NEW_BOOKS_FOLDER("Please type path for downloaded books: "),
 
+    ERROR_DOWNLOADING("New PDF files cannot be downloaded. Please send error report to mdorusak@gmail.com."),
+    ERROR_INVALID_MENU_OPTION("Invalid option selected."),
+
+    NO_NEW_FILES("There is no new files recently added."),
+
     MENU("""
 
-            ==================================================================================
+            ===============================================================================================
             This program allows you automatically download all new added files on librinostri.catholica.cz.
             
             Enter number you want to do.
-            ==================================================================================
+            \s
             1. download new pdf files from websites\s
             2. change folder for downloaded books\s
-            2. print help\s
-            3. print about\s
+            3. help\s
+            4. about\s
             5. exit
-            =================================================================================="""),
+            ==============================================================================================="""),
 
     UPDATER_INTRO("List of new books:");
 
