@@ -1,13 +1,11 @@
 package tools;
 
-import org.mockito.junit.MockitoJUnitRunner;
-
 import java.io.File;
 
 public class RSSDownloaderTest {
 
     private final String URL = "http://librinostri.catholica.cz/rss.php";
-    File rssFile = new File("test" + File.separator + "java" + File.separator + "resources" + File.separator + "rss.php");
+    File rssFile = new File("test" + File.separator + "java" + File.separator + "resources" + File.separator + "testRSS.php");
 
 /*
     @Test

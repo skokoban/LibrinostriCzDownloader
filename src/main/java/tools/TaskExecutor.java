@@ -15,7 +15,7 @@ public class TaskExecutor {
 /*======================================================================================================================
                                                     Attributes
 ======================================================================================================================*/
-        // usable arguments
+        // available arguments
     private final String ARG_DOWNLOAD   = "download";
     private final String ARG_DWNLD_DEST = "path";
     private final String ARG_HELP       = "help";

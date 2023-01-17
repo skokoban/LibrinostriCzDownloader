@@ -34,4 +34,9 @@ private File getTempPDF() throws IOException {
         assertFalse(new Downloader().downloadFile(getMockedConnection(), getTempPDF()));
     }
 
+    @Test
+    @DisplayName("False ")
+    public void passWhenErrorResponseCodeRecognized() throws IOException {
+        assertFalse(new Downloader().downloadFile(getMockedConnection(), getTempPDF()));
+    }
 }

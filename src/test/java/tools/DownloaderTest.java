@@ -23,8 +23,8 @@ public class DownloaderTest {
 /*======================================================================================================================
                                                 Attributes
 ======================================================================================================================*/
-    private final File TEST_SOURCE_FILE = new File("src/test/resources/rss.php");
-    private final File TEST_TARGET_FILE = new File("src/test/resources/test.php");
+    private static final File TEST_SOURCE_FILE = new File("src/test/resources/testRSS.php");
+    private static final File TEST_TARGET_FILE = new File("src/test/resources/target.php");
 /*======================================================================================================================
                                                 Helper methods
 ======================================================================================================================*/
@@ -46,11 +46,10 @@ public class DownloaderTest {
         when(urlmocked.openStream()).thenReturn(getInputStream());
         new Downloader().downloadTxtFile(urlmocked, TEST_TARGET_FILE);
         Assertions.assertEquals(TEST_SOURCE_FILE.length(), TEST_TARGET_FILE.length());
-        TEST_TARGET_FILE.delete();
     }
 
     @AfterAll
-    public void deleteTargetFile() {
+    public static void deleteTargetFile() {
         TEST_TARGET_FILE.delete();
     }
 }

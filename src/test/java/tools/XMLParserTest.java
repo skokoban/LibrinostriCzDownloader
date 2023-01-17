@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class XMLParserTest {
     InputSource testXMLFile = new InputSource("src" + File.separator + "test" + File.separator + "resources" +
-                            File.separator + "rss.php");
+                            File.separator + "testRSS.php");
     @Test
     public void passWhenCountOfItemIsTwo() throws XPathExpressionException, IOException {
         XMLParser xmlParser = new XMLParser();

@@ -5,7 +5,6 @@ import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
-import org.mockito.junit.MockitoJUnitRunner;
 
 import java.io.File;
 import java.io.IOException;
@@ -20,7 +19,7 @@ public class LibrinostriTest {
                                          Attributes
 ======================================================================================================================*/
 
-    private File rssFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "rss.php");
+    private File rssFile = new File("src" + File.separator + "test" + File.separator + "resources" + File.separator + "testRSS.php");
     private Document rssDocument;
     private ArrayList<String> pdfFileLinks = new ArrayList<>();
 

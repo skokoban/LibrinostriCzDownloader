@@ -21,7 +21,7 @@ public class Downloader {
      *
      * @param connection connection to URL
      * @param pdf        File object where downlaoded file be stored
-     * @return
+     * @return true if PDF file is successfully downlaoded, otherwire returns false
      * @throws IOException when downloading fails.
      */
     public boolean downloadFile(HttpURLConnection connection, File pdf) throws IOException {
