@@ -40,7 +40,7 @@ public class Executor {
             // create tmp file for php document
         File xmlTempFile;
         try {
-            xmlTempFile = File.createTempFile(XML_NAME, XML_SUFFIX);
+        xmlTempFile = File.createTempFile(XML_NAME, XML_SUFFIX);
             xmlTempFile.deleteOnExit();
         } catch (IOException e) {
             parseDownloadableError(e);

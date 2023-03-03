@@ -21,8 +21,8 @@ public class DownloadLinksParser {
 ======================================================================================================================*/
     /**
      * Inspect the book subsite for download links to all PDF´s related to the book.
-     * @param bookLink URL to information about the book on librinostri.catholica.cz.
-     * @return list of Strings with URLs to direct download PDFs.
+     * @param books URL to information about the book on librinostri.catholica.cz.
+     * @return list of object <code>Book</code> with additional links to each PDFs
      * @throws IOException if link to the book is not reachable.
      */
     public ArrayList<Book> parseDownloadLinks(ArrayList<Book> books) throws IOException {
@@ -31,9 +31,14 @@ public class DownloadLinksParser {
             Connection connection     = Jsoup.connect(book.getLINK());
             Document   document       = connection.get();
             Elements elementsDownload = document.select(DOWNLOAD_ELEMENT_NAME);
+
             ArrayList<String> dLinks  = new ArrayList<>();
             for (Element link : elementsDownload) {
-                dLinks.add(link.attr(LINK_ATTRIBUTE_NAME));
+                String dLink = link.attr(LINK_ATTRIBUTE_NAME);
+                if (!dLink.contains("/")) {
+                    throw new IOException();
+                }
+                dLinks.add(dLink);
             }
             finalBooks.add(new Book(book.getTITLE(), book.getLINK(), dLinks));
         }

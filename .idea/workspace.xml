@@ -4,16 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="modified whole project 13.01.2023.">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="modified whole project 17.01.2023.">
+      <change afterPath="$PROJECT_DIR$/src/test/resources/mockito-extensions/org.mockito.plugins.MockMaker" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/TaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/TaskExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/rss.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testRSS.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/testRSS.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testRSS.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +89,7 @@
     &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.4204436&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propDebugger&quot;
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.capture&quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -108,6 +111,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DownloadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloadTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DownloadTest.passWhenErrorResponseCodeRecognized" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
@@ -124,7 +142,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.passWhenCopyTextLinesWorks (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloadTest.passWhenTargetFileHas4096Length" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
@@ -133,14 +151,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenCopyTextLinesWorks" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloadTest" />
+      <option name="METHOD_NAME" value="passWhenTargetFileHas4096Length" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.passWhenCopyTextLinesWorks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloadTest.passWhenTargetFileHasZeroLength" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
@@ -149,25 +167,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenCopyTextLinesWorks" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea --add-opens java.base/java.lang=ALL-UNNAMED" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TaskExecutorTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.TaskExecutorTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloadTest" />
+      <option name="METHOD_NAME" value="passWhenTargetFileHasZeroLength" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -175,18 +176,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenCopyTextLinesWorks (1)" />
+      <item itemvalue="JUnit.DownloadTest" />
+      <item itemvalue="JUnit.DownloadTest.passWhenTargetFileHas4096Length" />
+      <item itemvalue="JUnit.DownloadTest.passWhenTargetFileHasZeroLength" />
       <item itemvalue="JUnit.DownloadTest.passWhenErrorResponseCodeRecognized" />
-      <item itemvalue="JUnit.TaskExecutorTest.test" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenCopyTextLinesWorks" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DownloadTest" />
+        <item itemvalue="JUnit.DownloadTest.passWhenTargetFileHas4096Length" />
+        <item itemvalue="JUnit.DownloadTest.passWhenTargetFileHasZeroLength" />
         <item itemvalue="JUnit.DownloadTest.passWhenErrorResponseCodeRecognized" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenCopyTextLinesWorks (1)" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenCopyTextLinesWorks" />
-        <item itemvalue="JUnit.TaskExecutorTest.test" />
       </list>
     </recent_temporary>
   </component>
@@ -304,7 +305,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673736026481</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="modified whole project 17.01.2023.">
+      <created>1673982127814</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673982127814</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -312,7 +320,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -334,7 +354,8 @@
     <MESSAGE value="modified whole project 12.12.2022." />
     <MESSAGE value="modified whole project 31.12.2022." />
     <MESSAGE value="modified whole project 13.01.2023." />
-    <option name="LAST_COMMIT_MESSAGE" value="modified whole project 13.01.2023." />
+    <MESSAGE value="modified whole project 17.01.2023." />
+    <option name="LAST_COMMIT_MESSAGE" value="modified whole project 17.01.2023." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

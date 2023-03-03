@@ -37,10 +37,6 @@ public class PDFFile {
         Map<String, File> fileMap = new HashMap<>();
         for (Book book : books) {
             for (String dLink : book.getDOWNLOAD_LINKS()) {
-                if (!dLink.contains("/")) {
-                    System.out.println("Error: Not valid link " + dLink);   //todo nech to tu nevypisuje
-                    continue;
-                }
                 int lastDivider = dLink.lastIndexOf("/");
                 String fileName = dLink.substring(lastDivider);
                 File file = new File(DOWNLOAD_FOLDER + File.separator + book.getTITLE() +

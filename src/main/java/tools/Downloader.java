@@ -10,32 +10,31 @@ public class Downloader {
                                                 Attributes
 ======================================================================================================================*/
     private final int BYTE_ARRAY_SIZE = 4096;
-    private final int ERROR_VALUE = -1;
+    private final int END_STREAM_VALUE = -1;
     private final int OFFSET_VALUE = 0;
+    private final String NEW_LINE_CHAR = "\n";
 /*======================================================================================================================
                                                 Methods
 ======================================================================================================================*/
 
     /**
-     * Downloads files from given URL to given File.
+     * Download file from given URL connection to given File.
      *
      * @param connection connection to URL
-     * @param pdf        File object where downlaoded file be stored
+     * @param pdf        File object where downlaoded file will be located
      * @return true if PDF file is successfully downlaoded, otherwire returns false
      * @throws IOException when downloading fails.
      */
     public boolean downloadFile(HttpURLConnection connection, File pdf) throws IOException {
             connection.connect();
             if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                // nepodarilo sa spojenie
                 return false;
-            }
-                // stiahnutie suboru
+            }                // stiahnutie suboru
             InputStream input   = connection.getInputStream();
             OutputStream output = new FileOutputStream(pdf);
             byte[]       data   = new byte[BYTE_ARRAY_SIZE];
             int          count;
-            while ((count = input.read(data)) != ERROR_VALUE) {
+            while ((count = input.read(data)) != END_STREAM_VALUE) {
                 output.write(data, OFFSET_VALUE, count);
             }
             output.close();
@@ -59,7 +58,7 @@ public class Downloader {
                 byte[] buffer;
                 buffer = line.getBytes(StandardCharsets.UTF_8);
                 bos.write(buffer);
-                bos.write("\n".getBytes());
+                bos.write(NEW_LINE_CHAR.getBytes());
             }
             bos.close();
         } catch (IOException e) {
