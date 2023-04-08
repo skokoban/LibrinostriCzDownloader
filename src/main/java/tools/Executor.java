@@ -18,7 +18,6 @@ public class Executor {
 /*======================================================================================================================
                                                     Attributes
 ======================================================================================================================*/
-    private final String XML_URL    = Config.getProperty("LibrinostriURL");
     private final String XML_NAME   = "rss";
     private final String XML_SUFFIX = ".php";
     private final String PROPERTY_DOWNLOAD_FOLDER = "downloadFolder";
@@ -31,8 +30,9 @@ public class Executor {
     public void download() {
             // create URL
         URL xmlURL;
+        String xmlProperty = "https://librinostri.catholica.cz/rss.php";
         try {
-            xmlURL = new URL(XML_URL);
+            xmlURL = new URL(xmlProperty);
         } catch (MalformedURLException e) {
             parseDownloadableError(e);
             return;
@@ -121,6 +121,12 @@ public class Executor {
         String downloadLocPath = scanner.nextLine();
         File booksPath  = new File(downloadLocPath);
         booksPath.mkdirs();
-        Config.setProperty(PROPERTY_DOWNLOAD_FOLDER, booksPath.getAbsolutePath());
+        new Config().setProperty(PROPERTY_DOWNLOAD_FOLDER, booksPath.getAbsolutePath());
+    }
+
+    public void showDownloadLocation() {
+        Config config = new Config();
+        String downloadFolder = config.getProperty(PROPERTY_DOWNLOAD_FOLDER);
+        Printer.printText(downloadFolder);
     }
 }

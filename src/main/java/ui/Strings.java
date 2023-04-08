@@ -37,7 +37,7 @@ public enum Strings {
 
     NEW_BOOKS_FOLDER("Please type path for downloaded books: "),
 
-    ERROR_DOWNLOADING("New PDF files cannot be downloaded. Please send error report to mdorusak@gmail.com."),
+    ERROR_DOWNLOADING("\nNew PDF files cannot be downloaded. Please send this error report to mdorusak@gmail.com."),
     ERROR_INVALID_MENU_OPTION("Invalid option selected."),
 
     NO_NEW_FILES("There is no new files recently added."),
@@ -49,11 +49,12 @@ public enum Strings {
             
             Enter number you want to do.
             \s
-            1. download new pdf files from websites\s
+            1. download new pdf files from website(s)\s
             2. change folder for downloaded books\s
-            3. help\s
-            4. about\s
-            5. exit
+            3. show folder for downloaded books\s
+            4. help\s
+            5. about\s
+            6. exit
             ==============================================================================================="""),
 
     UPDATER_INTRO("List of new books:");

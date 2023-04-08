@@ -17,7 +17,8 @@ public class TaskExecutor {
 ======================================================================================================================*/
         // available arguments
     private final String ARG_DOWNLOAD   = "download";
-    private final String ARG_DWNLD_DEST = "path";
+    private final String ARG_DWNLD_DEST = "path --set";
+    private final String ARG_SHOW_D_DEST= "path --show";
     private final String ARG_HELP       = "help";
     private final String ARG_ABOUT      = "about";
 /*======================================================================================================================
@@ -54,6 +55,7 @@ public class TaskExecutor {
         switch (arg) {
             case ARG_DOWNLOAD   -> functionSelector(1);
             case ARG_DWNLD_DEST -> functionSelector(2);
+            case ARG_SHOW_D_DEST-> functionSelector(3);
             case ARG_HELP       -> Printer.printHelp();
             case ARG_ABOUT      -> Printer.printAbout();
             default             -> Printer.printUnknownArgumentError();
@@ -74,9 +76,10 @@ public class TaskExecutor {
         switch (selection) {
             case 1 -> new Executor().download();
             case 2 -> new Executor().changeDownloadLocation();
-            case 3 -> Printer.printHelp();
-            case 4 -> Printer.printAbout();
-            case 5 -> {return;}
+            case 3 -> new Executor().showDownloadLocation();
+            case 4 -> Printer.printHelp();
+            case 5 -> Printer.printAbout();
+            case 6 -> {return;}
             default ->Printer.printInvalidOptionEntered();
         }
         Main.main(new String[0]);     // show menu after succesfully task proceeded

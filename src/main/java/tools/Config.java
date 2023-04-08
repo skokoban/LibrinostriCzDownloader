@@ -1,24 +1,55 @@
 package tools;
 
-import java.io.OutputStream;
-import java.io.InputStream;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.Properties;
 
 public class Config {
 /*======================================================================================================================
                                                     Attributes
 ======================================================================================================================*/
-    private static final String PATH_TO_PROPERTIES_FILE = "src/main/resources/config.properties";
+    private final String CONFIGFILE_NAME = "librinostri-downloader.properties";
+    private File configFileDir;
+    private String configFileDirPath;
+    private File configFile;
+
 /*======================================================================================================================
-                                                    Methods
+                                                        Constructor
 ======================================================================================================================*/
-    public static String getProperty(String key) {
+    public Config() {
+        configFileDirPath = System.getProperty("user.home") +
+                                File.separator +
+                                ".config" +
+                                File.separator +
+                                "librinostri-downlaoder";
+        configFileDir = new File(configFileDirPath);
+        configFile = new File(configFileDirPath + File.separator + CONFIGFILE_NAME);
+    }
+/*======================================================================================================================
+                                                        Methods
+======================================================================================================================*/
+    public Boolean exists() {
+        return configFile.exists();
+    }
+
+    public void createDefaultConfig() {
+        configFileDir.mkdirs();
         Properties properties = new Properties();
-        try (InputStream inputStream = new FileInputStream(PATH_TO_PROPERTIES_FILE)) {
+        try (OutputStream outputStream = new FileOutputStream(configFile)) {
+            properties.setProperty("downloadFolder", System.getProperty("user.home") + File.separator + "librinostri-cz-downlaoder");
+            properties.store(outputStream, "This is auto-generated properties file. Do not modify key. Value can be modified.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public String getProperty(String key) {
+        Properties properties = new Properties();
+        try (InputStream inputStream = new FileInputStream(configFile)) {
             properties.load(inputStream);
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+            return "";
         } catch (IOException e) {
             e.printStackTrace();
             return "";
@@ -26,9 +57,9 @@ public class Config {
         return properties.getProperty(key);
     }
 
-    public static boolean setProperty(String key, String value) {
+    public boolean setProperty(String key, String value) { // todo opravit. pri zmene jednej hodnoty ostatne zahodi. vytvori novy subor.
         Properties properties = new Properties();
-        try (OutputStream outputStream = new FileOutputStream(PATH_TO_PROPERTIES_FILE)) {
+        try (OutputStream outputStream = new FileOutputStream(configFile)) {
             properties.setProperty(key, value);
             properties.store(outputStream, "");
         } catch (IOException e) {

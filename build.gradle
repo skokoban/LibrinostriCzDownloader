@@ -11,14 +11,25 @@ repositories {
 
 dependencies {
     implementation 'org.jdom:jdom2:2.0.6.1'
-    implementation 'org.jsoup:jsoup:1.15.3'
-    testImplementation 'org.mockito:mockito-junit-jupiter:4.8.0'
-    testImplementation 'org.mockito:mockito-inline:4.8.0'
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
+    implementation 'org.jsoup:jsoup:1.15.4'
+    testImplementation 'org.mockito:mockito-junit-jupiter:5.2.0'
+    testImplementation 'org.mockito:mockito-inline:5.2.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.2'
     testImplementation 'org.powermock:powermock-api-mockito2:2.0.9'
     testImplementation 'org.powermock:powermock-module-junit4:2.0.9'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
 }
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    manifest {
+        attributes "Main-Class": "main.Main"
+    }
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
 }

@@ -1,13 +1,13 @@
 package main;
 
+import tools.Config;
 import tools.TaskExecutor;
 import ui.Printer;
 
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-
-public class Main {
+public class Main { //todo pridat jednoduche overenie ci je nieco nove na stranke naiesto stahovania vsetkych knih. pomocou hashu zrejme
     /**
      * Check if there was given arguments or not with running application from CLI.
      * If there was no arguments given, prints main menu with possibility of choice task.
@@ -16,6 +16,11 @@ public class Main {
      * @param args array of string that should be checked.
      */
     public static void main(String[] args) {
+        // check config file
+        Config config = new Config();
+        if (!config.exists()) {
+            config.createDefaultConfig();
+        }
         switch (args.length) {
             case 0 -> {
                 Printer.printMenu();

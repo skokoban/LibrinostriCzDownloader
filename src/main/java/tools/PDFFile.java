@@ -18,7 +18,8 @@ public class PDFFile {
                                                     Constructors
 ======================================================================================================================*/
     public PDFFile() {
-        this.DOWNLOAD_FOLDER = Config.getProperty("downloadFolder");
+        Config config = new Config();
+        this.DOWNLOAD_FOLDER = config.getProperty("downloadFolder");
     }
     public PDFFile(String downloadFolder) {
         this.DOWNLOAD_FOLDER = downloadFolder;
