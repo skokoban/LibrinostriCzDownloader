@@ -57,7 +57,7 @@ public class Config {
         return properties.getProperty(key);
     }
 
-    public boolean setProperty(String key, String value) { // todo opravit. pri zmene jednej hodnoty ostatne zahodi. vytvori novy subor.
+    public boolean setProperty(String key, String value) { // opravit. pri zmene jednej hodnoty ostatne zahodi. vytvori novy subor.
         Properties properties = new Properties();
         try (OutputStream outputStream = new FileOutputStream(configFile)) {
             properties.setProperty(key, value);
