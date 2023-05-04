@@ -8,6 +8,8 @@ import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 public class Main { //todo pridat jednoduche overenie ci je nieco nove na stranke naiesto stahovania vsetkych knih. pomocou hashu zrejme
+    //todo pri novom spustení a vybraní možnosti 3 vypíše cestu "aaaaaaaaaaa". zistit prečo a opraviť
+    //todo pri kontrole existencie knihy pocitat hash lebo nazov sa moze menit
     /**
      * Check if there was given arguments or not with running application from CLI.
      * If there was no arguments given, prints main menu with possibility of choice task.
