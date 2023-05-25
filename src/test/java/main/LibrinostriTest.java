@@ -3,6 +3,7 @@ package main;
 import org.jdom2.Document;
 import org.jdom2.JDOMException;
 import org.jdom2.input.SAXBuilder;
+import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
@@ -10,7 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.when;
 
 public class LibrinostriTest {
@@ -41,7 +42,7 @@ public class LibrinostriTest {
         SAXBuilder saxBuilderMock = Mockito.mock(SAXBuilder.class);
         when(saxBuilderMock.build("http://librinostri.catholica.cz/rss.php")).thenReturn(rssDocument);
         Librinostri librinostriMock = Mockito.mock(Librinostri.class);
-        when(librinostriMock.parseDownloadLinks("http://librinostri.catholica.cz/kniha/2690-pod-sluncem-satanovym"))
+        when(librinostriMock.findDownloadLinks("http://librinostri.catholica.cz/kniha/2690-pod-sluncem-satanovym"))
                 .thenReturn(pdfFileLinks);
         assertEquals(2, librinostriMock.getBOOKS_INFO().size());
     }

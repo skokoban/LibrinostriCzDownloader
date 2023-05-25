@@ -2,6 +2,8 @@ package tools;
 
 import main.Book;
 import org.xml.sax.InputSource;
+import tools.downloader.DownloadLinksParser;
+import tools.downloader.Downloader;
 import ui.Printer;
 
 import javax.xml.xpath.XPathExpressionException;

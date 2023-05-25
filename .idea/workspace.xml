@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="fix properties default file">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="noted two bags to fix">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/ConnectionProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/IConnection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tools/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,6 +76,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="JUnit4 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -71,7 +85,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev-gui" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,19 +112,27 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "TODO_SCOPE": "Project Files",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "/home/marceld/Dokumenty/AndroidStudioProjects/testHTTPPostSender",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
+    "last_opened_file_path": "/home/marceld/Dokumenty/programovanie/IdeaProjects/LibrinostriCzDownloader",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4204436",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="tools" />
+    </key>
   </component>
-  <component name="RunManager" selected="Gradle.LibrinostriCzDownloader [build]">
+  <component name="RunManager" selected="JUnit.ConfigTest.passWhenFileArgumentIsNull">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="LibrinostriCzDownloader.main" />
@@ -143,6 +165,7 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
     <configuration name="LibrinostriCzDownloader [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -164,34 +187,36 @@
       <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
       <method v="2" />
     </configuration>
-    <configuration name="DownloadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConfigTest.passWhenFileArgumentIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.downloader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloadTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="tools.ConfigTest" />
+      <option name="METHOD_NAME" value="passWhenFileArgumentIsNull" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloadTest.passWhenTargetFileHas4096Length" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConfigTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.downloader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloadTest" />
-      <option name="METHOD_NAME" value="passWhenTargetFileHas4096Length" />
+      <option name="MAIN_CLASS_NAME" value="tools.ConfigTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,16 +226,16 @@
       <item itemvalue="Application.Main" />
       <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
       <item itemvalue="Gradle.LibrinostriCzDownloader [check]" />
-      <item itemvalue="JUnit.DownloadTest" />
-      <item itemvalue="JUnit.DownloadTest.passWhenTargetFileHas4096Length" />
+      <item itemvalue="JUnit.ConfigTest.passWhenFileArgumentIsNull" />
+      <item itemvalue="JUnit.ConfigTest.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ConfigTest.passWhenFileArgumentIsNull" />
+        <item itemvalue="JUnit.ConfigTest.test" />
         <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
         <item itemvalue="Gradle.LibrinostriCzDownloader [check]" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DownloadTest" />
-        <item itemvalue="JUnit.DownloadTest.passWhenTargetFileHas4096Length" />
       </list>
     </recent_temporary>
   </component>
@@ -349,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680987448448</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="fix properties default file again">
+      <created>1681575644479</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1681575644479</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -394,7 +426,8 @@
     <MESSAGE value="modified whole project 17.01.2023." />
     <MESSAGE value="modified whole project 3.03.2023." />
     <MESSAGE value="fix properties default file" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix properties default file" />
+    <MESSAGE value="fix properties default file again" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix properties default file again" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

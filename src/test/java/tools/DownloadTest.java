@@ -7,6 +7,7 @@ import org.mockito.Mockito;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import tools.downloader.Downloader;
 
 import static org.junit.jupiter.api.Assertions.*;
 

@@ -1,4 +1,4 @@
-package tools;
+package tools.downloader;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -6,20 +6,18 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class Downloader {
-/*======================================================================================================================
+/*=================================================================================================
                                                 Attributes
-======================================================================================================================*/
+=================================================================================================*/
     private final int BYTE_ARRAY_SIZE = 4096;
     private final int END_STREAM_VALUE = -1;
     private final int OFFSET_VALUE = 0;
     private final String NEW_LINE_CHAR = "\n";
-/*======================================================================================================================
+/*=================================================================================================
                                                 Methods
-======================================================================================================================*/
-
+=================================================================================================*/
     /**
      * Download file from given URL connection to given File.
-     *
      * @param connection connection to URL
      * @param pdf        File object where downlaoded file will be located
      * @return true if PDF file is successfully downlaoded, otherwire returns false

@@ -7,9 +7,11 @@ import ui.Printer;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-public class Main { //todo pridat jednoduche overenie ci je nieco nove na stranke naiesto stahovania vsetkych knih. pomocou hashu zrejme
-    //todo pri novom spustení a vybraní možnosti 3 vypíše cestu "aaaaaaaaaaa". zistit prečo a opraviť
+public class Main {
+    //todo pridat jednoduche overenie ci je nieco nove na stranke naiesto stahovania vsetkych knih. pomocou hashu zrejme
+    //todo pri novom spustení a vybraní možnosti 3 vypíše cestu "aaaaaaaaaaa". zistit prečo a opraviť - ZISTENE v /res je subor odkial sa to berie
     //todo pri kontrole existencie knihy pocitat hash lebo nazov sa moze menit
+    //todo na zaciatku stahovania vytvori vsetky pdf subory popredu a az potom stahuje. ak nastane prerusenie tak ostanu prazdne nachystane subory. treba spravit aby sa vymazali
     /**
      * Check if there was given arguments or not with running application from CLI.
      * If there was no arguments given, prints main menu with possibility of choice task.
@@ -18,11 +20,7 @@ public class Main { //todo pridat jednoduche overenie ci je nieco nove na strank
      * @param args array of string that should be checked.
      */
     public static void main(String[] args) {
-        // check config file
-        Config config = new Config();
-        if (!config.exists()) {
-            config.createDefaultConfig();
-        }
+        checkConfig();
         switch (args.length) {
             case 0 -> {
                 Printer.printMenu();
@@ -39,6 +37,13 @@ public class Main { //todo pridat jednoduche overenie ci je nieco nove na strank
                 main(new String[0]);     // show menu after succesfully run task
             }
             default -> Printer.printInvalidCountOfArguments();
+        }
+    }
+
+    private static void checkConfig() {
+        Config config = new Config();
+        if (!config.exists()) {
+            //config.createDefaultConfig();
         }
     }
 
