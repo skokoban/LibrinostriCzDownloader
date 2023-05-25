@@ -24,8 +24,7 @@ public class DownloadLinksParser {
    * @return list of object <code>Book</code> with additional links to each PDFs
    * @throws IOException if link to the book is not reachable.
    */
-  public ArrayList<Book> parseDownloadLinks(ArrayList<Book> rawBooks) throws IOException {
-    ArrayList<Book> finalBooks = new ArrayList<>();
+  public void parseDownloadLinks(ArrayList<Book> rawBooks) throws IOException {
     IConnection iConnection = new ConnectionProvider();
     for (Book book: rawBooks) {
       Connection connection   = iConnection.getConnection(book.getLINK());
@@ -40,8 +39,7 @@ public class DownloadLinksParser {
         }
         dLinks.add(dLink);
       }
-      finalBooks.add(new Book(book.getTITLE(), book.getLINK(), dLinks));
+      book.setDOWNLOAD_LINKS(dLinks);
     }
-    return finalBooks;
   }
 }

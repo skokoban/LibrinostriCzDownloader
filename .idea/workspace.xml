@@ -4,21 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="noted two bags to fix">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/ConnectionProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/IConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/ConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="create interface for connection">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -381,7 +372,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681575644479</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="create interface for connection">
+      <created>1685035213012</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1685035213012</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -427,7 +425,8 @@
     <MESSAGE value="modified whole project 3.03.2023." />
     <MESSAGE value="fix properties default file" />
     <MESSAGE value="fix properties default file again" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix properties default file again" />
+    <MESSAGE value="create interface for connection" />
+    <option name="LAST_COMMIT_MESSAGE" value="create interface for connection" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

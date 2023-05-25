@@ -9,80 +9,75 @@ import java.util.ArrayList;
  */
 public class Book {
 
-/*======================================================================================================================
+/*=================================================================================================
                                                 Attributes
-======================================================================================================================*/
+=================================================================================================*/
 
-    private final String            TITLE;
-    private final String            LINK;
-    private       ArrayList<String> DOWNLOAD_LINKS;             // kniha moze byt rozdelena na viac casti preto viac linkov
+  private final String            TITLE;
+  private final String            LINK;
+  private       ArrayList<String> DOWNLOAD_LINKS; // kniha moze byt rozdelena na viac casti preto viac linkov
+  private final int               CHAR_LIMIT_TITLE = 255;
 
-/*======================================================================================================================
+/*=================================================================================================
                                                 Constructor
-======================================================================================================================*/
-
-    /**
-     * Construct <code>Book</code> with given attributes. Avoid title of special characters for purposes of
-     * creating directory from that title.
-     *
-     * @param title title of book
-     * @param link
-     */
-    public Book(String title, String link) {
-        TITLE = normalizeBookName(title);
-        LINK  = link;
-    }
-
-    public Book(String title, String link, ArrayList<String> downloadLinks) {
-        TITLE = normalizeBookName(title);
-        LINK  = link;
-        DOWNLOAD_LINKS = downloadLinks;
-    }
-
-/*======================================================================================================================
+=================================================================================================*/
+  /**
+   * Construct <code>Book</code> with given attributes. Avoid title of special characters for purposes of
+   * creating directory from that title.
+   *
+   * @param title title of book
+   * @param link
+   */
+  public Book(String title, String link) {
+    TITLE = normalizeBookName(title);
+    LINK  = link;
+  }
+/*=================================================================================================
+                                                Setters
+=================================================================================================*/
+  public void setDOWNLOAD_LINKS(ArrayList<String> downloadLinks) {
+    this.DOWNLOAD_LINKS = downloadLinks;
+  }
+/*=================================================================================================
                                                 Getters
-======================================================================================================================*/
+=================================================================================================*/
 
-    public String getTITLE() {
-        return TITLE;
-    }
+  public String getTITLE() {
+    return TITLE;
+  }
 
-    public String getLINK() {
-        return LINK;
-    }
+  public String getLINK() {
+    return LINK;
+  }
 
-    public ArrayList<String> getDOWNLOAD_LINKS() {
-        return DOWNLOAD_LINKS;
-    }
+  public ArrayList<String> getDOWNLOAD_LINKS() {
+    return DOWNLOAD_LINKS;
+  }
 
-/*======================================================================================================================
+/*=================================================================================================
                                                 Methods
-======================================================================================================================*/
+=================================================================================================*/
 
-    /**
-     * Converts string to system friendly form. Avoids string of "bad" chars.
-     * <p>Example:</p>
-     * <p>From <code>íťýáä</code> returns <code>ityaa</code>.</p>
-     * @param badTitle string to be converted
-     * @return clear string without special chars
-     */
-    protected String normalizeBookName(String badTitle) {
-        String replaceSpaces = Normalizer.normalize(badTitle, Normalizer.Form.NFD).replaceAll(" ", "_");
-        String goodName = Normalizer.normalize(replaceSpaces, Normalizer.Form.NFD).replaceAll("\\W","");
-        String finalName;
-        if(goodName.length() > 255) {
-            finalName = goodName.substring(0, 255);
-        } else {
-            finalName = goodName;
-        }
-        return finalName;
+  /**
+   * Converts string to system friendly form. Avoids string of "bad" chars.
+   * <p>Example:</p>
+   * <p>From <code>íťýáä</code> returns <code>ityaa</code>.</p>
+   * @param badTitle string to be converted
+   * @return clear string without special chars
+   */
+  protected String normalizeBookName(String badTitle) {
+    String replaceSpaces = Normalizer.normalize(badTitle, Normalizer.Form.NFD).replaceAll(" ", "_");
+    String goodName = Normalizer.normalize(replaceSpaces, Normalizer.Form.NFD).replaceAll("\\W","");
+    String finalName;
+    if(goodName.length() > CHAR_LIMIT_TITLE) {
+      finalName = goodName.substring(0, CHAR_LIMIT_TITLE);
+    } else {
+      finalName = goodName;
     }
+    return finalName;
+  }
 
-    /**
-     * Save book to hard drive. Saves only files which are not already downloaded.
-     * @return ArrayList of downloaded PDF files.
-     */
-    public String toString() {
-        return TITLE;
-    }
+  public String toString() {
+    return TITLE;
+  }
 }
