@@ -1,15 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="create interface for connection">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="create interface for connection 2">
+      <change afterPath="$PROJECT_DIR$/src/main/java/exceptions/LinkNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/IProperties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/parser/DocumentProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/parser/IDocument.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Config.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/TaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/TaskExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/ConnectionProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/IConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/IConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/BookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/BookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadLinksParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/PDFFileTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,11 +135,12 @@
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "last_opened_file_path": "/home/marceld/Dokumenty/programovanie/IdeaProjects/LibrinostriCzDownloader",
+    "last_opened_file_path": "/home/marceld/Dokumenty/programovanie/IdeaProjects/Junior_2",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4204436",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -119,114 +150,109 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="tools" />
+      <recent name="" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigTest.passWhenFileArgumentIsNull">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="main.Main" />
-      <module name="LibrinostriCzDownloader.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LibrinostriCzDownloader [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="LibrinostriCzDownloader [check]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="check" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <ForceTestExec>false</ForceTestExec>
-      <method v="2" />
-    </configuration>
-    <configuration name="ConfigTest.passWhenFileArgumentIsNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PropertiesTest.passWhenOutoutStreamThrowsIOException">
+    <configuration name="PropertiesTest.passWhenIOErrorReturnsEmptyString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.downloader.*" />
+          <option name="PATTERN" value="tools.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.ConfigTest" />
-      <option name="METHOD_NAME" value="passWhenFileArgumentIsNull" />
+      <option name="PACKAGE_NAME" value="tools.config" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
+      <option name="METHOD_NAME" value="passWhenIOErrorReturnsEmptyString" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConfigTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.downloader.*" />
+          <option name="PATTERN" value="tools.config.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.ConfigTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="tools.config" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
+      <option name="METHOD_NAME" value="passWhenNullInputStreamThrowsNullPointerException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PropertiesTest.passWhenOutoutStreamThrowsIOException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools.config" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
+      <option name="METHOD_NAME" value="passWhenOutoutStreamThrowsIOException" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PropertiesTest.passWhenPropertyWasSetSuccesfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools.config" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
+      <option name="METHOD_NAME" value="passWhenPropertyWasSetSuccesfully" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PropertiesTest.passWhenPropertyWasUpdatedSuccesfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools.config" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
+      <option name="METHOD_NAME" value="passWhenPropertyWasUpdatedSuccesfully" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Main" />
-      <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
-      <item itemvalue="Gradle.LibrinostriCzDownloader [check]" />
-      <item itemvalue="JUnit.ConfigTest.passWhenFileArgumentIsNull" />
-      <item itemvalue="JUnit.ConfigTest.test" />
+      <item itemvalue="JUnit.PropertiesTest.passWhenIOErrorReturnsEmptyString" />
+      <item itemvalue="JUnit.PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" />
+      <item itemvalue="JUnit.PropertiesTest.passWhenOutoutStreamThrowsIOException" />
+      <item itemvalue="JUnit.PropertiesTest.passWhenPropertyWasSetSuccesfully" />
+      <item itemvalue="JUnit.PropertiesTest.passWhenPropertyWasUpdatedSuccesfully" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConfigTest.passWhenFileArgumentIsNull" />
-        <item itemvalue="JUnit.ConfigTest.test" />
-        <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
-        <item itemvalue="Gradle.LibrinostriCzDownloader [check]" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PropertiesTest.passWhenOutoutStreamThrowsIOException" />
+        <item itemvalue="JUnit.PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" />
+        <item itemvalue="JUnit.PropertiesTest.passWhenPropertyWasUpdatedSuccesfully" />
+        <item itemvalue="JUnit.PropertiesTest.passWhenPropertyWasSetSuccesfully" />
+        <item itemvalue="JUnit.PropertiesTest.passWhenIOErrorReturnsEmptyString" />
       </list>
     </recent_temporary>
   </component>
@@ -379,7 +405,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685035213012</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="create interface for connection 2">
+      <created>1685048282155</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1685048282155</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -388,6 +421,11 @@
         <entry key="MAIN">
           <value>
             <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -426,7 +464,8 @@
     <MESSAGE value="fix properties default file" />
     <MESSAGE value="fix properties default file again" />
     <MESSAGE value="create interface for connection" />
-    <option name="LAST_COMMIT_MESSAGE" value="create interface for connection" />
+    <MESSAGE value="create interface for connection 2" />
+    <option name="LAST_COMMIT_MESSAGE" value="create interface for connection 2" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

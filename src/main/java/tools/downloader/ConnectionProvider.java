@@ -1,14 +1,15 @@
 package tools.downloader;
 
-import org.jsoup.Connection;
+import java.io.IOException;
 import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
 public class ConnectionProvider implements IConnection {
 /*=================================================================================================
                                         Methods
 =================================================================================================*/
   @Override
-  public Connection getConnection(String link) {
-    return Jsoup.connect(link);
+  public Document get(String link) throws IOException {
+    return Jsoup.connect(link).get();
   }
 }

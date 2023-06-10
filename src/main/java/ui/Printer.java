@@ -80,4 +80,8 @@ public class Printer {
     public static void printInvalidOptionEntered() {
         System.out.println(Strings.ERROR_INVALID_MENU_OPTION.getText());
     }
+
+    public static void printCannotSetPropertyBadFile() {
+        System.out.println(Strings.CANNOT_READ_FROM_FILE.getText());
+    }
 }

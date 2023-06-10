@@ -1,3 +1,4 @@
+/*
 package tools;
 
 import main.Book;
@@ -11,25 +12,33 @@ import javax.xml.xpath.XPathFactory;
 import java.io.IOException;
 import java.util.ArrayList;
 
+*/
 /**
  * Class <code>XMLParser</code> represents method for processing XML files. Gives ability to get information
  * about books located on website Librinostri.
- */
-public class XMLParser {
-/*=================================================================================================
-                                                      Attributes
-=================================================================================================*/
-  private XPath xpath = XPathFactory.newInstance().newXPath();
-/*=================================================================================================
-                                                    Methods
-=================================================================================================*/
+ *//*
 
-  /**
+public class XMLParser {
+*/
+/*=================================================================================================
+                                                 Attributes
+=================================================================================================*//*
+
+  private final XPath xpath = XPathFactory.newInstance().newXPath();
+*/
+/*=================================================================================================
+                                                  Methods
+=================================================================================================*//*
+
+
+  */
+/**
    * Inspect given XML file and provides URLs related to each book from given XML file.
    * @param xml XML file wth information about books
    * @return arrayList of objects book
    * @throws XPathExpressionException if reading XML tags fails.
-   */
+   *//*
+
   public ArrayList<Book> pasreBooks(InputSource xml) throws XPathExpressionException {
     NodeList nList = (NodeList) xpath.evaluate("/rss/channel/item", xml, XPathConstants.NODESET);
     int itemsCount = nList.getLength();
@@ -43,4 +52,4 @@ public class XMLParser {
     }
     return booksInfo;
   }
-}
+}*/

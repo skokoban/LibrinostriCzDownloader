@@ -74,9 +74,11 @@ public class TaskExecutor {
      */
     public void functionSelector(int selection) {
         switch (selection) {
+/*
             case 1 -> new Executor().download();
             case 2 -> new Executor().changeDownloadLocation();
             case 3 -> new Executor().showDownloadLocation();
+*/
             case 4 -> Printer.printHelp();
             case 5 -> Printer.printAbout();
             case 6 -> {return;}

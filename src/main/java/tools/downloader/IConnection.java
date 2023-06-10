@@ -1,7 +1,9 @@
 package tools.downloader;
 
-import org.jsoup.Connection;
+import java.io.IOException;
+import org.jsoup.nodes.Document;
 
 public interface IConnection {
-  Connection getConnection(String link);
+  Document get(String link) throws IOException;
+
 }

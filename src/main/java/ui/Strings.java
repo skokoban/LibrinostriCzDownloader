@@ -57,7 +57,9 @@ public enum Strings {
             6. exit
             ==============================================================================================="""),
 
-    UPDATER_INTRO("List of new books:");
+    UPDATER_INTRO("List of new books:"),
+
+    CANNOT_READ_FROM_FILE("Property impossible to set in case of config file not found");
 
             // field
     private final String text;

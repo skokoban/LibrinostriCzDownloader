@@ -4,8 +4,8 @@ import java.text.Normalizer;
 import java.util.ArrayList;
 
 /**
- * The <code>Book</code> class represents e-books located on websites. Book has basic attributes like title,
- * publication day. For e-book is important download link.
+ * The <code>Book</code> class represents e-books located on websites. Book has basic attributes
+ * like title, publication day. For e-book is important download link.
  */
 public class Book {
 
@@ -15,8 +15,9 @@ public class Book {
 
   private final String            TITLE;
   private final String            LINK;
-  private       ArrayList<String> DOWNLOAD_LINKS; // kniha moze byt rozdelena na viac casti preto viac linkov
-  private final int               CHAR_LIMIT_TITLE = 255;
+  private final ArrayList<String> DOWNLOAD_LINKS; // kniha moze byt rozdelena na viac casti
+  private final int               CHARS_LIMIT_TITLE = 255;
+  private final int               BIGIN_INDEX = 0;
 
 /*=================================================================================================
                                                 Constructor
@@ -26,17 +27,11 @@ public class Book {
    * creating directory from that title.
    *
    * @param title title of book
-   * @param link
    */
-  public Book(String title, String link) {
+  public Book(String title, String link, ArrayList<String> downloadLinks) {
     TITLE = normalizeBookName(title);
     LINK  = link;
-  }
-/*=================================================================================================
-                                                Setters
-=================================================================================================*/
-  public void setDOWNLOAD_LINKS(ArrayList<String> downloadLinks) {
-    this.DOWNLOAD_LINKS = downloadLinks;
+    DOWNLOAD_LINKS = downloadLinks;
   }
 /*=================================================================================================
                                                 Getters
@@ -59,24 +54,24 @@ public class Book {
 =================================================================================================*/
 
   /**
-   * Converts string to system friendly form. Avoids string of "bad" chars.
+   * Converts string to system friendly form. Avoids string of bad chars.
    * <p>Example:</p>
    * <p>From <code>íťýáä</code> returns <code>ityaa</code>.</p>
-   * @param badTitle string to be converted
+   * @param rawTitle string to be converted
    * @return clear string without special chars
    */
-  protected String normalizeBookName(String badTitle) {
-    String replaceSpaces = Normalizer.normalize(badTitle, Normalizer.Form.NFD).replaceAll(" ", "_");
-    String goodName = Normalizer.normalize(replaceSpaces, Normalizer.Form.NFD).replaceAll("\\W","");
+  protected String normalizeBookName(String rawTitle) {
+    String goodName = Normalizer.normalize(rawTitle, Normalizer.Form.NFD).replaceAll("\\W","");
     String finalName;
-    if(goodName.length() > CHAR_LIMIT_TITLE) {
-      finalName = goodName.substring(0, CHAR_LIMIT_TITLE);
+    if(goodName.length() > CHARS_LIMIT_TITLE) {
+      finalName = goodName.substring(BIGIN_INDEX, CHARS_LIMIT_TITLE);
     } else {
       finalName = goodName;
     }
     return finalName;
   }
 
+  @Override
   public String toString() {
     return TITLE;
   }

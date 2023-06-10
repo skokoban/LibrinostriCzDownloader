@@ -1,9 +1,10 @@
+/*
 package tools;
 
 import main.Book;
 import org.xml.sax.InputSource;
+import tools.config.Config;
 import tools.downloader.DownloadLinksParser;
-import tools.downloader.Downloader;
 import ui.Printer;
 
 import javax.xml.xpath.XPathExpressionException;
@@ -17,24 +18,28 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Executor {
-  /*===============================================================================================
+  */
+/*===============================================================================================
                                                       Attributes
-  ===============================================================================================*/
+  ===============================================================================================*//*
+
   private final String XML_NAME   = "rss";
   private final String XML_SUFFIX = ".php";
   private final String PROPERTY_DOWNLOAD_FOLDER = "downloadFolder";
+  private final String xmlNewBooks = "https://librinostri.catholica.cz/rss.php";
+*/
 /*=================================================================================================
                                                     Methods
-=================================================================================================*/
-  /**
+=================================================================================================*
+/**
    * Execute all necessarry processes to download a file.
-   */
+   *//*
+
   public void download() {
     // create URL
     URL xmlURL;
-    String xmlProperty = "https://librinostri.catholica.cz/rss.php";
     try {
-      xmlURL = new URL(xmlProperty);
+      xmlURL = new URL(xmlNewBooks);
     } catch (MalformedURLException e) {
       parseDownloadableError(e);
       return;
@@ -67,12 +72,17 @@ public class Executor {
     }
     // get download links
     DownloadLinksParser downloadLinksParser = new DownloadLinksParser();
+*/
+/*
     try {
-      downloadLinksParser.parseDownloadLinks(books);
+      downloadLinksParser.getDownloadLinks(books,
+          iDocument.get(document, downloadLinksParser.ELEMENT_DOWNLOAD_NAME));
     } catch (IOException e) {
       parseDownloadableError(e);
       return;
     }
+*//*
+
     // create apropriate files for all pdfs
     Map<String, File> fileMap;
     PDFFile pdfFile = new PDFFile();
@@ -104,19 +114,23 @@ public class Executor {
     }
   }
 
-  /**
+  */
+/**
    * Made to deal with downloading errors. Handle given exception and print it to StackTrace. Print text of error to command line to inform user.
    * @param e exception that should be printed to stackTrace.
-   */
+   *//*
+
   protected void parseDownloadableError(Exception e) {
     e.printStackTrace();
     Printer.printDownloadingError();
   }
 
-  /**
+  */
+/**
    * Set property <code>downloadFolder</code> to given path from command line prompt. Creates all neccessary
    * directories if not exists.
-   */
+   *//*
+
   public void changeDownloadLocation() {
     Printer.printNewDownloadLocAsking();
     Scanner scanner = new Scanner(System.in);
@@ -132,3 +146,4 @@ public class Executor {
     Printer.printText(downloadFolder);
   }
 }
+*/

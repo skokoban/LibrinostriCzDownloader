@@ -1,13 +1,11 @@
 package main;
 
 import org.junit.jupiter.api.Test;
-import tools.Config;
 
 class BookTest {
 @Test
     public void test() {
-    Config config = new Config();
-    System.out.println(config.setProperty("downloadFolder", "aaaaaaaaaaaaa"));
+
 }
 /*======================================================================================================================
                                          Attributes
