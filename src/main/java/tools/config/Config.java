@@ -9,27 +9,50 @@ public class Config {
 /*=================================================================================================
                                                       Attributes
 =================================================================================================*/
-  private static final String CONFIGFILE_NAME = "librinostri-downloader.properties";
-  private static final String PROPERTY_USER_HOME = "user.home";
-  private static final String CONFIG_FOLDER_NAME = ".config";
-  private static final String LIBRI_NOSTI_FOLDER_NAME = "librinostri-downlaoder";
+  private static Config instance;
+  private final String CONFIGFILE_NAME = "librinostri-downloader.properties";
+  private final String PROPERTY_USER_HOME = "user.home";
+  private final String CONFIG_FOLDER_NAME = ".config";
+  private final String LIBRI_NOSTI_FOLDER_NAME = "librinostri-downlaoder";
   private final String DOWNLOADED_FOLDER_NAME = "librinostri-downlaoder";
   private final String PROPERTY_DOWNLOAD_FOLDER = "downloadFolder";
   private final String PROPERTIES_COMMENT = "This is auto-generated properties file." +
       " Do not modify key. Value can be modified.";
-  private static File configFile;
+  private File configFile;
 /*=================================================================================================
-                                                 Methods
+                                             Constructor
 =================================================================================================*/
-  public static Path createDefault() throws IOException {
-    String configFileDir = System.getProperty(PROPERTY_USER_HOME) +
+  private Config() {
+    String configFileString = System.getProperty(PROPERTY_USER_HOME) +
+        File.separator +
+        CONFIG_FOLDER_NAME +
+        File.separator +
+        LIBRI_NOSTI_FOLDER_NAME +
+        File.separator +
+        CONFIGFILE_NAME;
+    configFile = new File(configFileString);
+  }
+/*=================================================================================================
+                                             Methods
+=================================================================================================*/
+  public static Config getInstance() {
+    if (instance == null) {
+      instance = new Config();
+    }
+    return instance;
+  }
+
+  public Path createDefault() throws IOException {
+    String configFileDirString = System.getProperty(PROPERTY_USER_HOME) +
         File.separator +
         CONFIG_FOLDER_NAME +
         File.separator +
         LIBRI_NOSTI_FOLDER_NAME;
-    Path configFileDirPath = Path.of(configFileDir);
+    Path configFileDirPath = Path.of(configFileDirString);
     Files.createDirectories(configFileDirPath);
-    Path configFilePath = Path.of(configFileDirPath + File.separator + CONFIGFILE_NAME);
+
+    String configFilePathString = configFileDirPath + File.separator + CONFIGFILE_NAME;
+    Path configFilePath = Path.of(configFilePathString);
     return Files.createFile(configFilePath);
   }
 
@@ -37,7 +60,7 @@ public class Config {
    * Inspect weather config file in user´s home directory exists or not
    * @return true if config file already exists, false if not.
    */
-  public static Boolean exists() {
+  public Boolean exists() {
     return configFile.exists();
   }
 

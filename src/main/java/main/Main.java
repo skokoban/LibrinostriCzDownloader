@@ -40,11 +40,8 @@ public class Main {
   }
 
   private static void checkConfig() {
-    Config config = new Config();
-    if (!config.exists()) {
       //config.createDefaultConfig();
     }
-  }
 
   public static int handleIntEntered() {
     Scanner scanner = new Scanner(System.in);
