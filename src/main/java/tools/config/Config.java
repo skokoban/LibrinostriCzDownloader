@@ -10,10 +10,6 @@ public class Config {
                                                       Attributes
 =================================================================================================*/
   private static Config instance;
-  private final String CONFIGFILE_NAME = "librinostri-downloader.properties";
-  private final String PROPERTY_USER_HOME = "user.home";
-  private final String CONFIG_FOLDER_NAME = ".config";
-  private final String LIBRI_NOSTI_FOLDER_NAME = "librinostri-downlaoder";
   private final String DOWNLOADED_FOLDER_NAME = "librinostri-downlaoder";
   private final String PROPERTY_DOWNLOAD_FOLDER = "downloadFolder";
   private final String PROPERTIES_COMMENT = "This is auto-generated properties file." +
@@ -22,38 +18,26 @@ public class Config {
 /*=================================================================================================
                                              Constructor
 =================================================================================================*/
-  private Config() {
-    String configFileString = System.getProperty(PROPERTY_USER_HOME) +
-        File.separator +
-        CONFIG_FOLDER_NAME +
-        File.separator +
-        LIBRI_NOSTI_FOLDER_NAME +
-        File.separator +
-        CONFIGFILE_NAME;
-    configFile = new File(configFileString);
+  private Config(File config) {
+    this.configFile = config;
   }
 /*=================================================================================================
                                              Methods
 =================================================================================================*/
-  public static Config getInstance() {
+  public static Config getInstance(File config) {
     if (instance == null) {
-      instance = new Config();
+      instance = new Config(config);
     }
     return instance;
   }
 
-  public Path createDefault() throws IOException {
-    String configFileDirString = System.getProperty(PROPERTY_USER_HOME) +
-        File.separator +
-        CONFIG_FOLDER_NAME +
-        File.separator +
-        LIBRI_NOSTI_FOLDER_NAME;
-    Path configFileDirPath = Path.of(configFileDirString);
-    Files.createDirectories(configFileDirPath);
+  public void createDefault() throws IOException {
+    Path configDirPath = Path.of(createDirectoryPath());
+    Files.createDirectories(configDirPath);
 
-    String configFilePathString = configFileDirPath + File.separator + CONFIGFILE_NAME;
-    Path configFilePath = Path.of(configFilePathString);
-    return Files.createFile(configFilePath);
+    String config = configFile.getPath();
+    Path configPath = Path.of(config);
+    Files.createFile(configPath);
   }
 
   /**
@@ -70,5 +54,12 @@ public class Config {
   @Override
   public String toString() {
     return configFile.toString();
+  }
+
+  protected String createDirectoryPath() {
+    String config = configFile.getPath();
+    int lastSlash = config.lastIndexOf("/");
+    String configDir = config.substring(0, lastSlash);
+    return config;
   }
 }

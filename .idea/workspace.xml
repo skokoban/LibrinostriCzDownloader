@@ -8,11 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add tests for PropertiesProvider.">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add tests for Config.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/ConfigLocationProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +134,7 @@
       <recent name="tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigTest.passWhenInstanceIsSame">
+  <component name="RunManager" selected="JUnit.ConfigTest.passWhenInstancesIsNotNull">
     <configuration name="ConfigTest.passWhenInstanceIsNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
@@ -162,6 +162,22 @@
       <option name="PACKAGE_NAME" value="tools.config" />
       <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
       <option name="METHOD_NAME" value="passWhenInstanceIsSame" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConfigTest.passWhenInstancesIsNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools.config" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
+      <option name="METHOD_NAME" value="passWhenInstancesIsNotNull" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -199,36 +215,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PropertiesTest.passWhenPropertyWasUpdatedSuccesfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tools.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tools.config" />
-      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
-      <option name="METHOD_NAME" value="passWhenPropertyWasUpdatedSuccesfully" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
+      <item itemvalue="JUnit.ConfigTest.passWhenInstancesIsNotNull" />
       <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsNotNull" />
       <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsSame" />
       <item itemvalue="JUnit.PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" />
       <item itemvalue="JUnit.PropertiesTest.passWhenOutoutStreamThrowsIOException" />
-      <item itemvalue="JUnit.PropertiesTest.passWhenPropertyWasUpdatedSuccesfully" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ConfigTest.passWhenInstancesIsNotNull" />
         <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsSame" />
         <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsNotNull" />
         <item itemvalue="JUnit.PropertiesTest.passWhenOutoutStreamThrowsIOException" />
         <item itemvalue="JUnit.PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" />
-        <item itemvalue="JUnit.PropertiesTest.passWhenPropertyWasUpdatedSuccesfully" />
       </list>
     </recent_temporary>
   </component>
@@ -395,7 +395,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686388587001</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Add tests for Config.">
+      <created>1686556478614</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1686556478614</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -449,7 +456,8 @@
     <MESSAGE value="create interface for connection" />
     <MESSAGE value="create interface for connection 2" />
     <MESSAGE value="Add tests for PropertiesProvider." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tests for PropertiesProvider." />
+    <MESSAGE value="Add tests for Config." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add tests for Config." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
