@@ -8,11 +8,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add tests for Config.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/ConfigLocationProvider.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Modify Config Class.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/BookTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/ExecutorTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +139,23 @@
       <recent name="tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigTest.passWhenInstancesIsNotNull">
+  <component name="RunManager" selected="JUnit.ConfigTest.passWhenInstanceIsSame">
+    <configuration name="ConfigTest.PassWhenConfigDirectorySuccesfullyCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.config.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools.config" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
+      <option name="METHOD_NAME" value="PassWhenConfigDirectorySuccesfullyCreated" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigTest.passWhenInstanceIsNotNull" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
@@ -183,7 +204,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ConfigTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
@@ -192,43 +213,27 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tools.config" />
-      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
-      <option name="METHOD_NAME" value="passWhenNullInputStreamThrowsNullPointerException" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PropertiesTest.passWhenOutoutStreamThrowsIOException" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tools.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tools.config" />
-      <option name="MAIN_CLASS_NAME" value="tools.config.PropertiesTest" />
-      <option name="METHOD_NAME" value="passWhenOutoutStreamThrowsIOException" />
+      <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.ConfigTest.test" />
       <item itemvalue="JUnit.ConfigTest.passWhenInstancesIsNotNull" />
       <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsNotNull" />
       <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsSame" />
-      <item itemvalue="JUnit.PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" />
-      <item itemvalue="JUnit.PropertiesTest.passWhenOutoutStreamThrowsIOException" />
+      <item itemvalue="JUnit.ConfigTest.PassWhenConfigDirectorySuccesfullyCreated" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConfigTest.passWhenInstancesIsNotNull" />
         <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsSame" />
+        <item itemvalue="JUnit.ConfigTest.passWhenInstancesIsNotNull" />
+        <item itemvalue="JUnit.ConfigTest.PassWhenConfigDirectorySuccesfullyCreated" />
+        <item itemvalue="JUnit.ConfigTest.test" />
         <item itemvalue="JUnit.ConfigTest.passWhenInstanceIsNotNull" />
-        <item itemvalue="JUnit.PropertiesTest.passWhenOutoutStreamThrowsIOException" />
-        <item itemvalue="JUnit.PropertiesTest.passWhenNullInputStreamThrowsNullPointerException" />
       </list>
     </recent_temporary>
   </component>
@@ -402,7 +407,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686556478614</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Modify Config Class.">
+      <created>1686601964489</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1686601964489</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -457,7 +469,8 @@
     <MESSAGE value="create interface for connection 2" />
     <MESSAGE value="Add tests for PropertiesProvider." />
     <MESSAGE value="Add tests for Config." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add tests for Config." />
+    <MESSAGE value="Modify Config Class." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modify Config Class." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

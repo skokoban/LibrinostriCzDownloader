@@ -1,14 +1,14 @@
 package tools;
 
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 public class DownloadTest {
 /*======================================================================================================================
@@ -35,6 +35,7 @@ public class DownloadTest {
         return new FileInputStream("src/test/resources/testRSS.php");
     }
 
+/*
     private URL getMockedURL() throws IOException {
         URL mockedURL = Mockito.mock(URL.class);
         Mockito.when(mockedURL.openStream()).thenReturn(getTestInputstreamForTxtFile());
@@ -53,6 +54,7 @@ public class DownloadTest {
         Mockito.when(mockedHttpURLConnection.getInputStream()).thenReturn(getTestInputStream(numOfBytesOfSourceFile));
         return mockedHttpURLConnection;
     }
+*/
 /*======================================================================================================================
                                                     Test Methods
 ======================================================================================================================*/

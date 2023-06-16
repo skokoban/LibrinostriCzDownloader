@@ -1,42 +1,45 @@
 package tools.config;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeAll;
-
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import java.io.File;
+import java.nio.file.Path;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class ConfigTest {
 
-  Path testDir;
-  File testFile;
+  public static final String TMP_DIR_PATH = System.getProperty("java.io.tmpdir");
+  private Path testFilePath;
 
-  @Before
-  public void createTestFile() throws IOException {
+  @BeforeEach
+  public void createTestPath() {
+    testFilePath = Path.of(TMP_DIR_PATH + File.separator + "testDir" + File.separator +
+        "testFile");
+/*
     testDir = Files.createTempDirectory("test");
     testFile = new File(testDir.toString() + File.separator + "test.properties");
     testFile.createNewFile();
+*/
   }
 
-  @After
-  public void clean() throws IOException {
+  @AfterAll
+  public static void clean() {
+/*
     Files.delete(testFile.toPath());
     Files.delete(testDir);
+*/
   }
   @Test
   public void passWhenInstancesIsNotNull() {
     Config instance1;
     Config instance2;
 
-    instance1 = Config.getInstance(testFile);
-    instance2 = Config.getInstance(testFile);
+    instance1 = Config.getInstance(testFilePath);
+    instance2 = Config.getInstance(testFilePath);
 
     assertNotNull(instance1);
     assertNotNull(instance2);
@@ -47,14 +50,14 @@ public class ConfigTest {
     Config instance1;
     Config instance2;
 
-    instance1 = Config.getInstance(testFile);
-    instance2 = Config.getInstance(testFile);
+    instance1 = Config.getInstance(testFilePath);
+    instance2 = Config.getInstance(testFilePath);
 
     assertSame(instance1, instance2);
   }
 
   @Test
-  public void passWhenFileArgumentIsNull() throws IOException {
+  public void PassWhenConfigDirectorySuccesfullyCreated() {
 
   }
 }

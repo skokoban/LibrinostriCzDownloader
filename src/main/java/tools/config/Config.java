@@ -1,30 +1,32 @@
 package tools.config;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class Config {
 /*=================================================================================================
-                                                      Attributes
+                                                          Attributes
 =================================================================================================*/
+  public static final String REASON_NULL_EX = "Instance cannot be created because "
+      + "file you provided points to null";
   private static Config instance;
   private final String DOWNLOADED_FOLDER_NAME = "librinostri-downlaoder";
   private final String PROPERTY_DOWNLOAD_FOLDER = "downloadFolder";
   private final String PROPERTIES_COMMENT = "This is auto-generated properties file." +
       " Do not modify key. Value can be modified.";
-  private File configFile;
+  private Path configFile;
 /*=================================================================================================
                                              Constructor
 =================================================================================================*/
-  private Config(File config) {
+  private Config(Path config) {
     this.configFile = config;
   }
 /*=================================================================================================
                                              Methods
 =================================================================================================*/
-  public static Config getInstance(File config) {
+  public static Config getInstance(Path config) throws NullPointerException {
+    if (config == null) throw new NullPointerException(REASON_NULL_EX);
     if (instance == null) {
       instance = new Config(config);
     }
@@ -32,12 +34,10 @@ public class Config {
   }
 
   public void createDefault() throws IOException {
-    Path configDirPath = Path.of(createDirectoryPath());
+    Path configDirPath = createDirectoryPath();
     Files.createDirectories(configDirPath);
 
-    String config = configFile.getPath();
-    Path configPath = Path.of(config);
-    Files.createFile(configPath);
+    Files.createFile(configFile);
   }
 
   /**
@@ -45,7 +45,7 @@ public class Config {
    * @return true if config file already exists, false if not.
    */
   public Boolean exists() {
-    return configFile.exists();
+    return Files.exists(configFile);
   }
 
   /**
@@ -56,10 +56,10 @@ public class Config {
     return configFile.toString();
   }
 
-  protected String createDirectoryPath() {
-    String config = configFile.getPath();
+  protected Path createDirectoryPath() {
+    String config = configFile.toString();
     int lastSlash = config.lastIndexOf("/");
     String configDir = config.substring(0, lastSlash);
-    return config;
+    return Path.of(configDir);
   }
 }
