@@ -33,6 +33,10 @@ public class Config {
     return instance;
   }
 
+  /**
+   * Create directory and file for specified config file path of instance.
+   * @throws IOException if default file cannot be created.
+   */
   public void createDefault() throws IOException {
     Path configDirPath = createDirectoryPath();
     Files.createDirectories(configDirPath);
