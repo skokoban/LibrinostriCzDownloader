@@ -27,7 +27,7 @@
             <link>http://test1.link</link>
             <description><![CDATA[test description 1.]]></description>
             <pubDate>Wed, 28 Sep 2022 00:00:00 GMT+1</pubDate>
-            <guid>htttp://test1.link</guid>
+            <guid>htttp://test3.link</guid>
         </item>
         <item>
             <title>Test title 4</title>

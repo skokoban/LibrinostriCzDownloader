@@ -1,4 +1,4 @@
-package tools.downloader;
+package tools.connection;
 
 import java.io.IOException;
 import org.jsoup.Jsoup;

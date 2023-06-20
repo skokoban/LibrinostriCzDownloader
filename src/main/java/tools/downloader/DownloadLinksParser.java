@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import tools.connection.ConnectionProvider;
+import tools.connection.IConnection;
 import tools.parser.DocumentProvider;
 import tools.parser.IDocument;
 

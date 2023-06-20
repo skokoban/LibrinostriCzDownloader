@@ -2,7 +2,8 @@ package main;
 
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -12,6 +13,8 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.zip.CRC32;
+import tools.downloader.DownloaderProvider;
+import tools.downloader.IDownloader;
 
 /**
  * The <code>Librinostri</code> class represents website librinostri.catholica.cz
@@ -56,65 +59,42 @@ public class Librinostri {
     return downloadLinks;
   }
 
-  public long countChecksum(File rssFile) throws FileNotFoundException {
-    Scanner scanner = new Scanner(rssFile);
-    StringBuilder fileSB = new StringBuilder();
-    while (scanner.hasNextLine()) {
-      fileSB.append(scanner.nextLine());
-    }
-    String fileString = fileSB.toString();
+  /**
+   * Count checksum for given file. Returns 0 if file is empty.
+   * @param path the path fle for which checksum be counted
+   * @return value of CRC32 checksum
+   * @throws IOException if checksum cannot be counted.
+   */
+  public static long countChecksum(Path path) throws IOException {
+    byte[] fileBytes = Files.readAllBytes(path);
     CRC32 rssFileCrc32 = new CRC32();
-    rssFileCrc32.update(fileString.getBytes());
+    rssFileCrc32.update(fileBytes);
     return rssFileCrc32.getValue();
   }
 
   /**
-   * Copy text content from remote file to local file. Copying is proceeded by single line
-   * systematically.
+   * Copy text content from remote file to local file.
    * @param url  link to remote text file
-   * @param xmlFile File where local file should be located
+   * @param rss File where local file should be located
+   * @return true if file is downloaded succesfully, false otherwise
+   * @throws IOException if download fails.
    */
-  public void downloadXml(URL url, File xmlFile) {
-    try {
-      InputStreamReader    inputStreamReader = new InputStreamReader(url.openStream());
-      BufferedReader       reader            = new BufferedReader(inputStreamReader);
-      FileOutputStream     fileOutputStream  = new FileOutputStream(xmlFile);
-      BufferedOutputStream bos               = new BufferedOutputStream(fileOutputStream);
-
-      String line;
-      while ((line = reader.readLine()) != null) {
-        byte[] buffer;
-        buffer = line.getBytes(StandardCharsets.UTF_8);
-        bos.write(buffer);
-        bos.write(NEW_LINE_CHAR.getBytes());
-      }
-      bos.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+  public boolean downloadRSS(URL url, Path rss) throws IOException {
+    IDownloader iDownloader = new DownloaderProvider();
+    iDownloader.download(url, rss);
+    return true;
   }
 
   /**
-   * Download file from given URL connection to given File.
-   * @param connection connection to URL
-   * @param file        File object where downlaoded file will be located
-   * @return true if PDF file is successfully downlaoded, otherwire returns false
-   * @throws IOException when downloading fails.
+   * Download file from given URL to given File.
+   * @param url remote location from which file should be downloaded
+   * @param path path to location where downlaoded file will be located
+   * @return count of downloaded bytes
+   * @throws IOException when download fails.
    */
-  public boolean downloadFile(HttpURLConnection connection, File file) throws IOException {
-    connection.connect();
-    if (connection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-      return false;
-    }                // stiahnutie suboru
-    InputStream input   = connection.getInputStream();
-    OutputStream output = new FileOutputStream(file);
-    byte[]       data   = new byte[BYTE_ARRAY_SIZE];
-    int          count;
-    while ((count = input.read(data)) != END_STREAM_VALUE) {
-      output.write(data, OFFSET_VALUE, count);
-    }
-    output.close();
-    return true;
+  public long downloadFile(URL url, Path path) throws IOException {
+    IDownloader iDownloader = new DownloaderProvider();
+    return iDownloader.download(url, path);
   }
 
 }
