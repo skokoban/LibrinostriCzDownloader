@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * The <code>Book</code> class represents e-books located on websites. Book has basic attributes
  * like title, publication day. For e-book is important download link.
  */
-public class Book {
+public class book {
 
 /*=================================================================================================
                                                 Attributes
@@ -28,7 +28,7 @@ public class Book {
    *
    * @param title title of book
    */
-  public Book(String title, String link, ArrayList<String> downloadLinks) {
+  public book(String title, String link, ArrayList<String> downloadLinks) {
     TITLE = normalizeBookName(title);
     LINK  = link;
     DOWNLOAD_LINKS = downloadLinks;

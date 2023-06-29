@@ -8,24 +8,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add another tests to ConfigTest.java">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/IDownloader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/XMLParserTest.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Improve XMLParser.">
+      <change afterPath="$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/testSite.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/LinkNotFoundException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/LinkNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/ConnectionHelper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/XMLParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/connection/ConnectionProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/IConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/connection/IConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/testRSS.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/testRSS.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/connection/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Document/HTMLDocumentProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/connection/IConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Document/IHTMLDocument.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/linksParser/DownloadLinksParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/DocumentProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/IDocument.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/XMLParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/XMLParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/XMLParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,9 +97,13 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2FidCxvRLztJxK2OYL7tSImwPjP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -123,12 +127,13 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "dev",
     "last_opened_file_path": "/home/marceld/Dokumenty/programovanie/IdeaProjects/Junior_2",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4204436",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -141,81 +146,69 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/java/tools/config" />
     </key>
+    <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="main.Librinostri" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="tools" />
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="tools.parser.linksParser" />
       <recent name="tools.parser.XMLParser" />
       <recent name="tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.XMLParserTest.getBooks">
-    <configuration name="DownloaderTest.passWhenFileFromUrlSuccesfullyCopied" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DownloadLinksParserTest.passWhenLinkNotFoundExceptionIsThrown">
+    <configuration name="DownloadLinksParserTest.getDownloadLinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.downloader.*" />
+          <option name="PATTERN" value="tools.parser.linksParser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.downloader" />
-      <option name="MAIN_CLASS_NAME" value="tools.downloader.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenFileFromUrlSuccesfullyCopied" />
+      <option name="PACKAGE_NAME" value="tools.parser.linksParser" />
+      <option name="MAIN_CLASS_NAME" value="tools.parser.linksParser.DownloadLinksParserTest" />
+      <option name="METHOD_NAME" value="getDownloadLinks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.passWhenInvalidurlExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloadLinksParserTest.passWhenDownloadLinksAreParsedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.downloader.*" />
+          <option name="PATTERN" value="tools.parser.linksParser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.downloader" />
-      <option name="MAIN_CLASS_NAME" value="tools.downloader.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenInvalidurlExceptionIsThrown" />
+      <option name="PACKAGE_NAME" value="tools.parser.linksParser" />
+      <option name="MAIN_CLASS_NAME" value="tools.parser.linksParser.DownloadLinksParserTest" />
+      <option name="METHOD_NAME" value="passWhenDownloadLinksAreParsedCorrectly" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.passWhenTargetFileIsEmpty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloadLinksParserTest.passWhenLinkNotFoundExceptionIsThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.downloader.*" />
+          <option name="PATTERN" value="tools.parser.linksParser.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.downloader" />
-      <option name="MAIN_CLASS_NAME" value="tools.downloader.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenTargetFileIsEmpty" />
+      <option name="PACKAGE_NAME" value="tools.parser.linksParser" />
+      <option name="MAIN_CLASS_NAME" value="tools.parser.linksParser.DownloadLinksParserTest" />
+      <option name="METHOD_NAME" value="passWhenLinkNotFoundExceptionIsThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LibrinostriTest.passWhenChecksumIsNotZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="main.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="main" />
-      <option name="MAIN_CLASS_NAME" value="main.LibrinostriTest" />
-      <option name="METHOD_NAME" value="passWhenChecksumIsNotZero" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XMLParserTest.getBooks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="XMLParserTest.passWhenTitleIsSuccesfullyAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
@@ -225,26 +218,42 @@
       </extension>
       <option name="PACKAGE_NAME" value="tools.parser.XMLParser" />
       <option name="MAIN_CLASS_NAME" value="tools.parser.XMLParser.XMLParserTest" />
-      <option name="METHOD_NAME" value="getBooks" />
+      <option name="METHOD_NAME" value="passWhenTitleIsSuccesfullyAdded" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XMLParserTest.passWhenURLIsSuccesfullyAdded" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.parser.XMLParser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools.parser.XMLParser" />
+      <option name="MAIN_CLASS_NAME" value="tools.parser.XMLParser.XMLParserTest" />
+      <option name="METHOD_NAME" value="passWhenURLIsSuccesfullyAdded" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumIsNotZero" />
-      <item itemvalue="JUnit.XMLParserTest.getBooks" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenFileFromUrlSuccesfullyCopied" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenInvalidurlExceptionIsThrown" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenTargetFileIsEmpty" />
+      <item itemvalue="JUnit.DownloadLinksParserTest.getDownloadLinks" />
+      <item itemvalue="JUnit.DownloadLinksParserTest.passWhenDownloadLinksAreParsedCorrectly" />
+      <item itemvalue="JUnit.DownloadLinksParserTest.passWhenLinkNotFoundExceptionIsThrown" />
+      <item itemvalue="JUnit.XMLParserTest.passWhenTitleIsSuccesfullyAdded" />
+      <item itemvalue="JUnit.XMLParserTest.passWhenURLIsSuccesfullyAdded" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.XMLParserTest.getBooks" />
-        <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumIsNotZero" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenTargetFileIsEmpty" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenInvalidurlExceptionIsThrown" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenFileFromUrlSuccesfullyCopied" />
+        <item itemvalue="JUnit.DownloadLinksParserTest.passWhenLinkNotFoundExceptionIsThrown" />
+        <item itemvalue="JUnit.DownloadLinksParserTest.passWhenDownloadLinksAreParsedCorrectly" />
+        <item itemvalue="JUnit.DownloadLinksParserTest.getDownloadLinks" />
+        <item itemvalue="JUnit.XMLParserTest.passWhenURLIsSuccesfullyAdded" />
+        <item itemvalue="JUnit.XMLParserTest.passWhenTitleIsSuccesfullyAdded" />
       </list>
     </recent_temporary>
   </component>
@@ -499,6 +508,21 @@
     <option name="LAST_COMMIT_MESSAGE" value="Add another tests to ConfigTest.java" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.jsoup.nodes.Document" memberName="shadowChildrenRef" />
+        <PinnedItemInfo parentTag="org.jsoup.nodes.Document" memberName="updateMetaCharset" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="((DeferredTextImpl)((DeferredElementNSImpl)node).firstChild).flags" custom="com.sun.org.apache.xerces.internal.dom.DeferredTextImpl,com.sun.org.apache.xerces.internal.dom.DeferredElementNSImpl" />

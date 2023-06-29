@@ -1,10 +1,10 @@
-package tools.connection;
+package tools.Document;
 
 import java.io.IOException;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
-public class ConnectionProvider implements IConnection {
+public class HTMLDocumentProvider implements IHTMLDocument {
 /*=================================================================================================
                                         Methods
 =================================================================================================*/

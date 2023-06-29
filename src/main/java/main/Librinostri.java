@@ -1,6 +1,5 @@
 package main;
 
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -10,9 +9,9 @@ import org.jsoup.select.Elements;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Scanner;
 import java.util.zip.CRC32;
+import tools.Document.HTMLDocumentProvider;
+import tools.Document.IHTMLDocument;
 import tools.downloader.DownloaderProvider;
 import tools.downloader.IDownloader;
 
@@ -25,8 +24,8 @@ public class Librinostri {
 /*=================================================================================================
                                                     Attributes
 =================================================================================================*/
-  private final LinkedList<Book> BOOKS_INFO           = new LinkedList<>();
-  private final String           URL_BOOKS_INFO       = "http://librinostri.catholica.cz/rss.php";
+  private final String           ELEMENT_DOWNLOAD_NAME= ".download";
+  private final String           URL_BOOKS_INFO       = "http://librinostri.catholica.cz/rss.php"; //todo presunut do configu
   private final String           DOWNLOAD_CSS_QUERY   = ".download";
   private final String           ATTRIBUTE_KEY_URL    = "abs:href";
   private final String           ELEMENT_ITEM_TO_FIND = "item";
@@ -35,14 +34,30 @@ public class Librinostri {
   private final int              END_STREAM_VALUE     = -1;
   private final int              OFFSET_VALUE         = 0;
 /*=================================================================================================
-                                                Getters
+                                                  Getters
 =================================================================================================*/
-  public LinkedList<Book> getBOOKS_INFO() {
-    return BOOKS_INFO;
-  }
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
+/*
+  */
+/**
+   * From given link to website download this website as Document. In Document find all
+   * elements with name .download.
+   * @param link link to website
+   * @return elements founded in website
+   * @throws IOException if connection to website fails.
+   *//*
+
+  public Elements getElements(String link) throws IOException {
+    IHTMLDocument IHTMLDocument = new HTMLDocumentProvider();
+    IElements iElements = new ElementsProvider();
+    Document    document    = IHTMLDocument.get(link);
+    Elements    elements    = iElements.get(ELEMENT_DOWNLOAD_NAME);
+    return elements;
+  }
+*/
+
   /**
    * Inspect the book subsite for download links to all PDF´s related to the book.
    * @param bookLink URL to information about the book on librinostri.catholica.cz.

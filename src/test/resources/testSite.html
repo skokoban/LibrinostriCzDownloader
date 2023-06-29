@@ -1,0 +1,90 @@
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.php"><!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/skeleton.css"><!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <style>
+
+
+.priloha li {
+  float:left;
+  display:inline;
+  margin-bottom: 0;
+}
+
+#sloupcu-2 li  {
+    width:50%;
+}
+
+</style>
+  <script src="/js/jquery.min.js"></script>
+  <script>
+$( document ).ready(function() {
+  $('a.download').click(function() {
+     var link = $(this).attr('href');
+     $.get('/statistika.php', {file: link}, function() {
+     });
+  });
+});
+</script>
+</head>
+<body>
+<div style="border-bottom: 1px solid #ccc; background-color: #f5f5f5; padding:0 0 0.3rem 1rem; margin:0 0 1rem 0;">
+  <div class="container">
+    <a href="/" style="text-decoration:none;">
+      <h2 style="color:#c10000; margin:1rem 0 0.5rem 0; ">Knihovna Libri nostri</h2></a> Katolík má být "podoben hospodáři, který vynáší ze své zásoby věci nové i staré". Věcí nových je všude bezpočtu. K&nbsp;poznání starých nabízíme své služby.
+  </div>
+</div>
+<div class="container zahlavi">
+  <div class="seven columns">
+    <p style="padding-top: 1rem;"><a href="/">ODDĚLENÍ</a>&nbsp;&nbsp;&nbsp; <a href="/informace">O KNIHOVNĚ</a>&nbsp;&nbsp;&nbsp;<a href="/servis" style="margin: 0 0 0 30px;">PRO KNIHOVNÍKY</a></p>
+  </div>
+  <div class="five columns vyhledat">
+    <form method="post" action="/vyhledat">
+      <input type="text" name="vyhledat" value="" placeholder="vyhledat"> <input type="checkbox" value="1" name="presne"> přesně
+    </form>
+  </div>
+</div>
+<div class="container obsah">
+  <br>
+  <div class="row">
+    <div class="two columns">
+      <img src="/download/nasinec-1918-r/pg-0001.jpg?1688055416" style="border:1px solid #ccc; width:80%; box-shadow: #dddddd 4px 6px 20px;" class="u-full-width">
+    </div>
+    <div class="ten columns">
+      <h3 style="margin: 0 0 0rem 0;">Našinec</h3>
+      <p style="margin: 0 0 1rem 0;"><i>Černochová Josefína</i>, 1870 <br>
+        Oddělení: <a href="/#oddeleni-20">Encyklopedie, periodika, almanachy, kalendáře a Čtenářský koutek</a> <br>
+        Pododdělení: <a href="/oddeleni/2001">Časopisy s periodicitou aspoň šestkrát do roka (abecedně podle názvu)</a></p>
+      <p style="margin: 0;">Do roku 1916: Zpřístupňujeme digitalizaci, kde si čtenář může prohlížet jednotlivá čísla nebo vyhledávat v obsahu celého časopisu na adrese <a href="https://ndk.cz/periodical/uuid:ae895c5d-435d-11dd-b505-00145e5790ea" target="_blank">Národní digitální knihovny</a>.<br>
+        Roky 1917 až 1941:</p>
+      <div class="priloha">
+        <ul id="sloupcu-2">
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1918-r.pdf" target="_blank">nasinec-1918-r.pdf</a>, 274.3 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1918-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1919-r.pdf" target="_blank">nasinec-1919-r.pdf</a>, 325.5 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1919-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1920-r.pdf" target="_blank">nasinec-1920-r.pdf</a>, 196.1 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1920-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1921-r.pdf" target="_blank">nasinec-1921-r.pdf</a>, 305.8 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1921-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1922-r.pdf" target="_blank">nasinec-1922-r.pdf</a>, 340.7 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1922-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1923-r.pdf" target="_blank">nasinec-1923-r.pdf</a>, 495.8 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1923-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1924-r.pdf" target="_blank">nasinec-1924-r.pdf</a>, 341.1 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1924-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1925-r.pdf" target="_blank">nasinec-1925-r.pdf</a>, 350.7 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1925-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1926-r.pdf" target="_blank">nasinec-1926-r.pdf</a>, 493.7 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1926-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1927-r.pdf" target="_blank">nasinec-1927-r.pdf</a>, 471.6 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1927-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1928-r.pdf" target="_blank">nasinec-1928-r.pdf</a>, 338.4 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1928-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+          <li><a class="download" href="https://librinostri.catholica.cz/download/nasinec-1929-r.pdf" target="_blank">nasinec-1929-r.pdf</a>, 315.2 MB &nbsp;&nbsp;<a href="/nahledy.php?n=1&amp;a=nasinec-1929-r" target="_blank" title="nahled s navigací"><i class="far fa-file"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+</body>
+</html>
