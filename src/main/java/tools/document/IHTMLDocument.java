@@ -1,4 +1,4 @@
-package tools.Document;
+package tools.document;
 
 import java.io.IOException;
 import org.jsoup.nodes.Document;

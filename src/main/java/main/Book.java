@@ -1,13 +1,15 @@
 package main;
 
+import java.net.URL;
 import java.text.Normalizer;
 import java.util.ArrayList;
+import java.util.Objects;
 
 /**
  * The <code>Book</code> class represents e-books located on websites. Book has basic attributes
  * like title, publication day. For e-book is important download link.
  */
-public class book {
+public class Book {
 
 /*=================================================================================================
                                                 Attributes
@@ -28,9 +30,9 @@ public class book {
    *
    * @param title title of book
    */
-  public book(String title, String link, ArrayList<String> downloadLinks) {
+  public Book(String title, String url, ArrayList<String> downloadLinks) {
     TITLE = normalizeBookName(title);
-    LINK  = link;
+    LINK  = url;
     DOWNLOAD_LINKS = downloadLinks;
   }
 /*=================================================================================================
@@ -74,5 +76,22 @@ public class book {
   @Override
   public String toString() {
     return TITLE;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null || getClass() != obj.getClass()) {
+      return false;
+    }
+    Book otherBook = (Book) obj;
+    return Objects.equals(this.TITLE, otherBook.TITLE);
+  }
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(TITLE);
   }
 }

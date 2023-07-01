@@ -1,17 +1,9 @@
 package main;
 
+import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
 import java.nio.file.Path;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.select.Elements;
-
-import java.io.*;
 import java.util.ArrayList;
-import java.util.zip.CRC32;
-import tools.Document.HTMLDocumentProvider;
-import tools.Document.IHTMLDocument;
 import tools.downloader.DownloaderProvider;
 import tools.downloader.IDownloader;
 
@@ -24,67 +16,19 @@ public class Librinostri {
 /*=================================================================================================
                                                     Attributes
 =================================================================================================*/
-  private final String           ELEMENT_DOWNLOAD_NAME= ".download";
-  private final String           URL_BOOKS_INFO       = "http://librinostri.catholica.cz/rss.php"; //todo presunut do configu
-  private final String           DOWNLOAD_CSS_QUERY   = ".download";
-  private final String           ATTRIBUTE_KEY_URL    = "abs:href";
-  private final String           ELEMENT_ITEM_TO_FIND = "item";
-  private final String           NEW_LINE_CHAR        = "\n";
-  private final int              BYTE_ARRAY_SIZE      = 4096;
-  private final int              END_STREAM_VALUE     = -1;
-  private final int              OFFSET_VALUE         = 0;
-/*=================================================================================================
-                                                  Getters
-=================================================================================================*/
+  private final String           URL_BOOKS_INFO       = "http://librinostri.catholica.cz/rss.php";
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-/*
-  */
-/**
-   * From given link to website download this website as Document. In Document find all
-   * elements with name .download.
-   * @param link link to website
-   * @return elements founded in website
-   * @throws IOException if connection to website fails.
-   *//*
-
-  public Elements getElements(String link) throws IOException {
-    IHTMLDocument IHTMLDocument = new HTMLDocumentProvider();
-    IElements iElements = new ElementsProvider();
-    Document    document    = IHTMLDocument.get(link);
-    Elements    elements    = iElements.get(ELEMENT_DOWNLOAD_NAME);
-    return elements;
-  }
-*/
-
   /**
    * Inspect the book subsite for download links to all PDF´s related to the book.
    * @param bookLink URL to information about the book on librinostri.catholica.cz.
    * @return list of Strings with URLs to direct download PDFs.
-   * @throws IOException if link to the book is not reachable.
    */
-  public ArrayList<String> findDownloadLinks(String bookLink) throws IOException {
-    ArrayList<String> downloadLinks    = new ArrayList<>();
-    Document          document         = Jsoup.connect(bookLink).get();
-    Elements          elementsDownload = document.select(DOWNLOAD_CSS_QUERY);
-    for (org.jsoup.nodes.Element link : elementsDownload) {
-      downloadLinks.add(link.attr(ATTRIBUTE_KEY_URL));      // do zoznamu pridava absolutne URL
-    }
-    return downloadLinks;
-  }
+  public ArrayList<URL> findDownloadLinks(String bookLink) {
+    ArrayList<URL> downloadLinks = new ArrayList<>();
 
-  /**
-   * Count checksum for given file. Returns 0 if file is empty.
-   * @param path the path fle for which checksum be counted
-   * @return value of CRC32 checksum
-   * @throws IOException if checksum cannot be counted.
-   */
-  public static long countChecksum(Path path) throws IOException {
-    byte[] fileBytes = Files.readAllBytes(path);
-    CRC32 rssFileCrc32 = new CRC32();
-    rssFileCrc32.update(fileBytes);
-    return rssFileCrc32.getValue();
+    return downloadLinks;
   }
 
   /**

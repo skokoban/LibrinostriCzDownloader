@@ -11,10 +11,6 @@ public class ConfigLocationProvider {
   private static final String CONFIG_FOLDER_NAME = ".config";
   private static final String LIBRI_NOSTI_FOLDER_NAME = "librinostri-downlaoder";
   private static final String CONFIGFILE_NAME = "librinostri-downloader.properties";
-
-/*=================================================================================================
-                                                Constructor
-=================================================================================================*/
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/

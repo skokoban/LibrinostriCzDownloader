@@ -52,14 +52,6 @@ public class Config {
     return Files.exists(configFile);
   }
 
-  /**
-   * @return Returns path to config file.
-   */
-  @Override
-  public String toString() {
-    return configFile.toString();
-  }
-
   protected Path createDirectoryPath() {
     String config = configFile.toString();
     int lastSlash = config.lastIndexOf("/");

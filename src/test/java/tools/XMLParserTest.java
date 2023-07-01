@@ -1,5 +1,7 @@
 package tools;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import org.junit.jupiter.api.Test;
 import org.xml.sax.InputSource;
 
@@ -34,4 +36,17 @@ public class XMLParserTest {
         assertEquals("Testovaci_titul_1", downloadLinks.get(0));
     }
 */
+    @Test
+    public void getFileSize() throws IOException {
+        URL url = new URL("https://librinostri.catholica.cz/download/nasinec-1925-r.pdf");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("HEAD");
+        connection.connect();
+        int responseCode = connection.getResponseCode();
+        if (responseCode == HttpURLConnection.HTTP_OK) {
+            System.out.println(connection.getContentLengthLong());
+        } else {
+            throw new IOException("Failed to retrieve file size. Response code: " + responseCode);
+        }
+    }
 }
