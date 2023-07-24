@@ -84,4 +84,8 @@ public class Printer {
   public static void printCannotSetPropertyBadFile() {
     System.out.println(Strings.CANNOT_READ_FROM_FILE.getText());
   }
+
+  public static void printCannotCreateConfigFile() {
+    System.out.println(Strings.CANNOT_CREATE_CONFIG_FILE.getText());
+  }
 }

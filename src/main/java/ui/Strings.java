@@ -9,6 +9,9 @@ public enum Strings {
   // strings for printing
   UNKNOWN_ARGS_ERROR("Unknown arguments. Use ´help´ argument to see available commands."),
 
+  CANNOT_CREATE_CONFIG_FILE("Missing config file. New config file cannot be created. Try to remove "
+      + "writing protection. Exiting..."),
+
   INVALID_COUNT_OF_ARGUMENTS("Invalid arguments. Use ´help´ argument to see available commands."),
 
   CANNOT_CREATE_NEW_FILE("File to save list of downloaded PDF files cannot be created. Try to remove" +

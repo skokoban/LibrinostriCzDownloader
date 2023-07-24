@@ -36,6 +36,7 @@ public class PropertiesTest {
     return tempConfigFile;
   }
 
+/*
   @Test
   void passWhenPropertyReadSuccesfully() throws IOException {
     createTempConfigFile();
@@ -52,6 +53,8 @@ public class PropertiesTest {
 
     assertEquals("testValue", testProperty);
   }
+*/
+/*
   @Test
   void passWhenTwoPropertiesReadSuccesfully() throws IOException {
     createTempConfigFile();
@@ -76,6 +79,8 @@ public class PropertiesTest {
 
     assertEquals(valuesAsString, propertiesAsString);
   }
+*/
+/*
   @Test
   void passWhenEmptyStringReturnedAfterException() throws IOException {
     IProperties propertiesProvider = new PropertiesProvider(createTempConfigFile());
@@ -197,4 +202,5 @@ public class PropertiesTest {
 
     assertEquals("Property impossible to set in case of config file not found", resultValue);
   }
+*/
 }

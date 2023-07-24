@@ -10,9 +10,12 @@ public class Config {
 =================================================================================================*/
   public static final String REASON_NULL_EX = "Instance cannot be created because "
       + "file you provided points to null";
+  public static final String CHECKSUM_KEY = "checksum";
+  public static final String RSS_URL_KEY = "rssURL";
+  public static final String RSS_URL = "https://librinostri.catholica.cz/rss.php";
   private static Config instance;
   private final String DOWNLOADED_FOLDER_NAME = "librinostri-downlaoder";
-  private final String PROPERTY_DOWNLOAD_FOLDER = "downloadFolder";
+  private final String PROPERTY_DOWNLOAD_FOLDER_KEY = "downloadFolder";
   private final String PROPERTIES_COMMENT = "This is auto-generated properties file." +
       " Do not modify key. Value can be modified.";
   private Path configFile;
@@ -37,7 +40,7 @@ public class Config {
    * Create directory and file for specified config file path of instance.
    * @throws IOException if default file cannot be created.
    */
-  public void createDefault() throws IOException {
+  public void createConfigFile() throws IOException {
     Path configDirPath = createDirectoryPath();
     Files.createDirectories(configDirPath);
 
@@ -57,5 +60,13 @@ public class Config {
     int lastSlash = config.lastIndexOf("/");
     String configDir = config.substring(0, lastSlash);
     return Path.of(configDir);
+  }
+
+  public void fillDefaultValues(IProperties provider) {
+    Path downloadLocation = ConfigLocationProvider.getDefaultDownloadLocation();
+    String downloadLocationString = downloadLocation.toString();
+    provider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocationString);
+    provider.setProperty(CHECKSUM_KEY, "");
+    provider.setProperty(RSS_URL_KEY, RSS_URL);
   }
 }

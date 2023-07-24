@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.nio.file.Path;
 import java.util.Properties;
 import ui.Printer;
 
@@ -12,7 +13,7 @@ import ui.Printer;
  * Provides manipulation with key-value pairs. These pairs are stored in text file. Gives ability
  * to set pairs and to search for value for given key.
  */
-public class PropertiesProvider implements IProperties{
+public class PropertiesProvider implements IProperties {
 /*=================================================================================================
                                                 Attributess
 =================================================================================================*/
@@ -23,13 +24,13 @@ public class PropertiesProvider implements IProperties{
 /*=================================================================================================
                                                 Constructors
 =================================================================================================*/
-  public PropertiesProvider(File configFile) {
-    this.configFile = configFile;
+  public PropertiesProvider() {
+    Path pathToConfig = ConfigLocationProvider.getConfigFileLocation();
+    configFile = new File(pathToConfig.toUri());
   }
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-
   /**
    * Returns value from properties file for given key, if the key exists. In case key not exists
    * then returns null.

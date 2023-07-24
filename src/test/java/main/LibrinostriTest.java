@@ -1,54 +1,27 @@
 package main;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 
-public class LibrinostriTest {
+class LibrinostriTest {
 
-  private static Path emptyFile;
-/*=================================================================================================
-                                                Attributes
-=================================================================================================*/
-/*=================================================================================================
-                                                Constructor
-=================================================================================================*/
-/*=================================================================================================
-                                                Methods
-=================================================================================================*/
   @Test
-  void passWhenChecksumIsNotZero() throws IOException {
-    //long checksum = Librinostri.countChecksum(getTestFile());
+  void passWhenChecksumsEqualsReturnsFalse() {
+    Librinostri librinostri = new Librinostri();
 
-    //assertNotEquals(0, checksum);
-  }
+    boolean result = librinostri.isNewFileAdded(16465165L, 16465165L);
 
-  Path getTestFile() {
-    return Path.of("src/test/resources/testRSS.php");
-  }
-
-  Path getTestEmptyFile() throws IOException {
-    emptyFile = Files.createTempFile("emptyTest", "tmp");
-    return emptyFile;
+    assertFalse(result);
   }
 
   @Test
-  void passWhenEmptyFileChecksumIsZero() throws IOException {
-    //long checksum = Librinostri.countChecksum(getTestEmptyFile());
+  void passWhenChecksumsNotEqualsReturnsTrue() {
+    Librinostri librinostri = new Librinostri();
 
-    //assertEquals(0, checksum);
-  }
+    boolean result = librinostri.isNewFileAdded(16465165L, 1222222L);
 
-  @AfterAll
-  static void clean() throws IOException {
-    Files.deleteIfExists(emptyFile);
+    assertTrue(result);
   }
 }

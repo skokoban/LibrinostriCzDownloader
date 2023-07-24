@@ -1,9 +1,14 @@
-/*
-package tools;
+package executor;
 
+import java.nio.file.Path;
 import main.Book;
 import org.xml.sax.InputSource;
 import tools.config.Config;
+import tools.config.ConfigLocationProvider;
+import tools.config.IProperties;
+import tools.config.PropertiesProvider;
+import tools.downloader.DownloaderProvider;
+import tools.downloader.IDownloader;
 import tools.parser.linksParser.DownloadLinksParser;
 import ui.Printer;
 
@@ -18,22 +23,38 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Executor {
-  */
-/*===============================================================================================
-                                                      Attributes
-  ===============================================================================================*//*
 
-  private final String XML_NAME   = "rss";
-  private final String XML_SUFFIX = ".php";
-  private final String PROPERTY_DOWNLOAD_FOLDER = "downloadFolder";
-  private final String xmlNewBooks = "https://librinostri.catholica.cz/rss.php";
-*/
-/*=================================================================================================
-                                                    Methods
-=================================================================================================*
-/**
-   * Execute all necessarry processes to download a file.
-   *//*
+  public static final String RSS_URL = "rssURL";
+
+  /*=================================================================================================
+                                           Attributes
+=================================================================================================*/
+
+  /*=================================================================================================
+                                              Methods
+  =================================================================================================*/
+  public static void downloadNewFiles() {
+      // download xml file wih new books info from rss feed
+    Path downloadFolder = ConfigLocationProvider.getDefaultDownloadLocation();
+
+    IProperties iProperties = new PropertiesProvider();
+    String rssURL = iProperties.getProperty(RSS_URL);
+
+    IDownloader iDownloader = new DownloaderProvider();
+    try {
+      iDownloader.download(rssURL, downloadFolder);
+    } catch (IOException e) {
+      Printer.printDownloadingError();
+      return;
+    }
+
+      // find download links for newest books
+
+
+  }
+}/*
+ Execute all necessarry processes to download a file.
+
 
   public void download() {
     // create URL
@@ -72,8 +93,6 @@ public class Executor {
     }
     // get download links
     DownloadLinksParser downloadLinksParser = new DownloadLinksParser();
-*/
-/*
     try {
       downloadLinksParser.getDownloadLinks(books,
           iDocument.get(document, downloadLinksParser.ELEMENT_DOWNLOAD_NAME));
@@ -81,7 +100,7 @@ public class Executor {
       parseDownloadableError(e);
       return;
     }
-*//*
+
 
     // create apropriate files for all pdfs
     Map<String, File> fileMap;
@@ -114,22 +133,20 @@ public class Executor {
     }
   }
 
-  */
-/**
+*
    * Made to deal with downloading errors. Handle given exception and print it to StackTrace. Print text of error to command line to inform user.
    * @param e exception that should be printed to stackTrace.
-   *//*
+
 
   protected void parseDownloadableError(Exception e) {
     e.printStackTrace();
     Printer.printDownloadingError();
   }
 
-  */
-/**
+*
    * Set property <code>downloadFolder</code> to given path from command line prompt. Creates all neccessary
    * directories if not exists.
-   *//*
+
 
   public void changeDownloadLocation() {
     Printer.printNewDownloadLocAsking();

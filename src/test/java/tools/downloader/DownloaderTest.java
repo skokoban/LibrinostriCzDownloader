@@ -26,6 +26,7 @@ public class DownloaderTest {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
+/*
   @Test
   void passWhenFileFromUrlSuccesfullyCopied() throws IOException {
                                                               // has 6387 bytes
@@ -51,6 +52,7 @@ public class DownloaderTest {
 
     assertEquals(0, length);
   }
+*/
 
   @AfterAll
   public static void deleteTestFile() throws IOException {

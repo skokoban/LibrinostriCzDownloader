@@ -55,7 +55,7 @@ public class ConfigTest {
   @Test
   public void PassWhenConfigDirectorySuccesfullyCreated() throws IOException {
     Config instance = Config.getInstance(testFilePath);
-    instance.createDefault();
+    instance.createConfigFile();
 
     boolean result = Files.isDirectory(testFileDir);
 
@@ -65,7 +65,7 @@ public class ConfigTest {
   @Test
   public void PassWhenConfigFileSuccesfullyCreated() throws IOException {
     Config instance = Config.getInstance(testFilePath);
-    instance.createDefault();
+    instance.createConfigFile();
 
     boolean result = Files.isRegularFile(testFilePath);
 

@@ -8,19 +8,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add DownloadLinksParserTest">
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/file/FileTest.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add FileTest.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Document/HTMLDocumentProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/document/HTMLDocumentProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Document/IHTMLDocument.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/document/IHTMLDocument.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/PDFFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/File.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/TaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/TaskExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/ConfigLocationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/ConfigLocationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/IDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/IDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +134,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.4204436",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -139,6 +145,7 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/executor" />
       <recent name="$PROJECT_DIR$/src/main/java/tools/PDFFile" />
       <recent name="$PROJECT_DIR$/src/test/java/tools/config" />
     </key>
@@ -150,13 +157,14 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="main" />
       <recent name="tools.file" />
       <recent name="tools.parser.linksParser" />
       <recent name="tools.parser.XMLParser" />
       <recent name="tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FileTest">
+  <component name="RunManager" selected="JUnit.LibrinostriTest.passWhenChecksumsNotEqualsReturnsTrue">
     <configuration name="FileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
@@ -172,65 +180,65 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.passWhenFromUrlWithMultipleSlashesIsSucsesfullyNameCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibrinostriTest.passWhenChecksumCannotBeCountedReturnsZero" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.FileTest" />
-      <option name="METHOD_NAME" value="passWhenFromUrlWithMultipleSlashesIsSucsesfullyNameCreated" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.LibrinostriTest" />
+      <option name="METHOD_NAME" value="passWhenChecksumCannotBeCountedReturnsZero" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.passWhenFromUrlWithOneSlashIsSucsesfullyNameCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibrinostriTest.passWhenChecksumsEqualsReturnsFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.FileTest" />
-      <option name="METHOD_NAME" value="passWhenFromUrlWithOneSlashIsSucsesfullyNameCreated" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.LibrinostriTest" />
+      <option name="METHOD_NAME" value="passWhenChecksumsEqualsReturnsFalse" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.passWhenNoNameAfterSlashReturnEmptyString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibrinostriTest.passWhenChecksumsNotEqualsReturnsTrue" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.FileTest" />
-      <option name="METHOD_NAME" value="passWhenNoNameAfterSlashReturnEmptyString" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.LibrinostriTest" />
+      <option name="METHOD_NAME" value="passWhenChecksumsNotEqualsReturnsTrue" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FileTest.passWhenReturnsSomeChecksum" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibrinostriTest.testUpdateHash" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.FileTest" />
-      <option name="METHOD_NAME" value="passWhenReturnsSomeChecksum" />
+      <option name="PACKAGE_NAME" value="main" />
+      <option name="MAIN_CLASS_NAME" value="main.LibrinostriTest" />
+      <option name="METHOD_NAME" value="testUpdateHash" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -238,18 +246,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.FileTest" />
-      <item itemvalue="JUnit.FileTest.passWhenFromUrlWithMultipleSlashesIsSucsesfullyNameCreated" />
-      <item itemvalue="JUnit.FileTest.passWhenFromUrlWithOneSlashIsSucsesfullyNameCreated" />
-      <item itemvalue="JUnit.FileTest.passWhenNoNameAfterSlashReturnEmptyString" />
-      <item itemvalue="JUnit.FileTest.passWhenReturnsSomeChecksum" />
+      <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumCannotBeCountedReturnsZero" />
+      <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsEqualsReturnsFalse" />
+      <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsNotEqualsReturnsTrue" />
+      <item itemvalue="JUnit.LibrinostriTest.testUpdateHash" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsNotEqualsReturnsTrue" />
+        <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsEqualsReturnsFalse" />
+        <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumCannotBeCountedReturnsZero" />
+        <item itemvalue="JUnit.LibrinostriTest.testUpdateHash" />
         <item itemvalue="JUnit.FileTest" />
-        <item itemvalue="JUnit.FileTest.passWhenReturnsSomeChecksum" />
-        <item itemvalue="JUnit.FileTest.passWhenNoNameAfterSlashReturnEmptyString" />
-        <item itemvalue="JUnit.FileTest.passWhenFromUrlWithMultipleSlashesIsSucsesfullyNameCreated" />
-        <item itemvalue="JUnit.FileTest.passWhenFromUrlWithOneSlashIsSucsesfullyNameCreated" />
       </list>
     </recent_temporary>
   </component>
@@ -452,7 +460,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688057270394</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Add FileTest.">
+      <option name="closed" value="true" />
+      <created>1688241295097</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1688241295097</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -484,7 +500,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add classes XMLParser and RSSDownloader with necessary methods." />
     <MESSAGE value="Remove getItemsCount method." />
     <MESSAGE value="progres.." />
     <MESSAGE value="Add Filecreator class." />
@@ -509,7 +524,8 @@
     <MESSAGE value="Add tests to ConfigTest.java" />
     <MESSAGE value="Add another tests to ConfigTest.java" />
     <MESSAGE value="Add DownloadLinksParserTest" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add DownloadLinksParserTest" />
+    <MESSAGE value="Add FileTest." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add FileTest." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

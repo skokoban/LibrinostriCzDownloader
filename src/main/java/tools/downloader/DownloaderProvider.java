@@ -11,7 +11,8 @@ public class DownloaderProvider implements IDownloader {
                                                   Methods
 =================================================================================================*/
   @Override
-  public long download(URL url, Path path) throws IOException {
+  public long download(String link, Path path) throws IOException {
+    URL url = new URL(link);
     InputStream inputStream = url.openStream();
     return Files.copy(inputStream, path);
   }

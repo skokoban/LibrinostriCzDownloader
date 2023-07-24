@@ -1,11 +1,20 @@
 package main;
 
+import exceptions.LinkNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import org.jsoup.nodes.Document;
+import tools.config.IProperties;
+import tools.config.PropertiesProvider;
+import tools.document.HTMLDocumentProvider;
+import tools.document.IHTMLDocument;
 import tools.downloader.DownloaderProvider;
 import tools.downloader.IDownloader;
+import tools.file.File;
+import tools.parser.linksParser.DownloadLinksParser;
 
 /**
  * The <code>Librinostri</code> class represents website librinostri.catholica.cz
@@ -13,22 +22,23 @@ import tools.downloader.IDownloader;
  */
 public class Librinostri {
 
-/*=================================================================================================
-                                                    Attributes
-=================================================================================================*/
-  private final String           URL_BOOKS_INFO       = "http://librinostri.catholica.cz/rss.php";
+  public static final String CHECKSUM = "checksum";
+  public static final String RSS_LINK = "rssURL";
+
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
   /**
    * Inspect the book subsite for download links to all PDF´s related to the book.
-   * @param bookLink URL to information about the book on librinostri.catholica.cz.
+   * @param bookURL URL to information about the book on librinostri.catholica.cz.
    * @return list of Strings with URLs to direct download PDFs.
+   * @throws IOException if website with download links is not reachable
+   * @throws LinkNotFoundException if none of link is found on website
    */
-  public ArrayList<URL> findDownloadLinks(String bookLink) {
-    ArrayList<URL> downloadLinks = new ArrayList<>();
-
-    return downloadLinks;
+  public ArrayList<URL> findDownloadLinks(String bookURL) throws IOException, LinkNotFoundException {
+    IHTMLDocument ihtmlDocument = new HTMLDocumentProvider();
+    Document htmlDocument = ihtmlDocument.get(bookURL);
+    return DownloadLinksParser.getDownloadLinks(htmlDocument);
   }
 
   /**
@@ -38,9 +48,9 @@ public class Librinostri {
    * @return true if file is downloaded succesfully, false otherwise
    * @throws IOException if download fails.
    */
-  public boolean downloadRSS(URL url, Path rss) throws IOException {
+  public boolean downloadRSS(String link, Path rss) throws IOException {
     IDownloader iDownloader = new DownloaderProvider();
-    iDownloader.download(url, rss);
+    iDownloader.download(link, rss);
     return true;
   }
 
@@ -51,9 +61,12 @@ public class Librinostri {
    * @return count of downloaded bytes
    * @throws IOException when download fails.
    */
-  public long downloadFile(URL url, Path path) throws IOException {
+  public long downloadFile(String link, Path path) throws IOException {
     IDownloader iDownloader = new DownloaderProvider();
-    return iDownloader.download(url, path);
+    return iDownloader.download(link, path);
   }
 
+  public boolean isNewFileAdded(long oldHash, long newHash) {
+    return !(oldHash == newHash);
+  }
 }

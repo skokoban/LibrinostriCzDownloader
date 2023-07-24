@@ -1,15 +1,15 @@
 package main;
 
+import java.io.IOException;
+import java.nio.file.Path;
+import java.util.Scanner;
+import java.util.concurrent.Executor;
 import tools.config.Config;
-import tools.TaskExecutor;
+import tools.config.ConfigLocationProvider;
+import tools.config.PropertiesProvider;
 import ui.Printer;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
 public class Main {
-  //todo pridat jednoduche overenie ci je nieco nove na stranke naiesto stahovania vsetkych knih. pomocou hashu zrejme
-  //todo pri novom spustení a vybraní možnosti 3 vypíše cestu "aaaaaaaaaaa". zistit prečo a opraviť - ZISTENE v /res je subor odkial sa to berie
-  //todo pri kontrole existencie knihy pocitat hash lebo nazov sa moze menit
   //todo na zaciatku stahovania vytvori vsetky pdf subory popredu a az potom stahuje. ak nastane prerusenie tak ostanu prazdne nachystane subory. treba spravit aby sa vymazali. skontrolovat ci bolo stiahnutie komplet. alebo skontrolovat velkost suboru ci je 0.
   /**
    * Check if there was given arguments or not with running application from CLI.
@@ -20,28 +20,41 @@ public class Main {
    */
   public static void main(String[] args) {
     checkConfig();
-    switch (args.length) {
-      case 0 -> {
-        Printer.printMenu();
-        try { TaskExecutor taskExecutor = new TaskExecutor();
-          taskExecutor.functionSelector(handleIntEntered());
-        } catch (InputMismatchException ignored) {
-          Printer.printInvalidOptionEntered();
-          main(new String[0]);
+    if (args.length > 0) {
+      Printer.printUnknownArgumentError();
+    }
+
+    while (true) {
+      Printer.printMenu();
+      int menuOption = handleIntEntered();
+
+      switch (menuOption) {
+        //case 1 -> Executor.downloadNewFiles();
+        //case 2 -> Executor.changeDownloadFolder();
+        //case 3 -> Executor.showDownloadFolder();
+        case 4 -> Printer.printHelp();
+        case 5 -> Printer.printAbout();
+        case 6 -> {
+          return;
         }
+        default -> Printer.printUnknownArgumentError();
       }
-      case 1 -> {
-        TaskExecutor taskExecutor = new TaskExecutor();
-        taskExecutor.parseArgs(args[0]);
-        main(new String[0]);     // show menu after succesfully run task
-      }
-      default -> Printer.printInvalidCountOfArguments();
     }
   }
 
   private static void checkConfig() {
-      //config.createDefaultConfig();
+    Path configLocation = ConfigLocationProvider.getConfigFileLocation();
+    Config config = Config.getInstance(configLocation);
+    if (!config.exists()) {
+      try {
+        config.createConfigFile();
+      } catch (IOException e) {
+        Printer.printCannotCreateConfigFile();
+        System.exit(0);
+      }
+      config.fillDefaultValues(new PropertiesProvider());
     }
+  }
 
   public static int handleIntEntered() {
     Scanner scanner = new Scanner(System.in);

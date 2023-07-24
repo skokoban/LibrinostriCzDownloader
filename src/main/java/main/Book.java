@@ -1,6 +1,5 @@
 package main;
 
-import java.net.URL;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Objects;
@@ -38,7 +37,6 @@ public class Book {
 /*=================================================================================================
                                                 Getters
 =================================================================================================*/
-
   public String getTITLE() {
     return TITLE;
   }
@@ -50,11 +48,9 @@ public class Book {
   public ArrayList<String> getDOWNLOAD_LINKS() {
     return DOWNLOAD_LINKS;
   }
-
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-
   /**
    * Converts string to system friendly form. Avoids string of bad chars.
    * <p>Example:</p>
