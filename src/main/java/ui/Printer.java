@@ -61,7 +61,7 @@ public class Printer {
     System.out.println(Strings.OK.getText());
   }
 
-  public static void printDownloading(File PDFFileName) {
+  public static void printDownloading(String PDFFileName) {
     System.out.print(Strings.DOWNLOADING.getText() + PDFFileName);
   }
 
@@ -87,5 +87,13 @@ public class Printer {
 
   public static void printCannotCreateConfigFile() {
     System.out.println(Strings.CANNOT_CREATE_CONFIG_FILE.getText());
+  }
+
+  public static void printXMLParsingError() {
+    System.out.println(Strings.XML_PARSE_ERROR_TEXT.getText());
+  }
+
+  public static void printCannotFindDownloadLinksForBook() {
+    System.out.print(Strings.CANNOT_FIND_DOWNLOAD_LINKS.getText());
   }
 }

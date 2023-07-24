@@ -1,11 +1,11 @@
 package main;
 
+import executor.Executor;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Scanner;
-import java.util.concurrent.Executor;
 import tools.config.Config;
-import tools.config.ConfigLocationProvider;
+import tools.config.LocationProvider;
 import tools.config.PropertiesProvider;
 import ui.Printer;
 
@@ -29,7 +29,7 @@ public class Main {
       int menuOption = handleIntEntered();
 
       switch (menuOption) {
-        //case 1 -> Executor.downloadNewFiles();
+        case 1 -> Executor.downloadNewFiles();
         //case 2 -> Executor.changeDownloadFolder();
         //case 3 -> Executor.showDownloadFolder();
         case 4 -> Printer.printHelp();
@@ -43,7 +43,7 @@ public class Main {
   }
 
   private static void checkConfig() {
-    Path configLocation = ConfigLocationProvider.getConfigFileLocation();
+    Path configLocation = LocationProvider.getConfigFileLocation();
     Config config = Config.getInstance(configLocation);
     if (!config.exists()) {
       try {

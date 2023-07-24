@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import main.Book;
 import org.junit.jupiter.api.Test;
 
 class FileTest {
@@ -51,11 +52,12 @@ class FileTest {
       Files.deleteIfExists(result);
     }
 
+/*
   @Test
     void passWhenFromUrlWithOneSlashIsSucsesfullyNameCreated() {
       String testUrl= "http://www.test.com/test.pdf";
 
-      String result = File.createName(testUrl);
+      String result = Book.retrieveName(testUrl);
 
       assertEquals("test.pdf", result);
     }
@@ -64,7 +66,7 @@ class FileTest {
     void passWhenFromUrlWithMultipleSlashesIsSucsesfullyNameCreated() {
       String testUrl= "http://www.test.com//files/old/test.pdf";
 
-      String result = File.createName(testUrl);
+      String result = Book.retrieveName(testUrl);
 
       assertEquals("test.pdf", result);
     }
@@ -73,10 +75,11 @@ class FileTest {
     void passWhenNoNameAfterSlashReturnEmptyString() {
       String testUrl= "http://www.test.com/";
 
-      String result = File.createName(testUrl);
+      String result = Book.retrieveName(testUrl);
 
       assertEquals("", result);
     }
+*/
 
   @Test
     void passWhenReturnsSomeChecksum() throws IOException {

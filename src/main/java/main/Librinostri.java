@@ -2,18 +2,13 @@ package main;
 
 import exceptions.LinkNotFoundException;
 import java.io.IOException;
-import java.net.URL;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import org.jsoup.nodes.Document;
-import tools.config.IProperties;
-import tools.config.PropertiesProvider;
 import tools.document.HTMLDocumentProvider;
 import tools.document.IHTMLDocument;
 import tools.downloader.DownloaderProvider;
 import tools.downloader.IDownloader;
-import tools.file.File;
 import tools.parser.linksParser.DownloadLinksParser;
 
 /**
@@ -30,12 +25,13 @@ public class Librinostri {
 =================================================================================================*/
   /**
    * Inspect the book subsite for download links to all PDF´s related to the book.
+   *
    * @param bookURL URL to information about the book on librinostri.catholica.cz.
    * @return list of Strings with URLs to direct download PDFs.
-   * @throws IOException if website with download links is not reachable
+   * @throws IOException           if website with download links is not reachable
    * @throws LinkNotFoundException if none of link is found on website
    */
-  public ArrayList<URL> findDownloadLinks(String bookURL) throws IOException, LinkNotFoundException {
+  public ArrayList<String> findDownloadLinks(String bookURL) throws IOException, LinkNotFoundException {
     IHTMLDocument ihtmlDocument = new HTMLDocumentProvider();
     Document htmlDocument = ihtmlDocument.get(bookURL);
     return DownloadLinksParser.getDownloadLinks(htmlDocument);
@@ -43,7 +39,7 @@ public class Librinostri {
 
   /**
    * Copy text content from remote file to local file.
-   * @param url  link to remote text file
+   * @param link  link to remote text file
    * @param rss File where local file should be located
    * @return true if file is downloaded succesfully, false otherwise
    * @throws IOException if download fails.
@@ -56,7 +52,7 @@ public class Librinostri {
 
   /**
    * Download file from given URL to given File.
-   * @param url remote location from which file should be downloaded
+   * @param link remote location from which file should be downloaded
    * @param path path to location where downlaoded file will be located
    * @return count of downloaded bytes
    * @throws IOException when download fails.
@@ -68,5 +64,10 @@ public class Librinostri {
 
   public boolean isNewFileAdded(long oldHash, long newHash) {
     return !(oldHash == newHash);
+  }
+
+  public String retrieveName(String url) {
+    int lastSlash = url.lastIndexOf("/");
+    return url.substring(lastSlash + 1);
   }
 }

@@ -25,7 +25,7 @@ public class PropertiesProvider implements IProperties {
                                                 Constructors
 =================================================================================================*/
   public PropertiesProvider() {
-    Path pathToConfig = ConfigLocationProvider.getConfigFileLocation();
+    Path pathToConfig = LocationProvider.getConfigFileLocation();
     configFile = new File(pathToConfig.toUri());
   }
 /*=================================================================================================

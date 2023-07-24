@@ -62,7 +62,12 @@ public enum Strings {
 
   UPDATER_INTRO("List of new books:"),
 
-  CANNOT_READ_FROM_FILE("Property impossible to set in case of config file not found");
+  CANNOT_READ_FROM_FILE("Property impossible to set because config file not found"),
+
+  XML_PARSE_ERROR_TEXT("Error occured when parsing XML file with new books information."
+      + "Unexpected XML file structure."),
+
+  CANNOT_FIND_DOWNLOAD_LINKS("Cannot find download links for book ");
 
   // field
   private final String text;

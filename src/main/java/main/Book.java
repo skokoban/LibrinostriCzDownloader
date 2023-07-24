@@ -1,8 +1,15 @@
 package main;
 
+import static tools.file.File.create;
+
+import java.io.IOException;
+import java.nio.file.Path;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Objects;
+import tools.config.IProperties;
+import tools.config.PropertiesProvider;
+import tools.file.File;
 
 /**
  * The <code>Book</code> class represents e-books located on websites. Book has basic attributes
@@ -20,6 +27,7 @@ public class Book {
   private final int               CHARS_LIMIT_TITLE = 255;
   private final int               BIGIN_INDEX = 0;
 
+
 /*=================================================================================================
                                                 Constructor
 =================================================================================================*/
@@ -34,9 +42,11 @@ public class Book {
     LINK  = url;
     DOWNLOAD_LINKS = downloadLinks;
   }
-/*=================================================================================================
-                                                Getters
-=================================================================================================*/
+
+
+  /*=================================================================================================
+                                                  Getters
+  =================================================================================================*/
   public String getTITLE() {
     return TITLE;
   }
@@ -69,7 +79,7 @@ public class Book {
     return finalName;
   }
 
-  @Override
+   @Override
   public String toString() {
     return TITLE;
   }

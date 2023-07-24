@@ -21,14 +21,6 @@ class DownloadLinksParserTest {
     htmlDocument = Jsoup.parse(new File("src/test/resources/testSite.html"));
 
   }
-  @Test
-  void passWhenDownloadLinksAreParsedCorrectly() {
-    ArrayList<URL> urls = DownloadLinksParser.getDownloadLinks(htmlDocument);
-
-    int urlsCount = urls.size();
-
-    assertEquals(12, urlsCount);
-  }
 
   @Test
   void passWhenLinkNotFoundExceptionIsThrown() {

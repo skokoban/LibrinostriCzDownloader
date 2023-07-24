@@ -4,27 +4,16 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.zip.CRC32;
+import tools.config.IProperties;
+import tools.config.PropertiesProvider;
 
 public class File {
-/*=================================================================================================
-                                                 Attributes
-=================================================================================================*/
-
-/*=================================================================================================
-                                                Constructors
-=================================================================================================*/
-
 /*=================================================================================================
                                                   Methods
 =================================================================================================*/
   public static Path create(String path) throws IOException {
     Path mPath = Path.of(path);
     return Files.createFile(mPath);
-  }
-
-  public static String createName(String url) {
-    int lastSlash = url.lastIndexOf("/");
-    return url.substring(lastSlash + 1);
   }
 
   /**
@@ -38,5 +27,17 @@ public class File {
     CRC32 rssFileCrc32 = new CRC32();
     rssFileCrc32.update(fileBytes);
     return rssFileCrc32.getValue();
+  }
+
+  public static java.io.File getRSSFile() {
+    IProperties properties= new PropertiesProvider();
+    String rssFile = properties.getProperty("RSS file temporary location");
+    return new java.io.File(rssFile);
+  }
+
+  public static Path getRSSFilePath() {
+    IProperties properties= new PropertiesProvider();
+    String rssFile = properties.getProperty("RSS file temporary location");
+    return Path.of(rssFile);
   }
 }

@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
-public class XMLParserTest {
+public class BooksProviderTest {
     InputSource testXMLFile = new InputSource("src" + File.separator + "test" + File.separator + "resources" +
                             File.separator + "testRSS.php");
 /*

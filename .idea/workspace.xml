@@ -8,25 +8,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="Add FileTest.">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="code executor">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/IBooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/executor/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/TaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/TaskExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/ConfigLocationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/ConfigLocationProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/ConfigLocationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/LocationProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/IDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/IDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/File.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/XMLParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/linksParser/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/linksParser/DownloadLinksParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/BooksProviderTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/file/FileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/file/FileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/XMLParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/BooksProviderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +104,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -114,29 +121,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "TODO_SCOPE": "Project Files",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "dev",
-    "last_opened_file_path": "/home/marceld/Dokumenty/programovanie/IdeaProjects/Junior_2",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.4204436",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;TODO_SCOPE&quot;: &quot;Project Files&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/marceld/Dokumenty/programovanie/IdeaProjects/Junior_2&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.4204436&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/test/resources" />
@@ -150,6 +157,7 @@
       <recent name="$PROJECT_DIR$/src/test/java/tools/config" />
     </key>
     <key name="MoveMembersDialog.RECENTS_KEY">
+      <recent name="main.Book" />
       <recent name="main.Librinostri" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -164,18 +172,19 @@
       <recent name="tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.LibrinostriTest.passWhenChecksumsNotEqualsReturnsTrue">
-    <configuration name="FileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DownloaderTest.test">
+    <configuration name="DownloaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="tools.downloader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.FileTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="tools.downloader" />
+      <option name="MAIN_CLASS_NAME" value="tools.downloader.DownloaderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -245,7 +254,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.FileTest" />
+      <item itemvalue="JUnit.DownloaderTest.test" />
       <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumCannotBeCountedReturnsZero" />
       <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsEqualsReturnsFalse" />
       <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsNotEqualsReturnsTrue" />
@@ -253,11 +262,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DownloaderTest.test" />
         <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsNotEqualsReturnsTrue" />
         <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumsEqualsReturnsFalse" />
         <item itemvalue="JUnit.LibrinostriTest.passWhenChecksumCannotBeCountedReturnsZero" />
         <item itemvalue="JUnit.LibrinostriTest.testUpdateHash" />
-        <item itemvalue="JUnit.FileTest" />
       </list>
     </recent_temporary>
   </component>
@@ -468,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1688241295097</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="code executor">
+      <option name="closed" value="true" />
+      <created>1690183932257</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1690183932257</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -500,7 +517,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Remove getItemsCount method." />
     <MESSAGE value="progres.." />
     <MESSAGE value="Add Filecreator class." />
     <MESSAGE value="Add FileChecker and Downloader classes." />
@@ -525,7 +541,8 @@
     <MESSAGE value="Add another tests to ConfigTest.java" />
     <MESSAGE value="Add DownloadLinksParserTest" />
     <MESSAGE value="Add FileTest." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add FileTest." />
+    <MESSAGE value="code executor" />
+    <option name="LAST_COMMIT_MESSAGE" value="code executor" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

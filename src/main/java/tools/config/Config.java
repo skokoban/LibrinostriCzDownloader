@@ -63,7 +63,7 @@ public class Config {
   }
 
   public void fillDefaultValues(IProperties provider) {
-    Path downloadLocation = ConfigLocationProvider.getDefaultDownloadLocation();
+    Path downloadLocation = LocationProvider.getDefaultDownloadLocation();
     String downloadLocationString = downloadLocation.toString();
     provider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocationString);
     provider.setProperty(CHECKSUM_KEY, "");

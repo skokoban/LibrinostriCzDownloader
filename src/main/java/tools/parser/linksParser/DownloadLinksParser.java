@@ -1,8 +1,6 @@
 package tools.parser.linksParser;
 
 import exceptions.LinkNotFoundException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -21,24 +19,19 @@ public class DownloadLinksParser {
 =================================================================================================*/
   /**
    * In elements try to find download links. Finding is based on attribute "abs:href".
+   *
    * @param htmlDocument HTML Document of website where download links are provided
-   * @throws LinkNotFoundException if any of download links was not found in Document.
    * @return ArrayList of URLs point to PDF files attached to book.
+   * @throws LinkNotFoundException if any of download links was not found in Document.
    */
-  public static ArrayList<URL> getDownloadLinks(Document htmlDocument) throws LinkNotFoundException {
+  public static ArrayList<String> getDownloadLinks(Document htmlDocument) throws LinkNotFoundException {
     Elements elements = htmlDocument.select(CSS_QUERY_DOWNLOAD);
-    int elementsCount = elements.size();
-    ArrayList<URL> urls = new ArrayList<>(elementsCount);
-    URL url;
+    int linksCount = elements.size();
+    ArrayList<String> links = new ArrayList<>(linksCount);
     for (Element element: elements) {
       String link = element.attr(ATTRIBUTE_LINK_NAME);
-      try {
-        url = new URL(link);
-      } catch (MalformedURLException e) {
-        throw new LinkNotFoundException(e);
-      }
-      urls.add(url);
+      links.add(link);
     }
-    return urls;
+    return links;
   }
 }
