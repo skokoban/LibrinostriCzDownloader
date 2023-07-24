@@ -10,7 +10,6 @@ import tools.config.PropertiesProvider;
 import ui.Printer;
 
 public class Main {
-  //todo na zaciatku stahovania vytvori vsetky pdf subory popredu a az potom stahuje. ak nastane prerusenie tak ostanu prazdne nachystane subory. treba spravit aby sa vymazali. skontrolovat ci bolo stiahnutie komplet. alebo skontrolovat velkost suboru ci je 0.
   /**
    * Check if there was given arguments or not with running application from CLI.
    * If there was no arguments given, prints main menu with possibility of choice task.
@@ -30,8 +29,8 @@ public class Main {
 
       switch (menuOption) {
         case 1 -> Executor.downloadNewFiles();
-        //case 2 -> Executor.changeDownloadFolder();
-        //case 3 -> Executor.showDownloadFolder();
+        case 2 -> Executor.changeDownloadFolder();
+        case 3 -> Executor.showDownloadFolder();
         case 4 -> Printer.printHelp();
         case 5 -> Printer.printAbout();
         case 6 -> {
