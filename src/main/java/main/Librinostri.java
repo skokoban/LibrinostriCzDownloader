@@ -62,10 +62,6 @@ public class Librinostri {
     return iDownloader.download(link, path);
   }
 
-  public boolean isNewFileAdded(long oldHash, long newHash) {
-    return !(oldHash == newHash);
-  }
-
   public String retrieveName(String url) {
     int lastSlash = url.lastIndexOf("/");
     return url.substring(lastSlash + 1);

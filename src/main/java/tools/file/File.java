@@ -8,10 +8,12 @@ import tools.config.IProperties;
 import tools.config.PropertiesProvider;
 
 public class File {
+
+  private static final String rssTempLocation = "rssTempLocation";
 /*=================================================================================================
                                                   Methods
 =================================================================================================*/
-  public static Path create(String path) throws IOException {
+  public static Path createFile(String path) throws IOException {
     Path mPath = Path.of(path);
     return Files.createFile(mPath);
   }
@@ -31,13 +33,13 @@ public class File {
 
   public static java.io.File getRSSFile() {
     IProperties properties= new PropertiesProvider();
-    String rssFile = properties.getProperty("RSS file temporary location");
+    String rssFile = properties.getProperty(rssTempLocation);
     return new java.io.File(rssFile);
   }
 
   public static Path getRSSFilePath() {
     IProperties properties= new PropertiesProvider();
-    String rssFile = properties.getProperty("RSS file temporary location");
+    String rssFile = properties.getProperty(rssTempLocation);
     return Path.of(rssFile);
   }
 }

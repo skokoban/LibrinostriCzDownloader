@@ -5,6 +5,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 
 public class DownloaderProvider implements IDownloader {
 /*=================================================================================================
@@ -14,6 +15,6 @@ public class DownloaderProvider implements IDownloader {
   public long download(String link, Path path) throws IOException {
     URL url = new URL(link);
     InputStream inputStream = url.openStream();
-    return Files.copy(inputStream, path);
+    return Files.copy(inputStream, path, StandardCopyOption.REPLACE_EXISTING);
   }
 }

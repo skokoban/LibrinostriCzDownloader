@@ -21,32 +21,19 @@ import ui.Printer;
 public class Executor {
 
   public static final String RSS_URL = "rssURL";
-  public static final String DOWNLOAD_FOLDER = "download folder";
+  public static final String DOWNLOAD_FOLDER = "downloadFolder";
   private static IProperties iProperties = new PropertiesProvider();
 
-/*=================================================================================================
-                                           Attributes
-=================================================================================================*/
+  private static Librinostri librinostri = new Librinostri();
+  private static Path rssFilePath = File.getRSSFilePath();
 
 /*=================================================================================================
                                               Methods
 =================================================================================================*/
   public static void downloadNewFiles() {
-      // initialize class for download operations
-    Librinostri librinostri = new Librinostri();
-
       // download xml file wih new books info from rss feed
-    Path rssFilePath = File.getRSSFilePath();
-
-    String rssURL = iProperties.getProperty(RSS_URL);
-
-    try {
-      librinostri.downloadRSS(rssURL, rssFilePath);
-    } catch (IOException e) {
-      Printer.printDownloadingError();
-      return;
-    }
-
+    downloadXML();
+    saveChecksum();
       // find links to the newest books
     LinkedHashMap<String, String> rawBooks = new LinkedHashMap<>();
     String rssFile = rssFilePath.toString();
@@ -88,18 +75,39 @@ public class Executor {
       }
     }
 
+  private static void saveChecksum() {
+    long mchecksum = 0;
+    try {
+      mchecksum = File.checksum(rssFilePath);
+    } catch (IOException e) {
+      System.out.println(e);
+      Printer.printText("Checksum cannot be couonted. "
+          + "Please send this error report to mdorusak@gmail.com");
+    }
+    String checksum = String.valueOf(mchecksum);
+    iProperties.setProperty("checksum", checksum);
+  }
+
   private static void downloadFiles(ArrayList<String> links) {
     Librinostri librinostri = new Librinostri();
+    String downloadFolder = iProperties.getProperty(DOWNLOAD_FOLDER);
+    Path downloadDirectory = Path.of(downloadFolder);
+    try {
+      createDirectories(downloadDirectory);
+    } catch (IOException e) {
+      e.printStackTrace();
+      Printer.printDownloadingError();
+    }
     for (String link : links) {
       String name = librinostri.retrieveName(link);
-      String downloadFolder = iProperties.getProperty(DOWNLOAD_FOLDER);
       String pathToFile = downloadFolder + java.io.File.separator + name;
       Path path = Path.of(pathToFile);
       Printer.printDownloading(name);
       try {
         librinostri.downloadFile(link, path);
       } catch (IOException e) {
-        Printer.printDownloading(name);
+        Printer.printDownloadingError();
+        continue;
       }
       Printer.printOK();
     }
@@ -118,5 +126,36 @@ public class Executor {
   public static void showDownloadFolder() {
     String downloadFolder = iProperties.getProperty(DOWNLOAD_FOLDER);
     System.out.println(downloadFolder);
+  }
+
+  public static void checkForUpdate() {
+    String mOldHash = iProperties.getProperty("checksum");
+    long oldHash = Long.parseLong(mOldHash);
+    long newHash = downloadXML();
+    if (oldHash == newHash) {
+      Printer.printText("Nothing new on website.");
+    }
+    else Printer.printText("There are new files to download on website.");
+  }
+
+  protected static long downloadXML() {
+    String rssURL = iProperties.getProperty(RSS_URL);
+    try {
+      librinostri.downloadRSS(rssURL, rssFilePath);
+    } catch (IOException e) {
+      System.out.println(e);
+      Printer.printDownloadingError();
+    }
+    long checksum = 0;
+    try {
+      checksum = File.checksum(rssFilePath);
+    } catch (IOException e) {
+      Printer.printDownloadingError();
+    }
+    return checksum;
+  }
+
+  public static void createDirectories(Path path) throws IOException {
+    Files.createDirectories(path);
   }
 }

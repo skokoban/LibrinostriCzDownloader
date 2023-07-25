@@ -1,5 +1,6 @@
 package tools.config;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,6 +14,8 @@ public class Config {
   public static final String CHECKSUM_KEY = "checksum";
   public static final String RSS_URL_KEY = "rssURL";
   public static final String RSS_URL = "https://librinostri.catholica.cz/rss.php";
+  private static final String RSS_TEMP_LOCATION_KEY = "rssTempLocation";
+  private String RSS_TEMP_LOCATION_VALUE = null;
   private static Config instance;
   private final String DOWNLOADED_FOLDER_NAME = "librinostri-downlaoder";
   private final String PROPERTY_DOWNLOAD_FOLDER_KEY = "downloadFolder";
@@ -68,5 +71,7 @@ public class Config {
     provider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocationString);
     provider.setProperty(CHECKSUM_KEY, "");
     provider.setProperty(RSS_URL_KEY, RSS_URL);
+    String xmlFile = System.getProperty("java.io.tmpdir") + File.separator + "rss.php";
+    provider.setProperty(RSS_TEMP_LOCATION_KEY, xmlFile);
   }
 }

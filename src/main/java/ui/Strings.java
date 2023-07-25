@@ -52,12 +52,13 @@ public enum Strings {
             
             Enter number you want to do.
             \s
-            1. download new pdf files from website(s)\s
-            2. change folder for downloaded books\s
-            3. show folder for downloaded books\s
-            4. help\s
-            5. about\s
-            6. exit
+            1. check for updates\s
+            2. download new pdf files from website(s)\s
+            3. change folder for downloaded books\s
+            4. show folder for downloaded books\s
+            5. help\s
+            6. about\s
+            7. exit
             ==============================================================================================="""),
 
   UPDATER_INTRO("List of new books:"),

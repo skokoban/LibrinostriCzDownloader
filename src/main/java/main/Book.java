@@ -1,15 +1,8 @@
 package main;
 
-import static tools.file.File.create;
-
-import java.io.IOException;
-import java.nio.file.Path;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Objects;
-import tools.config.IProperties;
-import tools.config.PropertiesProvider;
-import tools.file.File;
 
 /**
  * The <code>Book</code> class represents e-books located on websites. Book has basic attributes

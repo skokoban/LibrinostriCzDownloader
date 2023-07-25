@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import main.Book;
 import org.junit.jupiter.api.Test;
 
 class FileTest {
@@ -20,7 +19,7 @@ class FileTest {
       testPath = "test.txt";
       Files.deleteIfExists(Path.of(testPath));
 
-      Path result = File.create(testPath);
+      Path result = File.createFile(testPath);
 
       assertNotNull(result);
 
@@ -32,7 +31,7 @@ class FileTest {
       testPath = "test.txt";
       Files.deleteIfExists(Path.of(testPath));
 
-      Path result = File.create(testPath);
+      Path result = File.createFile(testPath);
 
       assertTrue(Files.exists(result));
       assertTrue(Files.isRegularFile(result));
@@ -45,7 +44,7 @@ class FileTest {
       testPath = "test.txt";
       Files.deleteIfExists(Path.of(testPath));
 
-      Path result = File.create(testPath);
+      Path result = File.createFile(testPath);
 
       assertTrue(Files.isRegularFile(result));
 

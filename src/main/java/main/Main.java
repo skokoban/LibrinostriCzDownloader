@@ -22,18 +22,17 @@ public class Main {
     if (args.length > 0) {
       Printer.printUnknownArgumentError();
     }
-
     while (true) {
       Printer.printMenu();
       int menuOption = handleIntEntered();
-
       switch (menuOption) {
-        case 1 -> Executor.downloadNewFiles();
-        case 2 -> Executor.changeDownloadFolder();
-        case 3 -> Executor.showDownloadFolder();
-        case 4 -> Printer.printHelp();
-        case 5 -> Printer.printAbout();
-        case 6 -> {
+        case 1 -> Executor.checkForUpdate();
+        case 2 -> Executor.downloadNewFiles(); //todo spravit vytvaranie adresarov pre pdf podla nazvu knih.
+        case 3 -> Executor.changeDownloadFolder();
+        case 4 -> Executor.showDownloadFolder();
+        case 5 -> Printer.printHelp();
+        case 6 -> Printer.printAbout();
+        case 7 -> {
           return;
         }
         default -> Printer.printUnknownArgumentError();
@@ -44,7 +43,7 @@ public class Main {
   private static void checkConfig() {
     Path configLocation = LocationProvider.getConfigFileLocation();
     Config config = Config.getInstance(configLocation);
-    if (!config.exists()) {
+    if (Boolean.FALSE.equals(config.exists())) {
       try {
         config.createConfigFile();
       } catch (IOException e) {
