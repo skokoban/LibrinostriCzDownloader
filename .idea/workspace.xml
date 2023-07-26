@@ -8,18 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="code executor again">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="fix error when diectory for files was not created">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/executor/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/file/FileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/file/FileTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,8 +86,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+  }
+}]]></component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="bec5bd48-11a7-4c1f-817d-f3c1b4a4a5f9" />
+        <option name="url" value="https://github.com/skokoban/LibrinostriCzDownloader.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -488,7 +493,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690208843498</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix error when diectory for files was not created">
+      <option name="closed" value="true" />
+      <created>1690302741419</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1690302741419</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -520,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add Filecreator class." />
     <MESSAGE value="Add FileChecker and Downloader classes." />
     <MESSAGE value="Many changes" />
     <MESSAGE value="Add XMLParser one test" />
@@ -545,18 +557,10 @@
     <MESSAGE value="Add FileTest." />
     <MESSAGE value="code executor" />
     <MESSAGE value="code executor again" />
-    <option name="LAST_COMMIT_MESSAGE" value="code executor again" />
+    <MESSAGE value="fix error when diectory for files was not created" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix error when diectory for files was not created" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.jsoup.nodes.Document" memberName="shadowChildrenRef" />
