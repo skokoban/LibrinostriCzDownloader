@@ -1,6 +1,5 @@
 package tools.parser.linksParser;
 
-import exceptions.LinkNotFoundException;
 import java.util.ArrayList;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;

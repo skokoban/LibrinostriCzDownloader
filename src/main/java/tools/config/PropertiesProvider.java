@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.nio.file.Path;
 import java.util.Properties;
 import ui.Printer;
 
@@ -25,8 +24,7 @@ public class PropertiesProvider implements IProperties {
                                                 Constructors
 =================================================================================================*/
   public PropertiesProvider() {
-    Path pathToConfig = LocationProvider.getConfigFileLocation();
-    configFile = new File(pathToConfig.toUri());
+    configFile = LocationProvider.getConfigFile();
   }
 /*=================================================================================================
                                                 Methods

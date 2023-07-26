@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import ui.Printer;
 
 public class Config {
 /*=================================================================================================
@@ -21,22 +22,38 @@ public class Config {
   private final String PROPERTY_DOWNLOAD_FOLDER_KEY = "downloadFolder";
   private final String PROPERTIES_COMMENT = "This is auto-generated properties file." +
       " Do not modify key. Value can be modified.";
-  private Path configFile;
+  private File configFile;
 /*=================================================================================================
                                              Constructor
 =================================================================================================*/
-  private Config(Path config) {
-    this.configFile = config;
+  private Config(File configFile) {
+    this.configFile = configFile;
   }
 /*=================================================================================================
                                              Methods
 =================================================================================================*/
-  public static Config getInstance(Path config) throws NullPointerException {
+  public static Config getInstance(File config) throws NullPointerException {
     if (config == null) throw new NullPointerException(REASON_NULL_EX);
     if (instance == null) {
       instance = new Config(config);
     }
     return instance;
+  }
+
+  /**
+   * Check if config file already exists. If yes then nothing happen.
+   * If not then config file with default values be created.
+   */
+  public void checkConfig() {
+    if (Boolean.FALSE.equals(configFile.exists())) {
+      try {
+        createConfigFile();
+      } catch (IOException e) {
+        Printer.printCannotCreateConfigFile();
+        System.exit(0);
+      }
+      fillDefaultValues(new PropertiesProvider());
+    }
   }
 
   /**
@@ -46,18 +63,20 @@ public class Config {
   public void createConfigFile() throws IOException {
     Path configDirPath = createDirectoryPath();
     Files.createDirectories(configDirPath);
-
-    Files.createFile(configFile);
+    configFile.createNewFile();
   }
 
   /**
-   * Inspect weather config file in user´s home directory exists or not
    * @return true if config file already exists, false if not.
    */
   public Boolean exists() {
-    return Files.exists(configFile);
+    return configFile.exists();
   }
 
+  /**
+   * Create Path object with path to directory where config file be located.
+   * @return the path
+   */
   protected Path createDirectoryPath() {
     String config = configFile.toString();
     int lastSlash = config.lastIndexOf("/");
@@ -65,7 +84,11 @@ public class Config {
     return Path.of(configDir);
   }
 
-  public void fillDefaultValues(IProperties provider) {
+  /**
+   * Fill default values to newly created empty config file.
+   * @param provider interface for working with properties.
+   */
+  protected void fillDefaultValues(IProperties provider) {
     Path downloadLocation = LocationProvider.getDefaultDownloadLocation();
     String downloadLocationString = downloadLocation.toString();
     provider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocationString);

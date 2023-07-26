@@ -70,8 +70,9 @@ public class Executor {
 
       // download PDF files for each book
     for (Book book : books) {
-      ArrayList<String> downloadLinks = book.getDOWNLOAD_LINKS();
-      downloadFiles(downloadLinks);
+      ArrayList<String> downloadLinks = book.getDownloadLinks();
+      String title = book.getTITLE();
+      downloadFiles(title, downloadLinks);
       }
     }
 
@@ -88,10 +89,11 @@ public class Executor {
     iProperties.setProperty("checksum", checksum);
   }
 
-  private static void downloadFiles(ArrayList<String> links) {
+  private static void downloadFiles(String title, ArrayList<String> links) {
     Librinostri librinostri = new Librinostri();
     String downloadFolder = iProperties.getProperty(DOWNLOAD_FOLDER);
-    Path downloadDirectory = Path.of(downloadFolder);
+    String filesFolder = downloadFolder + java.io.File.separator + title;
+    Path downloadDirectory = Path.of(filesFolder);
     try {
       createDirectories(downloadDirectory);
     } catch (IOException e) {
@@ -100,7 +102,7 @@ public class Executor {
     }
     for (String link : links) {
       String name = librinostri.retrieveName(link);
-      String pathToFile = downloadFolder + java.io.File.separator + name;
+      String pathToFile = filesFolder + java.io.File.separator + name;
       Path path = Path.of(pathToFile);
       Printer.printDownloading(name);
       try {

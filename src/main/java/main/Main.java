@@ -1,15 +1,14 @@
 package main;
 
 import executor.Executor;
-import java.io.IOException;
-import java.nio.file.Path;
+import java.io.File;
 import java.util.Scanner;
 import tools.config.Config;
 import tools.config.LocationProvider;
-import tools.config.PropertiesProvider;
 import ui.Printer;
 
 public class Main {
+  //todo pred stahvanim skontrolovat ci uz dany subor existuje. ak nie stiahnut novy. ak ano tak skontrolovat ci je kompletny - porovnat velkost. ak velkost nesedi stiahnut znovu. ak sedi preskocit a ist stahovat dalsi subor.
   /**
    * Check if there was given arguments or not with running application from CLI.
    * If there was no arguments given, prints main menu with possibility of choice task.
@@ -18,7 +17,9 @@ public class Main {
    * @param args array of string that should be checked.
    */
   public static void main(String[] args) {
-    checkConfig();
+    File configFile = LocationProvider.getConfigFile();
+    Config config = Config.getInstance(configFile);
+    config.checkConfig();
     if (args.length > 0) {
       Printer.printUnknownArgumentError();
     }
@@ -27,7 +28,7 @@ public class Main {
       int menuOption = handleIntEntered();
       switch (menuOption) {
         case 1 -> Executor.checkForUpdate();
-        case 2 -> Executor.downloadNewFiles(); //todo spravit vytvaranie adresarov pre pdf podla nazvu knih.
+        case 2 -> Executor.downloadNewFiles();
         case 3 -> Executor.changeDownloadFolder();
         case 4 -> Executor.showDownloadFolder();
         case 5 -> Printer.printHelp();
@@ -37,20 +38,6 @@ public class Main {
         }
         default -> Printer.printUnknownArgumentError();
       }
-    }
-  }
-
-  private static void checkConfig() {
-    Path configLocation = LocationProvider.getConfigFileLocation();
-    Config config = Config.getInstance(configLocation);
-    if (Boolean.FALSE.equals(config.exists())) {
-      try {
-        config.createConfigFile();
-      } catch (IOException e) {
-        Printer.printCannotCreateConfigFile();
-        System.exit(0);
-      }
-      config.fillDefaultValues(new PropertiesProvider());
     }
   }
 

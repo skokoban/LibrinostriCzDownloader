@@ -2,11 +2,8 @@ package tools.parser.linksParser;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import exceptions.LinkNotFoundException;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
-import java.util.ArrayList;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Assertions;

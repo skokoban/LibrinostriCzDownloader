@@ -1,6 +1,5 @@
 package main;
 
-import exceptions.LinkNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.ArrayList;
