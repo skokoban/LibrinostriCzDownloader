@@ -12,7 +12,7 @@ import main.Book;
 import main.Librinostri;
 import org.xml.sax.InputSource;
 import tools.config.IProperties;
-import tools.config.PropertiesProvider;
+import tools.config.PropertiesFactory;
 import tools.file.File;
 import tools.parser.XMLParser.BooksProvider;
 import tools.parser.XMLParser.IBooks;
@@ -22,7 +22,7 @@ public class Executor {
 
   public static final String RSS_URL = "rssURL";
   public static final String DOWNLOAD_FOLDER = "downloadFolder";
-  private static IProperties iProperties = new PropertiesProvider();
+  private static IProperties iProperties;
 
   private static Librinostri librinostri = new Librinostri();
   private static Path rssFilePath = File.getRSSFilePath();
@@ -86,11 +86,13 @@ public class Executor {
           + "Please send this error report to mdorusak@gmail.com");
     }
     String checksum = String.valueOf(mchecksum);
+    iProperties = PropertiesFactory.getPropertiesProvider();
     iProperties.setProperty("checksum", checksum);
   }
 
   private static void downloadFiles(String title, ArrayList<String> links) {
     Librinostri librinostri = new Librinostri();
+    iProperties = PropertiesFactory.getPropertiesProvider();
     String downloadFolder = iProperties.getProperty(DOWNLOAD_FOLDER);
     String filesFolder = downloadFolder + java.io.File.separator + title;
     Path downloadDirectory = Path.of(filesFolder);
@@ -117,6 +119,7 @@ public class Executor {
 
   public static void changeDownloadFolder() {
     String downloadFolder = handleString();
+    iProperties = PropertiesFactory.getPropertiesProvider();
     iProperties.setProperty(DOWNLOAD_FOLDER, downloadFolder);
   }
 
@@ -126,11 +129,13 @@ public class Executor {
   }
 
   public static void showDownloadFolder() {
+    iProperties = PropertiesFactory.getPropertiesProvider();
     String downloadFolder = iProperties.getProperty(DOWNLOAD_FOLDER);
     System.out.println(downloadFolder);
   }
 
   public static void checkForUpdate() {
+    iProperties = PropertiesFactory.getPropertiesProvider();
     String mOldHash = iProperties.getProperty("checksum");
     long oldHash = Long.parseLong(mOldHash);
     long newHash = downloadXML();
@@ -141,6 +146,7 @@ public class Executor {
   }
 
   protected static long downloadXML() {
+    iProperties = PropertiesFactory.getPropertiesProvider();
     String rssURL = iProperties.getProperty(RSS_URL);
     try {
       librinostri.downloadRSS(rssURL, rssFilePath);

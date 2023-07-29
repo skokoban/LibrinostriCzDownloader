@@ -28,9 +28,8 @@ public class Librinostri {
    * @param bookURL URL to information about the book on librinostri.catholica.cz.
    * @return list of Strings with URLs to direct download PDFs.
    * @throws IOException           if website with download links is not reachable
-   * @throws LinkNotFoundException if none of link is found on website
    */
-  public ArrayList<String> findDownloadLinks(String bookURL) throws IOException, LinkNotFoundException {
+  public ArrayList<String> findDownloadLinks(String bookURL) throws IOException {
     IHTMLDocument ihtmlDocument = new HTMLDocumentProvider();
     Document htmlDocument = ihtmlDocument.get(bookURL);
     return DownloadLinksParser.getDownloadLinks(htmlDocument);

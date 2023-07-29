@@ -2,26 +2,22 @@ package tools.config;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import ui.Printer;
 
 public class Config {
-/*=================================================================================================
-                                                          Attributes
-=================================================================================================*/
-  public static final String REASON_NULL_EX = "Instance cannot be created because "
+
+  /*=================================================================================================
+                                             Attributes
+  =================================================================================================*/
+  private static final String REASON_NULL_EXCEPTION = "Instance cannot be created because "
       + "file you provided points to null";
-  public static final String CHECKSUM_KEY = "checksum";
-  public static final String RSS_URL_KEY = "rssURL";
-  public static final String RSS_URL = "https://librinostri.catholica.cz/rss.php";
-  private static final String RSS_TEMP_LOCATION_KEY = "rssTempLocation";
-  private String RSS_TEMP_LOCATION_VALUE = null;
+  private static final String CHECKSUM_KEY = "checksum";
+  private static final String RSS_URL_KEY = "rssURL";
+  private static final String RSS_URL_VALUE = "https://librinostri.catholica.cz/rss.php";
+  private static final String RSS_TEMP_LOCATION_KEY = "rssLocation";
+  private static final String RSS_FILE_NAME_VALUE = "rss.php";
+  public static final String TMPDIR = "java.io.tmpdir";
   private static Config instance;
-  private final String DOWNLOADED_FOLDER_NAME = "librinostri-downlaoder";
-  private final String PROPERTY_DOWNLOAD_FOLDER_KEY = "downloadFolder";
-  private final String PROPERTIES_COMMENT = "This is auto-generated properties file." +
-      " Do not modify key. Value can be modified.";
+  private static final String PROPERTY_DOWNLOAD_FOLDER_KEY = "downloadFolder";
   private File configFile;
 /*=================================================================================================
                                              Constructor
@@ -33,27 +29,9 @@ public class Config {
                                              Methods
 =================================================================================================*/
   public static Config getInstance(File config) throws NullPointerException {
-    if (config == null) throw new NullPointerException(REASON_NULL_EX);
-    if (instance == null) {
-      instance = new Config(config);
-    }
+    if (config == null) throw new NullPointerException(REASON_NULL_EXCEPTION);
+    if (instance == null) instance = new Config(config);
     return instance;
-  }
-
-  /**
-   * Check if config file already exists. If yes then nothing happen.
-   * If not then config file with default values be created.
-   */
-  public void checkConfig() {
-    if (Boolean.FALSE.equals(configFile.exists())) {
-      try {
-        createConfigFile();
-      } catch (IOException e) {
-        Printer.printCannotCreateConfigFile();
-        System.exit(0);
-      }
-      fillDefaultValues(new PropertiesProvider());
-    }
   }
 
   /**
@@ -61,15 +39,12 @@ public class Config {
    * @throws IOException if default file cannot be created.
    */
   public void createConfigFile() throws IOException {
-    Path configDirPath = createDirectoryPath();
-    Files.createDirectories(configDirPath);
+    File configDir = createDirectoryPath();
+    configDir.mkdirs();
     configFile.createNewFile();
   }
 
-  /**
-   * @return true if config file already exists, false if not.
-   */
-  public Boolean exists() {
+  public boolean exists() {
     return configFile.exists();
   }
 
@@ -77,24 +52,25 @@ public class Config {
    * Create Path object with path to directory where config file be located.
    * @return the path
    */
-  protected Path createDirectoryPath() {
+  protected File createDirectoryPath() {
     String config = configFile.toString();
     int lastSlash = config.lastIndexOf("/");
     String configDir = config.substring(0, lastSlash);
-    return Path.of(configDir);
+    return new File(configDir);
   }
 
   /**
    * Fill default values to newly created empty config file.
-   * @param provider interface for working with properties.
+   * @param propertiesProvider interface for working with properties.
+   * @param locationProvider provider for locations on filesystem.
    */
-  protected void fillDefaultValues(IProperties provider) {
-    Path downloadLocation = LocationProvider.getDefaultDownloadLocation();
-    String downloadLocationString = downloadLocation.toString();
-    provider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocationString);
-    provider.setProperty(CHECKSUM_KEY, "");
-    provider.setProperty(RSS_URL_KEY, RSS_URL);
-    String xmlFile = System.getProperty("java.io.tmpdir") + File.separator + "rss.php";
-    provider.setProperty(RSS_TEMP_LOCATION_KEY, xmlFile);
+  public void fillDefaultValues(PropertiesProvider propertiesProvider,
+      LocationProvider locationProvider) {
+    String downloadLocation = locationProvider.defaultDownloadLocation();
+    propertiesProvider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocation);
+    propertiesProvider.setProperty(CHECKSUM_KEY, "");
+    propertiesProvider.setProperty(RSS_URL_KEY, RSS_URL_VALUE);
+    String rssFileLocation = System.getProperty(TMPDIR) + File.separator + RSS_FILE_NAME_VALUE;
+    propertiesProvider.setProperty(RSS_TEMP_LOCATION_KEY, rssFileLocation);
   }
 }

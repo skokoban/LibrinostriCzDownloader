@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.zip.CRC32;
 import tools.config.IProperties;
+import tools.config.LocationProvider;
 import tools.config.PropertiesProvider;
 
 public class File {
@@ -32,13 +33,17 @@ public class File {
   }
 
   public static java.io.File getRSSFile() {
-    IProperties properties= new PropertiesProvider();
+    LocationProvider locationProvider = new LocationProvider();
+    java.io.File config = locationProvider.configFile();
+    IProperties properties= new PropertiesProvider(config);
     String rssFile = properties.getProperty(rssTempLocation);
     return new java.io.File(rssFile);
   }
 
   public static Path getRSSFilePath() {
-    IProperties properties= new PropertiesProvider();
+    LocationProvider locationProvider = new LocationProvider();
+    java.io.File config = locationProvider.configFile();
+    IProperties properties= new PropertiesProvider(config);
     String rssFile = properties.getProperty(rssTempLocation);
     return Path.of(rssFile);
   }

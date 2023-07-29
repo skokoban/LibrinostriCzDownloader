@@ -23,8 +23,8 @@ public class PropertiesProvider implements IProperties {
 /*=================================================================================================
                                                 Constructors
 =================================================================================================*/
-  public PropertiesProvider() {
-    configFile = LocationProvider.getConfigFile();
+  public PropertiesProvider(File configFile) {
+    this.configFile = configFile;
   }
 /*=================================================================================================
                                                 Methods

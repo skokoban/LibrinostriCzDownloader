@@ -1,13 +1,12 @@
 package tools.config;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertSame;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,60 +14,88 @@ import org.junit.jupiter.api.Test;
 public class ConfigTest {
 
   public static final String TMP_DIR_PATH = System.getProperty("java.io.tmpdir");
-  private static Path testFilePath;
-  private static Path testFileDir;
+  private static File testFile;
+  private static File testFileDir;
 
   @BeforeEach
-  public void createTestPath() {
-    testFileDir = Path.of(TMP_DIR_PATH + File.separator + "testDir");
-    testFilePath = Path.of(testFileDir + File.separator + "testFile");
+  public void createTestFile() {
+    testFileDir = new File(TMP_DIR_PATH + File.separator + "testDir");
+    testFile = new File(testFileDir + File.separator + "testFile");
   }
 
   @AfterAll
-  public static void clean() throws IOException {
-    Files.delete(testFilePath);
-    Files.delete(testFileDir);
+  public static void clean() {
+    testFile.delete();
+    testFileDir.delete();
   }
   @Test
-  public void passWhenInstancesIsNotNull() {
+  void passWhenInstancesIsNotNull() {
     Config instance1;
     Config instance2;
 
-    instance1 = Config.getInstance(testFilePath);
-    instance2 = Config.getInstance(testFilePath);
+    instance1 = Config.getInstance(testFile);
+    instance2 = Config.getInstance(testFile);
 
     assertNotNull(instance1);
     assertNotNull(instance2);
   }
 
   @Test
-  public void passWhenInstanceIsSame() {
+  void passWhenInstanceIsSame() {
     Config instance1;
     Config instance2;
 
-    instance1 = Config.getInstance(testFilePath);
-    instance2 = Config.getInstance(testFilePath);
+    instance1 = Config.getInstance(testFile);
+    instance2 = Config.getInstance(testFile);
 
     assertSame(instance1, instance2);
   }
 
   @Test
-  public void PassWhenConfigDirectorySuccesfullyCreated() throws IOException {
-    Config instance = Config.getInstance(testFilePath);
-    instance.createConfigFile();
+  void PassWhenConfigDirectorySuccesfullyCreated() {
+    Config instance = Config.getInstance(testFile);
+    instance.exists();
 
-    boolean result = Files.isDirectory(testFileDir);
+    boolean result = testFileDir.isDirectory();
 
     assertTrue(result);
   }
 
   @Test
-  public void PassWhenConfigFileSuccesfullyCreated() throws IOException {
-    Config instance = Config.getInstance(testFilePath);
-    instance.createConfigFile();
+  void PassWhenConfigFileSuccesfullyCreated() {
+    Config instance = Config.getInstance(testFile);
+    instance.exists();
 
-    boolean result = Files.isRegularFile(testFilePath);
+    boolean result = testFile.isFile();
 
     assertTrue(result);
+  }
+
+  @Test
+  void PassWhenPropertyDownloadFolderInsertedSuccesfully() throws IOException {
+    testFileDir.mkdirs();
+    testFile.createNewFile();
+    Config instance = Config.getInstance(testFile);
+    PropertiesProvider mockPropertiesProvider = new PropertiesProvider(testFile);
+    LocationProvider locationProvider = new LocationProvider();
+    instance.fillDefaultValues(mockPropertiesProvider, locationProvider);
+
+    String result = mockPropertiesProvider.getProperty("downloadFolder");
+
+    assertEquals("/home/marceld/librinostri-downloader", result);
+  }
+
+  @Test
+  void PassWhenPropertyRSSLocationInsertedSuccesfully() throws IOException {
+    testFileDir.mkdirs();
+    testFile.createNewFile();
+    Config instance = Config.getInstance(testFile);
+    PropertiesProvider mockPropertiesProvider = new PropertiesProvider(testFile);
+    LocationProvider locationProvider = new LocationProvider();
+    instance.fillDefaultValues(mockPropertiesProvider, locationProvider);
+
+    String result = mockPropertiesProvider.getProperty("rssLocation");
+
+    assertEquals("/tmp/rss.php", result);
   }
 }

@@ -21,9 +21,8 @@ public class DownloadLinksParser {
    *
    * @param htmlDocument HTML Document of website where download links are provided
    * @return ArrayList of URLs point to PDF files attached to book.
-   * @throws LinkNotFoundException if any of download links was not found in Document.
    */
-  public static ArrayList<String> getDownloadLinks(Document htmlDocument) throws LinkNotFoundException {
+  public static ArrayList<String> getDownloadLinks(Document htmlDocument){
     Elements elements = htmlDocument.select(CSS_QUERY_DOWNLOAD);
     int linksCount = elements.size();
     ArrayList<String> links = new ArrayList<>(linksCount);
