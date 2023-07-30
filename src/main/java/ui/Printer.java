@@ -96,4 +96,8 @@ public class Printer {
   public static void printCannotFindDownloadLinksForBook() {
     System.out.print(Strings.CANNOT_FIND_DOWNLOAD_LINKS.getText());
   }
+
+  public static void printFileAlreadyDownloaded() {
+    System.out.println(Strings.FILE_ALREADY_EISTS.getText());
+  }
 }

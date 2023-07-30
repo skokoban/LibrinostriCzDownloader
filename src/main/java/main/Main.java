@@ -11,7 +11,6 @@ import tools.config.PropertiesProvider;
 import ui.Printer;
 
 public class Main {
-  //todo pred stahvanim skontrolovat ci uz dany subor existuje. ak nie stiahnut novy. ak ano tak skontrolovat ci je kompletny - porovnat velkost. ak velkost nesedi stiahnut znovu. ak sedi preskocit a ist stahovat dalsi subor.
   /**
    * Check if there was given arguments or not with running application from CLI.
    * If there was no arguments given, prints main menu with possibility of choice task.

@@ -1,6 +1,7 @@
 package executor;
 
 import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -109,6 +110,9 @@ public class Executor {
       Printer.printDownloading(name);
       try {
         librinostri.downloadFile(link, path);
+      } catch (FileAlreadyExistsException e) {
+        Printer.printFileAlreadyDownloaded();
+        continue;
       } catch (IOException e) {
         Printer.printDownloadingError();
         continue;
