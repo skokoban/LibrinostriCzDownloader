@@ -8,19 +8,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="modify Config class.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesFactory.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="modify test in ConfigTest.">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/executor/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/LocationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/LocationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/linksParser/DownloadLinksParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/linksParser/DownloadLinksParser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,6 +108,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": -1
+}]]></component>
   <component name="ProjectId" id="2FidCxvRLztJxK2OYL7tSImwPjP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -175,7 +172,20 @@
       <recent name="tools" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigTest.PassWhenPropertyRSSLocationInsertedSuccesfully">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="LibrinostriCzDownloader.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="main.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ConfigTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
@@ -202,22 +212,6 @@
       <option name="PACKAGE_NAME" value="tools.config" />
       <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
       <option name="METHOD_NAME" value="PassWhenConfigDirectorySuccesfullyCreated" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigTest.PassWhenConfigFileSuccesfullyCreated" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tools.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tools.config" />
-      <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
-      <option name="METHOD_NAME" value="PassWhenConfigFileSuccesfullyCreated" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -256,19 +250,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.ConfigTest.PassWhenPropertyDownloadFolderInsertedSuccesfully" />
       <item itemvalue="JUnit.ConfigTest.PassWhenPropertyRSSLocationInsertedSuccesfully" />
       <item itemvalue="JUnit.ConfigTest" />
       <item itemvalue="JUnit.ConfigTest.PassWhenConfigDirectorySuccesfullyCreated" />
-      <item itemvalue="JUnit.ConfigTest.PassWhenConfigFileSuccesfullyCreated" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ConfigTest.PassWhenPropertyRSSLocationInsertedSuccesfully" />
         <item itemvalue="JUnit.ConfigTest.PassWhenPropertyDownloadFolderInsertedSuccesfully" />
         <item itemvalue="JUnit.ConfigTest.PassWhenConfigDirectorySuccesfullyCreated" />
         <item itemvalue="JUnit.ConfigTest" />
-        <item itemvalue="JUnit.ConfigTest.PassWhenConfigFileSuccesfullyCreated" />
       </list>
     </recent_temporary>
   </component>
@@ -527,7 +521,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690388998852</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="add test to ConfigTest.">
+      <option name="closed" value="true" />
+      <created>1690628041340</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1690628041340</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -559,8 +561,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add XMLParser one test" />
-    <MESSAGE value="Complet xmlparser." />
     <MESSAGE value="Finish FileCreator class and appropriate tests." />
     <MESSAGE value="FileChecker and FileCreator merged to one class PDFFile." />
     <MESSAGE value="modified whole project 12.12.2022." />
@@ -584,7 +584,9 @@
     <MESSAGE value="fix error when diectory for files was not created" />
     <MESSAGE value="fix non sreating folders for files" />
     <MESSAGE value="modify Config class." />
-    <option name="LAST_COMMIT_MESSAGE" value="modify Config class." />
+    <MESSAGE value="add test to ConfigTest." />
+    <MESSAGE value="modify test in ConfigTest." />
+    <option name="LAST_COMMIT_MESSAGE" value="modify test in ConfigTest." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

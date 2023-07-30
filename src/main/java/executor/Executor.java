@@ -137,7 +137,13 @@ public class Executor {
   public static void checkForUpdate() {
     iProperties = PropertiesFactory.getPropertiesProvider();
     String mOldHash = iProperties.getProperty("checksum");
-    long oldHash = Long.parseLong(mOldHash);
+    long oldHash = 0;
+    try {
+      oldHash = Long.parseLong(mOldHash);
+    } catch (NumberFormatException e) {
+      Printer.printText("There are new files to download on website.");
+      return;
+    }
     long newHash = downloadXML();
     if (oldHash == newHash) {
       Printer.printText("Nothing new on website.");

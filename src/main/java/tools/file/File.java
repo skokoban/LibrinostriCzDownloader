@@ -10,7 +10,7 @@ import tools.config.PropertiesProvider;
 
 public class File {
 
-  private static final String rssTempLocation = "rssTempLocation";
+  private static final String rssTempLocation = "rssLocation";
 /*=================================================================================================
                                                   Methods
 =================================================================================================*/

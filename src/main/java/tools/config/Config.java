@@ -68,7 +68,7 @@ public class Config {
       LocationProvider locationProvider) {
     String downloadLocation = locationProvider.defaultDownloadLocation();
     propertiesProvider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocation);
-    propertiesProvider.setProperty(CHECKSUM_KEY, "");
+    propertiesProvider.setProperty(CHECKSUM_KEY, " ");
     propertiesProvider.setProperty(RSS_URL_KEY, RSS_URL_VALUE);
     String rssFileLocation = System.getProperty(TMPDIR) + File.separator + RSS_FILE_NAME_VALUE;
     propertiesProvider.setProperty(RSS_TEMP_LOCATION_KEY, rssFileLocation);
