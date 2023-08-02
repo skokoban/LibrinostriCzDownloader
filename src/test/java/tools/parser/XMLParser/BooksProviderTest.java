@@ -17,7 +17,7 @@ class BooksProviderTest {
   @Test
   void passWhenBooksAreSuccesfullyAdded() throws XPathExpressionException {
     BooksProvider xmlParser = new BooksProvider();
-    LinkedHashMap<String, String> books = xmlParser.getBooks(
+    LinkedHashMap<String, String> books = xmlParser.parseBooks(
         new InputSource("src/test/resources/testRSS.php"));
 
     boolean hasNull = false;
@@ -34,7 +34,7 @@ class BooksProviderTest {
   @Test
   void passWhenTitleIsSuccesfullyAdded() throws XPathExpressionException {
     BooksProvider xmlParser = new BooksProvider();
-    LinkedHashMap<String, String> books = xmlParser.getBooks(
+    LinkedHashMap<String, String> books = xmlParser.parseBooks(
         new InputSource("src/test/resources/testRSS.php"));
 
     boolean hasTitle = books.containsKey("Test title 2");
@@ -45,7 +45,7 @@ class BooksProviderTest {
   @Test
   void passWhenURLIsSuccesfullyAdded() throws XPathExpressionException {
     BooksProvider xmlParser = new BooksProvider();
-    LinkedHashMap<String, String> books = xmlParser.getBooks(
+    LinkedHashMap<String, String> books = xmlParser.parseBooks(
         new InputSource("src/test/resources/testRSS.php"));
     String url = books.get("Test title 2");
 

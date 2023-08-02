@@ -8,13 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="modify test in ConfigTest.">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add excluding existed files.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/executor/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/IBooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/IBooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/BooksProviderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/BooksProviderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,10 +110,10 @@
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": -1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: -1
+}</component>
   <component name="ProjectId" id="2FidCxvRLztJxK2OYL7tSImwPjP" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -252,10 +253,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.ConfigTest.PassWhenPropertyDownloadFolderInsertedSuccesfully" />
-      <item itemvalue="JUnit.ConfigTest.PassWhenPropertyRSSLocationInsertedSuccesfully" />
       <item itemvalue="JUnit.ConfigTest" />
       <item itemvalue="JUnit.ConfigTest.PassWhenConfigDirectorySuccesfullyCreated" />
+      <item itemvalue="JUnit.ConfigTest.PassWhenPropertyDownloadFolderInsertedSuccesfully" />
+      <item itemvalue="JUnit.ConfigTest.PassWhenPropertyRSSLocationInsertedSuccesfully" />
     </list>
     <recent_temporary>
       <list>
@@ -538,7 +539,15 @@
       <option name="project" value="LOCAL" />
       <updated>1690727795785</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="add excluding existed files.">
+      <option name="closed" value="true" />
+      <created>1690734157213</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1690734157213</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -570,7 +579,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Finish FileCreator class and appropriate tests." />
     <MESSAGE value="FileChecker and FileCreator merged to one class PDFFile." />
     <MESSAGE value="modified whole project 12.12.2022." />
     <MESSAGE value="modified whole project 31.12.2022." />
@@ -595,7 +603,8 @@
     <MESSAGE value="modify Config class." />
     <MESSAGE value="add test to ConfigTest." />
     <MESSAGE value="modify test in ConfigTest." />
-    <option name="LAST_COMMIT_MESSAGE" value="modify test in ConfigTest." />
+    <MESSAGE value="add excluding existed files." />
+    <option name="LAST_COMMIT_MESSAGE" value="add excluding existed files." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

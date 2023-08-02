@@ -22,12 +22,10 @@ public class Book {
    * Construct <code>Book</code> with given attributes.
    * @param title title of book
    * @param link link to website about infomation of book
-   * @param downloadLinks list of links from where each PDF is available to download.
    */
-  public Book(String title, String link, ArrayList<String> downloadLinks) {
+  public Book(String title, String link) {
     TITLE = StringManipulator.normalizeBookName(title);
     LINK  = link;
-    this.downloadLinks = downloadLinks;
   }
 /*=================================================================================================
                                                   Setters

@@ -34,9 +34,9 @@ public enum Strings {
             Librinosti.cz PDF File downloader v.0.22.12.18
             created by Marcel Dorušák."""),
 
-  OK(" OK"),
+  OK(". OK"),
 
-  DOWNLOADING("downloading: "),
+  DOWNLOADING("trying to download "),
 
   NEW_BOOKS_FOLDER("Please type path for downloaded books: "),
 
@@ -66,7 +66,7 @@ public enum Strings {
   XML_PARSE_ERROR_TEXT("Error occured when parsing XML file with new books information."
       + "Unexpected XML file structure."),
   CANNOT_FIND_DOWNLOAD_LINKS("Cannot find download links for book "),
-  FILE_ALREADY_EISTS("already exists. Skipping...");
+  FILE_ALREADY_EISTS(". already exists. Skipping...");
 
   // field
   private final String text;

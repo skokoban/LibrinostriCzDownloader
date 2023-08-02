@@ -5,12 +5,12 @@ import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.Map.Entry;
+import java.util.List;
 import java.util.Scanner;
 import javax.xml.xpath.XPathExpressionException;
 import main.Book;
 import main.Librinostri;
+import main.Main;
 import org.xml.sax.InputSource;
 import tools.config.IProperties;
 import tools.config.PropertiesFactory;
@@ -32,50 +32,52 @@ public class Executor {
                                               Methods
 =================================================================================================*/
   public static void downloadNewFiles() {
-      // download xml file wih new books info from rss feed
     downloadXML();
     saveChecksum();
-      // find links to the newest books
-    LinkedHashMap<String, String> rawBooks = new LinkedHashMap<>();
-    String rssFile = rssFilePath.toString();
-    InputSource isXML = new InputSource(rssFile);
-    IBooks iBooks = new BooksProvider();
-
-    try {
-      rawBooks = iBooks.getBooks(isXML);
-    } catch (XPathExpressionException e) {
-      Printer.printXMLParsingError();
-    }
-
-      // delete xml file not necessarry anymore
+    List<Book> books = findLinks();
+    books = findDownloadLinks(books);
     try {
       Files.deleteIfExists(rssFilePath);
     } catch (IOException ignore) {}
+    downloadPDFS(books);
+  }
 
-    // create Book objects with download links
-    ArrayList<Book> books = new ArrayList<>();
-    for (Entry<String, String> entry : rawBooks.entrySet()) {
-      String link = entry.getValue();
-      String title = entry.getKey();
-      ArrayList<String> downloadLinks;
-      try {
-         downloadLinks = librinostri.findDownloadLinks(link);
-      } catch (IOException e) {
-        Printer.printCannotFindDownloadLinksForBook();
-        System.out.println(entry.getKey());
-        continue;
-      }
-      Book book = new Book(title, link, downloadLinks);
-      books.add(book);
-    }
-
-      // download PDF files for each book
+  private static void downloadPDFS(List<Book> books) {
     for (Book book : books) {
       ArrayList<String> downloadLinks = book.getDownloadLinks();
       String title = book.getTITLE();
       downloadFiles(title, downloadLinks);
       }
+  }
+
+  private static List<Book> findLinks() {
+    List<Book> books = new ArrayList<>();
+    String rssFile = rssFilePath.toString();
+    InputSource isXML = new InputSource(rssFile);
+    IBooks iBooks = new BooksProvider();
+    try {
+      books = iBooks.parseBooks(isXML);
+    } catch (XPathExpressionException e) {
+      Printer.printXMLParsingError();
     }
+    return books;
+  }
+
+  private static List<Book> findDownloadLinks(List<Book> books) {
+    for (Book book : books) {
+      String link = book.getLINK();
+      ArrayList<String> downloadLinks;
+      try {
+         downloadLinks = librinostri.findDownloadLinks(link);
+      } catch (IOException e) {
+        Printer.printCannotFindDownloadLinksForBook();
+        System.out.println(book.getTITLE());
+        continue;
+      }
+      book.setDownloadLinks(downloadLinks);
+    }
+    return books;
+  }
 
   private static void saveChecksum() {
     long mchecksum = 0;
@@ -100,7 +102,7 @@ public class Executor {
     try {
       createDirectories(downloadDirectory);
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println(e);
       Printer.printDownloadingError();
     }
     for (String link : links) {
@@ -141,7 +143,7 @@ public class Executor {
   public static void checkForUpdate() {
     iProperties = PropertiesFactory.getPropertiesProvider();
     String mOldHash = iProperties.getProperty("checksum");
-    long oldHash = 0;
+    long oldHash;
     try {
       oldHash = Long.parseLong(mOldHash);
     } catch (NumberFormatException e) {
@@ -159,15 +161,18 @@ public class Executor {
     iProperties = PropertiesFactory.getPropertiesProvider();
     String rssURL = iProperties.getProperty(RSS_URL);
     try {
+      Files.deleteIfExists(rssFilePath);
       librinostri.downloadRSS(rssURL, rssFilePath);
     } catch (IOException e) {
       System.out.println(e);
       Printer.printDownloadingError();
+      Main.main(new String[]{});
     }
     long checksum = 0;
     try {
       checksum = File.checksum(rssFilePath);
     } catch (IOException e) {
+      System.out.println(e);
       Printer.printDownloadingError();
     }
     return checksum;
