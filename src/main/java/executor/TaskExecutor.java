@@ -58,7 +58,7 @@ public class TaskExecutor {
             case ARG_SHOW_D_DEST-> functionSelector(3);
             case ARG_HELP       -> Printer.printHelp();
             case ARG_ABOUT      -> Printer.printAbout();
-            default             -> Printer.printUnknownArgumentError();
+            default             -> Printer.printUnknownMenuOptionError();
         }
     }
 

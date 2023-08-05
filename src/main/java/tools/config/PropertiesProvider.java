@@ -12,7 +12,7 @@ import ui.Printer;
  * Provides manipulation with key-value pairs. These pairs are stored in text file. Gives ability
  * to set pairs and to search for value for given key.
  */
-public class PropertiesProvider implements IProperties {
+public class PropertiesProvider {
 /*=================================================================================================
                                                 Attributess
 =================================================================================================*/
@@ -35,7 +35,6 @@ public class PropertiesProvider implements IProperties {
    * @param key key for which value should be returned
    * @return String with value apropriate for given key, if there is no such key returns null.
    */
-  @Override
   public String getProperty(String key) {
     Properties properties = new Properties();
     try (FileInputStream fileInputStream = getFileInputStream(configFile)) {
@@ -62,7 +61,6 @@ public class PropertiesProvider implements IProperties {
    * @param key key
    * @param value value for the key.
    */
-  @Override
   public void setProperty(String key, String value) {
     Properties properties = new Properties();
     try (FileInputStream inputStream = getFileInputStream(configFile)) {

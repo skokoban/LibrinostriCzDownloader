@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.zip.CRC32;
-import tools.config.IProperties;
 import tools.config.LocationProvider;
 import tools.config.PropertiesProvider;
 
@@ -22,11 +21,15 @@ public class File {
   /**
    * Count checksum for given file. Returns 0 if file is empty.
    * @param path the path fle for which checksum be counted
-   * @return value of CRC32 checksum
-   * @throws IOException if checksum cannot be counted.
+   * @return value of CRC32 checksum. Returns -1 if checksum cannot be counted.
    */
-  public static long checksum(Path path) throws IOException {
-    byte[] fileBytes = Files.readAllBytes(path);
+  public static long checksum(Path path) {
+    byte[] fileBytes;
+    try {
+      fileBytes = Files.readAllBytes(path);
+    } catch (IOException e) {
+      return -1;
+    }
     CRC32 rssFileCrc32 = new CRC32();
     rssFileCrc32.update(fileBytes);
     return rssFileCrc32.getValue();

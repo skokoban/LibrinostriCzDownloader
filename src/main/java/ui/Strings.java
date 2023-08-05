@@ -7,7 +7,7 @@ public enum Strings {
 ======================================================================================================================*/
 
   // strings for printing
-  UNKNOWN_ARGS_ERROR("Unknown arguments. Use ´help´ argument to see available commands."),
+  UNKNOWN_MENU_OPTION_ERROR("Unknown menu option."),
 
   CANNOT_CREATE_CONFIG_FILE("Missing config file. New config file cannot be created. Try to remove "
       + "writing protection. Exiting..."),
@@ -66,7 +66,8 @@ public enum Strings {
   XML_PARSE_ERROR_TEXT("Error occured when parsing XML file with new books information."
       + "Unexpected XML file structure."),
   CANNOT_FIND_DOWNLOAD_LINKS("Cannot find download links for book "),
-  FILE_ALREADY_EISTS(". already exists. Skipping...");
+  FILE_ALREADY_EISTS(". already exists. Skipping..."), UNKNOWN_ARGUMENT_ERROR("Unknown"
+      + "arguemnt.");
 
   // field
   private final String text;

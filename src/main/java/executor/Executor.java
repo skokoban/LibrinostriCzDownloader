@@ -12,7 +12,6 @@ import main.Book;
 import main.Librinostri;
 import main.Main;
 import org.xml.sax.InputSource;
-import tools.config.IProperties;
 import tools.config.PropertiesFactory;
 import tools.file.File;
 import tools.parser.XMLParser.BooksProvider;
@@ -140,7 +139,7 @@ public class Executor {
     System.out.println(downloadFolder);
   }
 
-  public static void checkForUpdate() {
+  public static void update() {
     iProperties = PropertiesFactory.getPropertiesProvider();
     String mOldHash = iProperties.getProperty("checksum");
     long oldHash;

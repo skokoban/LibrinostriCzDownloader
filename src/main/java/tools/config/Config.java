@@ -64,9 +64,8 @@ public class Config {
    * @param propertiesProvider interface for working with properties.
    * @param locationProvider provider for locations on filesystem.
    */
-  public void fillDefaultValues(PropertiesProvider propertiesProvider,
-      LocationProvider locationProvider) {
-    String downloadLocation = locationProvider.defaultDownloadLocation();
+  public void fillDefaultValues(PropertiesProvider propertiesProvider) {
+    String downloadLocation = LocationProvider.defaultDownloadLocation();
     propertiesProvider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocation);
     propertiesProvider.setProperty(CHECKSUM_KEY, " ");
     propertiesProvider.setProperty(RSS_URL_KEY, RSS_URL_VALUE);

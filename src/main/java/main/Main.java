@@ -1,9 +1,7 @@
 package main;
 
-import executor.Executor;
 import java.io.File;
 import java.io.IOException;
-import java.util.Scanner;
 import tools.config.Config;
 import tools.config.LocationProvider;
 import tools.config.PropertiesFactory;
@@ -22,9 +20,12 @@ public class Main {
     if (args.length > 0) {
       Printer.printUnknownArgumentError();
     }
+    checkConfig();
+    Menu.process();
+  }
 
-    LocationProvider locationProvider = new LocationProvider();
-    File configFile = locationProvider.configFile();
+  private static void checkConfig() {
+    File configFile = LocationProvider.configFile();
     Config config = Config.getInstance(configFile);
     if (Boolean.FALSE.equals(config.exists())) {
       try {
@@ -34,29 +35,7 @@ public class Main {
         System.exit(0);
       }
       PropertiesProvider propertiesProvider = PropertiesFactory.getPropertiesProvider();
-      config.fillDefaultValues(propertiesProvider, locationProvider);
+      config.fillDefaultValues(propertiesProvider);
     }
-
-    while (true) {
-      Printer.printMenu();
-      int menuOption = handleIntEntered();
-      switch (menuOption) {
-        case 1 -> Executor.checkForUpdate();
-        case 2 -> Executor.downloadNewFiles();
-        case 3 -> Executor.changeDownloadFolder();
-        case 4 -> Executor.showDownloadFolder();
-        case 5 -> Printer.printHelp();
-        case 6 -> Printer.printAbout();
-        case 7 -> {
-          return;
-        }
-        default -> Printer.printUnknownArgumentError();
-      }
-    }
-  }
-
-  public static int handleIntEntered() {
-    Scanner scanner = new Scanner(System.in);
-    return scanner.nextInt();
   }
 }

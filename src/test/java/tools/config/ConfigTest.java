@@ -77,8 +77,7 @@ public class ConfigTest {
     testFile.createNewFile();
     Config instance = Config.getInstance(testFile);
     PropertiesProvider mockPropertiesProvider = new PropertiesProvider(testFile);
-    LocationProvider locationProvider = new LocationProvider();
-    instance.fillDefaultValues(mockPropertiesProvider, locationProvider);
+    instance.fillDefaultValues(mockPropertiesProvider);
 
     String result = mockPropertiesProvider.getProperty("downloadFolder");
 
@@ -91,8 +90,7 @@ public class ConfigTest {
     testFile.createNewFile();
     Config instance = Config.getInstance(testFile);
     PropertiesProvider mockPropertiesProvider = new PropertiesProvider(testFile);
-    LocationProvider locationProvider = new LocationProvider();
-    instance.fillDefaultValues(mockPropertiesProvider, locationProvider);
+    instance.fillDefaultValues(mockPropertiesProvider);
 
     String result = mockPropertiesProvider.getProperty("rssLocation");
 

@@ -1,20 +1,32 @@
 package tools.downloader;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.file.FileAlreadyExistsException;
-import java.nio.file.Files;
 import java.nio.file.Path;
+import tools.Downloader;
+import tools.config.ConfigProvider;
 
-public class DownloaderProvider implements IDownloader {
+public class DownloaderProvider {
+  private Downloader downloader;
+/*=================================================================================================
+                                                  Constructors
+=================================================================================================*/
+  public DownloaderProvider() {}
+  public DownloaderProvider(Downloader downloader) {
+    this.downloader = downloader;
+  }
 /*=================================================================================================
                                                   Methods
 =================================================================================================*/
-  @Override
-  public long download(String link, Path path) throws FileAlreadyExistsException, IOException {
-    URL url = new URL(link);
-    InputStream inputStream = url.openStream();
-    return Files.copy(inputStream, path);
+  public Path downloadXML() {
+    ConfigProvider configProvider = new ConfigProvider();
+    String link = configProvider.getRSSURL();
+    String mPath = configProvider.getRSSLocation();
+    Path path = Path.of(mPath);
+    downloader.download(link, path);
+    return path;
   }
+
+ /* public File downloadPDFs() {
+    File file = downloader.download();
+    return new File("");
+  }*/
 }

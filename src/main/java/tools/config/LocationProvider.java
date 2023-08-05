@@ -3,19 +3,16 @@ package tools.config;
 import java.io.File;
 
 /**
- * This class provide methods for gaining necessarry locations in filesystem.
+ * This class provide methods for retrieving necessarry locations in filesystem.
  */
 public class LocationProvider {
 /*=================================================================================================
                                                 Attributes
 =================================================================================================*/
-  private final String PROPERTY_USER_HOME = "user.home";
-  private final String CONFIG_FOLDER_NAME = ".config";
-  private final String LIBRI_NOSTI_FOLDER_NAME = "librinostri-downloader";
-  private final String CONFIGFILE_NAME = "librinostri-downloader.properties";
-/*=================================================================================================
-                                                Constructors
-=================================================================================================*/
+  private static final String LIBRI_NOSTI_FOLDER_NAME = "librinostri-downloader";
+  private static final String PROPERTY_USER_HOME = "user.home";
+  private static final String CONFIG_FOLDER_NAME = ".config";
+  private static final String CONFIGFILE_NAME = "librinostri-downloader.properties";
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
@@ -24,7 +21,7 @@ public class LocationProvider {
    * in folder named librinostri-downloader.
    * @return the file.
    */
-  public File configFile() {
+  public static File configFile() {
     String configFileString = System.getProperty(PROPERTY_USER_HOME) +
                               File.separator +
                               CONFIG_FOLDER_NAME +
@@ -40,7 +37,7 @@ public class LocationProvider {
    * directory
    * @return path to default download location.
    */
-  public String defaultDownloadLocation() {
+  public static String defaultDownloadLocation() {
     return System.getProperty(PROPERTY_USER_HOME) +
            File.separator +
            LIBRI_NOSTI_FOLDER_NAME;

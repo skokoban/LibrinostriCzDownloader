@@ -20,8 +20,8 @@ public class Printer {
     System.out.println(Strings.HELP.getText());
   }
 
-  public static void printUnknownArgumentError() {
-    System.out.println(Strings.UNKNOWN_ARGS_ERROR.getText());
+  public static void printUnknownMenuOptionError() {
+    System.out.println(Strings.UNKNOWN_MENU_OPTION_ERROR.getText());
   }
 
   public static void printInvalidCountOfArguments() {
@@ -99,5 +99,9 @@ public class Printer {
 
   public static void printFileAlreadyDownloaded() {
     System.out.println(Strings.FILE_ALREADY_EISTS.getText());
+  }
+
+  public static void printUnknownArgumentError() {
+    System.out.println(Strings.UNKNOWN_ARGUMENT_ERROR.getText());
   }
 }
