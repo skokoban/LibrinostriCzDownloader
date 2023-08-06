@@ -24,7 +24,7 @@ private Menu() {
       Printer.printMenu();
       int menuOption = handleIntEntered();
       switch (menuOption) {
-        case 1 -> update();
+        case 1 -> update(); //
         case 2 -> downloadNewFiles();
         //case 3 -> Executor.changeDownloadFolder();
         //case 4 -> Executor.showDownloadFolder();
@@ -42,8 +42,7 @@ private Menu() {
   }
 
   private static void update() {
-    Updater updater = new Updater();
-    if (updater.update()) Printer.printUpdaterNewFiles();
+    if (Updater.update()) Printer.printUpdaterNewFiles();
     else Printer.printNoNewFiles();
   }
 

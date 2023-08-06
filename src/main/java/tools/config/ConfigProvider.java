@@ -23,7 +23,7 @@ public class ConfigProvider {
 =================================================================================================*/
   public long getChecksum() {
     String checksum = propertiesProvider.getProperty(CHECKSUM_KEY);
-    return Long.getLong(checksum);
+    return Long.parseLong(checksum);
   }
   public String getDownloadFolder() {
     return propertiesProvider.getProperty(DOWNLOAD_FOLDER_KEY);
@@ -33,5 +33,8 @@ public class ConfigProvider {
   }
   public String getRSSURL() {
     return propertiesProvider.getProperty(RSS_URL_KEY);
+  }
+  public void setChecksum(String checksum) {
+    propertiesProvider.setProperty(CHECKSUM_KEY, checksum);
   }
 }

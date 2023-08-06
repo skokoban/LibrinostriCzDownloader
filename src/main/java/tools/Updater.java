@@ -1,9 +1,8 @@
 package tools;
 
-import java.nio.file.Path;
 import java.util.Objects;
 import tools.config.ConfigProvider;
-import tools.downloader.DownloaderProvider;
+import tools.file.XMLFile;
 
 public class Updater {
 /*=================================================================================================
@@ -18,16 +17,21 @@ public class Updater {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-  /*public boolean update() {
+  public static boolean update() {
       // retrieve crc checksum from properties file as string
     ConfigProvider config = new ConfigProvider();
     long oldChecksum = config.getChecksum();
       // download actual xml file
-    DownloaderProvider downloader= new DownloaderProvider();
-    Path rssFile = downloader.downloadXML();
-      // retrieve checksum for actual xml file
-    long newChecksum = tools.file.File.checksum(rssFile);
+    String url = config.getRSSURL();
+    String path = config.getRSSLocation();
+    XMLFile xml = new XMLFile(url, path);
+    xml.download();
+    long newChecksum = xml.countChecksum();
       // check if checksums are equals or not
-    return !Objects.equals(oldChecksum, newChecksum);
-  }*/
+    if (!Objects.equals(oldChecksum, newChecksum)) {
+      xml.saveChecksum(config);
+      return true;
+    }
+    return false;
+  }
 }

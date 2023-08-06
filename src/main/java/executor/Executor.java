@@ -1,21 +1,12 @@
 package executor;
 
 import java.io.IOException;
-import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
-import javax.xml.xpath.XPathExpressionException;
 import main.Book;
 import main.Librinostri;
-import main.Main;
-import org.xml.sax.InputSource;
-import tools.config.PropertiesFactory;
-import tools.file.File;
-import tools.parser.XMLParser.BooksProvider;
-import tools.parser.XMLParser.IBooks;
 import ui.Printer;
 
 public class Executor {
@@ -49,7 +40,7 @@ public class Executor {
       }
   }*/
 
-  private static List<Book> findLinks() {
+ /* private static List<Book> findLinks() {
     List<Book> books = new ArrayList<>();
     String rssFile = rssFilePath.toString();
     InputSource isXML = new InputSource(rssFile);
@@ -60,7 +51,7 @@ public class Executor {
       Printer.printXMLParsingError();
     }
     return books;
-  }
+  }*/
 
   private static List<Book> findDownloadLinks(List<Book> books) {
     for (Book book : books) {

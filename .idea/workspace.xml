@@ -8,23 +8,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="improved many classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="new clas XMLFile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/executor/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/executor/TaskExecutor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Updater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/file/FileTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/file/FileTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/IBooks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/UpdaterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/UpdaterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +200,7 @@
       <recent name="tools.parser.XMLParser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DownloaderTest.download">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="LibrinostriCzDownloader.main" />
@@ -216,22 +210,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ConfigTest.PassWhenPropertyDownloadFolderInsertedSuccesfully" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tools.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tools.config" />
-      <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
-      <option name="METHOD_NAME" value="PassWhenPropertyDownloadFolderInsertedSuccesfully" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -268,6 +246,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="DownloaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UpdaterTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
@@ -287,17 +281,17 @@
     <list>
       <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.DownloaderTest.download" />
+      <item itemvalue="JUnit.DownloaderTest.test" />
       <item itemvalue="JUnit.UpdaterTest.update" />
-      <item itemvalue="JUnit.ConfigTest.PassWhenPropertyDownloadFolderInsertedSuccesfully" />
       <item itemvalue="JUnit.ConfigTest.PassWhenPropertyRSSLocationInsertedSuccesfully" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DownloaderTest.test" />
         <item itemvalue="JUnit.DownloaderTest.download" />
         <item itemvalue="JUnit.UpdaterTest.update" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ConfigTest.PassWhenPropertyRSSLocationInsertedSuccesfully" />
-        <item itemvalue="JUnit.ConfigTest.PassWhenPropertyDownloadFolderInsertedSuccesfully" />
       </list>
     </recent_temporary>
   </component>
@@ -596,7 +590,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691235506563</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="new clas XMLFile">
+      <option name="closed" value="true" />
+      <created>1691306151815</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1691306151815</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -656,7 +658,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modified whole project 12.12.2022." />
     <MESSAGE value="modified whole project 31.12.2022." />
     <MESSAGE value="modified whole project 13.01.2023." />
     <MESSAGE value="modified whole project 17.01.2023." />
@@ -681,9 +682,19 @@
     <MESSAGE value="modify test in ConfigTest." />
     <MESSAGE value="add excluding existed files." />
     <MESSAGE value="improved many classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="improved many classes" />
+    <MESSAGE value="new clas XMLFile" />
+    <option name="LAST_COMMIT_MESSAGE" value="new clas XMLFile" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.jsoup.nodes.Document" memberName="shadowChildrenRef" />

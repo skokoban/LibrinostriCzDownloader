@@ -2,6 +2,7 @@ package tools.file;
 
 import java.nio.file.Path;
 import java.util.HashMap;
+import java.util.Map;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
@@ -11,13 +12,14 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import tools.Downloader;
+import tools.config.ConfigProvider;
 import tools.config.PropertiesProvider;
 
 public class XMLFile extends File {
 /*=================================================================================================
                                                 Attributes
 =================================================================================================*/
-  private HashMap<String, String> books;
+  private Map<String, String> books;
   private long checksum;
   private final String URL;
   private final String PATH;
@@ -34,6 +36,16 @@ public class XMLFile extends File {
     PATH = path;
   }
 /*=================================================================================================
+                                                Getters
+=================================================================================================*/
+  public Map<String, String> getBooks() {
+    return books;
+  }
+
+  public long getChecksum() {
+    return checksum;
+  }
+/*=================================================================================================
                                                 Methods
 =================================================================================================*/
   public boolean download() {
@@ -41,12 +53,13 @@ public class XMLFile extends File {
     return result > 0;
   }
 
-  public void countChecksum() {
+  public long countChecksum() {
     Path mPath = Path.of(PATH);
     checksum = checksum(mPath);
+    return checksum;
   }
 
-  public int parseBooks() {
+  public int parseXML() {
     InputSource xml = new InputSource(PATH);
     NodeList nodeList;
     XPathExpression expressionTitle;
@@ -59,6 +72,7 @@ public class XMLFile extends File {
       return 0;
     }
     int itemsCount = nodeList.getLength();
+    books = new HashMap<>(itemsCount);
     for (int i = 0; i < itemsCount; i++) {
       Node node = nodeList.item(i);
       String title;
@@ -69,14 +83,13 @@ public class XMLFile extends File {
       } catch (XPathExpressionException e) {
         continue;
       }
-
       books.put(title, link);
     }
     return books.size();
   }
 
-  public void saveChecksum(PropertiesProvider propertiesProvider) {
+  public void saveChecksum(ConfigProvider configProvider) {
     String mChecksum = String.valueOf(checksum);
-    propertiesProvider.setProperty(PROPERTY_CHECKSUM_KEY, mChecksum);
+    configProvider.setChecksum(mChecksum);
   }
 }
