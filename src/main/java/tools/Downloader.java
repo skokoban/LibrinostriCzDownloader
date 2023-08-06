@@ -16,13 +16,14 @@ public class Downloader {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-  public long download(String link, Path path) {
+  public static long download(String link, String path) {
+    Path mPath = Path.of(path);
     URL url;
     long length;
     try {
       url = new URL(link);
       InputStream inputStream = url.openStream();
-      length = Files.copy(inputStream, path);
+      length = Files.copy(inputStream, mPath);
     } catch (IOException e) {
       length = 0;
     }

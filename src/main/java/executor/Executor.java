@@ -22,15 +22,15 @@ public class Executor {
 
   public static final String RSS_URL = "rssURL";
   public static final String DOWNLOAD_FOLDER = "downloadFolder";
-  private static IProperties iProperties;
+  //private static IProperties iProperties;
 
   private static Librinostri librinostri = new Librinostri();
-  private static Path rssFilePath = File.getRSSFilePath();
+  private static Path rssFilePath = null;
 
 /*=================================================================================================
                                               Methods
 =================================================================================================*/
-  public static void downloadNewFiles() {
+  /*public static void downloadNewFiles() {
     downloadXML();
     saveChecksum();
     List<Book> books = findLinks();
@@ -47,7 +47,7 @@ public class Executor {
       String title = book.getTITLE();
       downloadFiles(title, downloadLinks);
       }
-  }
+  }*/
 
   private static List<Book> findLinks() {
     List<Book> books = new ArrayList<>();
@@ -78,7 +78,7 @@ public class Executor {
     return books;
   }
 
-  private static void saveChecksum() {
+/*  private static void saveChecksum() {
     long mchecksum = 0;
     try {
       mchecksum = File.checksum(rssFilePath);
@@ -90,11 +90,10 @@ public class Executor {
     String checksum = String.valueOf(mchecksum);
     iProperties = PropertiesFactory.getPropertiesProvider();
     iProperties.setProperty("checksum", checksum);
-  }
+  }*/
 
-  private static void downloadFiles(String title, ArrayList<String> links) {
+  /*private static void downloadFiles(String title, ArrayList<String> links) {
     Librinostri librinostri = new Librinostri();
-    iProperties = PropertiesFactory.getPropertiesProvider();
     String downloadFolder = iProperties.getProperty(DOWNLOAD_FOLDER);
     String filesFolder = downloadFolder + java.io.File.separator + title;
     Path downloadDirectory = Path.of(filesFolder);
@@ -120,9 +119,9 @@ public class Executor {
       }
       Printer.printOK();
     }
-  }
+  }*/
 
-  public static void changeDownloadFolder() {
+  /*public static void changeDownloadFolder() {
     String downloadFolder = handleString();
     iProperties = PropertiesFactory.getPropertiesProvider();
     iProperties.setProperty(DOWNLOAD_FOLDER, downloadFolder);
@@ -154,9 +153,9 @@ public class Executor {
       Printer.printText("Nothing new on website.");
     }
     else Printer.printText("There are new files to download on website.");
-  }
+  }*/
 
-  protected static long downloadXML() {
+/*  protected static long downloadXML() {
     iProperties = PropertiesFactory.getPropertiesProvider();
     String rssURL = iProperties.getProperty(RSS_URL);
     try {
@@ -167,15 +166,10 @@ public class Executor {
       Printer.printDownloadingError();
       Main.main(new String[]{});
     }
-    long checksum = 0;
-    try {
-      checksum = File.checksum(rssFilePath);
-    } catch (IOException e) {
-      System.out.println(e);
-      Printer.printDownloadingError();
-    }
+    long checksum;
+    checksum = File.checksum(rssFilePath);
     return checksum;
-  }
+  }*/
 
   public static void createDirectories(Path path) throws IOException {
     Files.createDirectories(path);

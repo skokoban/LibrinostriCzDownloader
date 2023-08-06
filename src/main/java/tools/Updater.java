@@ -18,7 +18,7 @@ public class Updater {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-  public boolean update() {
+  /*public boolean update() {
       // retrieve crc checksum from properties file as string
     ConfigProvider config = new ConfigProvider();
     long oldChecksum = config.getChecksum();
@@ -29,5 +29,5 @@ public class Updater {
     long newChecksum = tools.file.File.checksum(rssFile);
       // check if checksums are equals or not
     return !Objects.equals(oldChecksum, newChecksum);
-  }
+  }*/
 }

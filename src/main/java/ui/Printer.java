@@ -28,8 +28,8 @@ public class Printer {
     System.out.println(Strings.INVALID_COUNT_OF_ARGUMENTS.getText());
   }
 
-  public static void printUpdateIntro() {
-    System.out.println(Strings.UPDATER_INTRO.getText());
+  public static void printUpdaterNewFiles() {
+    System.out.println(Strings.UPDATER_NEW_FILES.getText());
   }
 
   public static void printFileCannotBeCreated() {

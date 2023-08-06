@@ -42,11 +42,11 @@ public class Librinostri {
    * @return true if file is downloaded succesfully, false otherwise
    * @throws IOException if download fails.
    */
-  public boolean downloadRSS(String link, Path rss) throws IOException {
+  /*public boolean downloadRSS(String link, Path rss) throws IOException {
     IDownloader iDownloader = new DownloaderProvider();
     iDownloader.download(link, rss);
     return true;
-  }
+  }*/
 
   /**
    * Download file from given URL to given File.
@@ -55,10 +55,10 @@ public class Librinostri {
    * @return count of downloaded bytes
    * @throws IOException when download fails.
    */
-  public long downloadFile(String link, Path path) throws IOException {
+  /*public long downloadFile(String link, Path path) throws IOException {
     IDownloader iDownloader = new DownloaderProvider();
     return iDownloader.download(link, path);
-  }
+  }*/
 
   public String retrieveName(String url) {
     int lastSlash = url.lastIndexOf("/");

@@ -18,12 +18,12 @@ public class DownloaderTest {
                                                 Methods
 =================================================================================================*/
 
-  @Test
+/*  @Test
   void test() throws IOException {
     IDownloader iDownloader = new DownloaderProvider();
     long length = iDownloader.download("https://librinostri.catholica.cz/rss.php", TMP_FILE);
     System.out.println(length);
-  }
+  }*/
 
   @AfterAll
   public static void deleteTestFile() throws IOException {

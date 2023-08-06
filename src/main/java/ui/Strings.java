@@ -61,7 +61,7 @@ public enum Strings {
             7. exit
             ==============================================================================================="""),
 
-  UPDATER_INTRO("List of new books:"),
+  UPDATER_NEW_FILES("There is new files to download."),
   CANNOT_READ_FROM_FILE("Property impossible to set because config file not found"),
   XML_PARSE_ERROR_TEXT("Error occured when parsing XML file with new books information."
       + "Unexpected XML file structure."),

@@ -6,27 +6,35 @@ import tools.config.ConfigProvider;
 
 public class DownloaderProvider {
   private Downloader downloader;
+  private ConfigProvider configProvider;
+  private final String rssLink;
+  private final String rssPath;
 /*=================================================================================================
                                                   Constructors
 =================================================================================================*/
-  public DownloaderProvider() {}
-  public DownloaderProvider(Downloader downloader) {
-    this.downloader = downloader;
+  public DownloaderProvider() {
+    rssLink = configProvider.getRSSURL();
+    rssPath = configProvider.getRSSLocation();
   }
 /*=================================================================================================
                                                   Methods
 =================================================================================================*/
   public Path downloadXML() {
-    ConfigProvider configProvider = new ConfigProvider();
-    String link = configProvider.getRSSURL();
-    String mPath = configProvider.getRSSLocation();
-    Path path = Path.of(mPath);
-    downloader.download(link, path);
-    return path;
+    downloader.download(rssLink, rssPath);
+    return Path.of(rssPath);
   }
 
- /* public File downloadPDFs() {
-    File file = downloader.download();
-    return new File("");
+/*  public boolean downloadPDFs() {
+      // stiahnut xml
+    downloader.download(rssLink, rssPath);
+      // najst linky na knihy
+
+      // najst ku kazdej knihy odkazy na stiahnutie pdfs
+
+      // povymazávať pdfs, ktoré sa už nachádzajú v zložke pre sťahovanie
+
+      // --začína samotné sťahovanie
+      //
+    return new File(" ");
   }*/
 }

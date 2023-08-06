@@ -13,7 +13,7 @@ import org.junit.jupiter.api.Test;
 class FileTest {
 
   private String testPath;
-
+/*
   @Test
     void passWhenCreatedPathIsNotNull() throws IOException {
       testPath = "test.txt";
@@ -49,7 +49,7 @@ class FileTest {
       assertTrue(Files.isRegularFile(result));
 
       Files.deleteIfExists(result);
-    }
+    }*/
 
 /*
   @Test

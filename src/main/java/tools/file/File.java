@@ -9,13 +9,17 @@ import tools.config.PropertiesProvider;
 
 public class File {
 
-  private static final String rssTempLocation = "rssLocation";
 /*=================================================================================================
                                                   Methods
 =================================================================================================*/
-  public static Path createFile(String path) throws IOException {
+  protected static Path createFile(String path) throws IOException {
     Path mPath = Path.of(path);
     return Files.createFile(mPath);
+  }
+
+  protected static void deleteFile(String path) throws IOException {
+    Path mPath = Path.of(path);
+    Files.deleteIfExists(mPath);
   }
 
   /**
@@ -23,31 +27,15 @@ public class File {
    * @param path the path fle for which checksum be counted
    * @return value of CRC32 checksum. Returns -1 if checksum cannot be counted.
    */
-  public static long checksum(Path path) {
+  protected static long checksum(Path path) {
     byte[] fileBytes;
     try {
       fileBytes = Files.readAllBytes(path);
     } catch (IOException e) {
-      return -1;
+      return 0;
     }
     CRC32 rssFileCrc32 = new CRC32();
     rssFileCrc32.update(fileBytes);
     return rssFileCrc32.getValue();
-  }
-
-  public static java.io.File getRSSFile() {
-    LocationProvider locationProvider = new LocationProvider();
-    java.io.File config = locationProvider.configFile();
-    IProperties properties= new PropertiesProvider(config);
-    String rssFile = properties.getProperty(rssTempLocation);
-    return new java.io.File(rssFile);
-  }
-
-  public static Path getRSSFilePath() {
-    LocationProvider locationProvider = new LocationProvider();
-    java.io.File config = locationProvider.configFile();
-    IProperties properties= new PropertiesProvider(config);
-    String rssFile = properties.getProperty(rssTempLocation);
-    return Path.of(rssFile);
   }
 }
