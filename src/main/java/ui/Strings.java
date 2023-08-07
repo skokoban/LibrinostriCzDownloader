@@ -34,11 +34,11 @@ public enum Strings {
             Librinosti.cz PDF File downloader v.0.22.12.18
             created by Marcel Dorušák."""),
 
-  OK(". OK"),
+  OK(" OK"),
 
-  DOWNLOADING("trying to download "),
+  DOWNLOADING("trying to download: "),
 
-  NEW_BOOKS_FOLDER("Please type path for downloaded books: "),
+  NEW_BOOKS_FOLDER("Please enter path for downloaded books: "),
 
   ERROR_DOWNLOADING("\nNew PDF files cannot be downloaded. Please send this error report to mdorusak@gmail.com."),
   ERROR_INVALID_MENU_OPTION("Invalid option selected."),
@@ -53,7 +53,7 @@ public enum Strings {
             Enter number you want to do.
             \s
             1. check for updates\s
-            2. download new pdf files from website(s)\s
+            2. download new pdf files from website\s
             3. change folder for downloaded books\s
             4. show folder for downloaded books\s
             5. help\s
@@ -66,7 +66,8 @@ public enum Strings {
   XML_PARSE_ERROR_TEXT("Error occured when parsing XML file with new books information."
       + "Unexpected XML file structure."),
   CANNOT_FIND_DOWNLOAD_LINKS("Cannot find download links for book "),
-  FILE_ALREADY_EISTS(". already exists. Skipping..."), UNKNOWN_ARGUMENT_ERROR("Unknown"
+  BAD_PATH_ENTERED("Path you entered is incorrect."),
+  FILE_ALREADY_EISTS(" already exists. Skipping..."), UNKNOWN_ARGUMENT_ERROR("Unknown"
       + "arguemnt.");
 
   // field

@@ -1,39 +1,37 @@
-package tools;
+package tools.file;
 
-import java.util.Objects;
+import java.nio.file.Path;
+import tools.Downloader;
 import tools.config.ConfigProvider;
-import tools.file.XMLFile;
 
-public class Updater {
+public class PDFFile extends File{
 /*=================================================================================================
                                                 Attributes
 =================================================================================================*/
+  private String path;
+  private String name;
+  private String link;
+  private String downloadFolder;
 /*=================================================================================================
                                                 Constructor
 =================================================================================================*/
-  public Updater() {
-    throw new IllegalStateException("Utility class");
+  public PDFFile(String link, String downlodFolder) {
+    this.link = link;
+    this.downloadFolder = downlodFolder;
   }
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-  public static boolean update() {
-      // retrieve crc checksum from properties file as string
-    ConfigProvider config = new ConfigProvider();
-    long oldChecksum = config.getChecksum();
-      // download actual xml file
-    String url = config.getRSSURL();
-    String path = config.getRSSLocation();
-    XMLFile xml = new XMLFile(url, path);
-    xml.download();
-    long newChecksum = xml.countChecksum();
-      // check if checksums are equals or not
-    if (!Objects.equals(oldChecksum, newChecksum)) {
-      xml.saveChecksum(config);
-      xml.deleteXML();
-      return true;
-    }
-    xml.deleteXML();
-    return false;
+  public void retrieveName() {
+    int lastSlash = link.lastIndexOf("/");
+    name = link.substring(lastSlash + 1);
+  }
+  public void makePath() {
+    path = downloadFolder + java.io.File.pathSeparator + name;
+  }
+
+  public boolean download() {
+    long size = Downloader.download(link, path);
+    return size > 0;
   }
 }

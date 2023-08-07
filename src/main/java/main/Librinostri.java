@@ -1,14 +1,6 @@
 package main;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.util.ArrayList;
-import org.jsoup.nodes.Document;
-import tools.document.HTMLDocumentProvider;
-import tools.document.IHTMLDocument;
-import tools.downloader.DownloaderProvider;
-import tools.downloader.IDownloader;
-import tools.parser.linksParser.DownloadLinksParser;
 
 /**
  * The <code>Librinostri</code> class represents website librinostri.catholica.cz
@@ -29,35 +21,10 @@ public class Librinostri {
    * @return list of Strings with URLs to direct download PDFs.
    * @throws IOException           if website with download links is not reachable
    */
-  public ArrayList<String> findDownloadLinks(String bookURL) throws IOException {
-    IHTMLDocument ihtmlDocument = new HTMLDocumentProvider();
+  /*public ArrayList<String> findDownloadLinks(String bookURL) throws IOException {
+    IHTMLDocument ihtmlDocument = new HTMLDocument();
     Document htmlDocument = ihtmlDocument.get(bookURL);
     return DownloadLinksParser.getDownloadLinks(htmlDocument);
-  }
-
-  /**
-   * Copy text content from remote file to local file.
-   * @param link  link to remote text file
-   * @param rss File where local file should be located
-   * @return true if file is downloaded succesfully, false otherwise
-   * @throws IOException if download fails.
-   */
-  /*public boolean downloadRSS(String link, Path rss) throws IOException {
-    IDownloader iDownloader = new DownloaderProvider();
-    iDownloader.download(link, rss);
-    return true;
-  }*/
-
-  /**
-   * Download file from given URL to given File.
-   * @param link remote location from which file should be downloaded
-   * @param path path to location where downlaoded file will be located
-   * @return count of downloaded bytes
-   * @throws IOException when download fails.
-   */
-  /*public long downloadFile(String link, Path path) throws IOException {
-    IDownloader iDownloader = new DownloaderProvider();
-    return iDownloader.download(link, path);
   }*/
 
   public String retrieveName(String url) {

@@ -25,16 +25,24 @@ public class ConfigProvider {
     String checksum = propertiesProvider.getProperty(CHECKSUM_KEY);
     return Long.parseLong(checksum);
   }
+
   public String getDownloadFolder() {
     return propertiesProvider.getProperty(DOWNLOAD_FOLDER_KEY);
   }
+
   public String getRSSLocation() {
     return propertiesProvider.getProperty(RSS_LOC_KEY);
   }
+
   public String getRSSURL() {
     return propertiesProvider.getProperty(RSS_URL_KEY);
   }
+
   public void setChecksum(String checksum) {
     propertiesProvider.setProperty(CHECKSUM_KEY, checksum);
+  }
+
+  public void setDownloadFolder(String givenPath) {
+    propertiesProvider.setProperty(DOWNLOAD_FOLDER_KEY, givenPath);
   }
 }

@@ -8,17 +8,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="new clas XMLFile">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="finished updater">
+      <change afterPath="$PROJECT_DIR$/src/main/java/main/Downloader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/file/PDFFile.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/executor/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/executor/Executor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Updater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/document/HTMLDocumentProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/document/IHTMLDocument.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloaderProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/IDownloader.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/BooksProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/XMLParser/IBooks.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/parser/linksParser/DownloadLinksParser.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/UpdaterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/UpdaterTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,8 +86,8 @@
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -598,7 +606,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691306151815</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="finished updater">
+      <option name="closed" value="true" />
+      <created>1691334179746</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1691334179746</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -658,7 +674,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modified whole project 31.12.2022." />
     <MESSAGE value="modified whole project 13.01.2023." />
     <MESSAGE value="modified whole project 17.01.2023." />
     <MESSAGE value="modified whole project 3.03.2023." />
@@ -683,18 +698,10 @@
     <MESSAGE value="add excluding existed files." />
     <MESSAGE value="improved many classes" />
     <MESSAGE value="new clas XMLFile" />
-    <option name="LAST_COMMIT_MESSAGE" value="new clas XMLFile" />
+    <MESSAGE value="finished updater" />
+    <option name="LAST_COMMIT_MESSAGE" value="finished updater" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.jsoup.nodes.Document" memberName="shadowChildrenRef" />

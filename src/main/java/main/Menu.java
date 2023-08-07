@@ -1,9 +1,11 @@
 package main;
 
-import executor.Executor;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
 import java.util.Scanner;
 import tools.Updater;
-import tools.downloader.DownloaderProvider;
+import tools.config.ConfigProvider;
 import ui.Printer;
 
 public class Menu {
@@ -22,12 +24,12 @@ private Menu() {
   public static void process() {
     while (true) {
       Printer.printMenu();
-      int menuOption = handleIntEntered();
+      int menuOption = handleInt();
       switch (menuOption) {
-        case 1 -> update(); //
-        case 2 -> downloadNewFiles();
-        //case 3 -> Executor.changeDownloadFolder();
-        //case 4 -> Executor.showDownloadFolder();
+        case 1 -> update();
+        case 2 -> Downloader.download();
+        case 3 -> changeDownloadFolder();
+        //case 4 -> showDownloadFolder();
         case 5 -> Printer.printHelp();
         case 6 -> Printer.printAbout();
         case 7 -> {return;}
@@ -35,19 +37,30 @@ private Menu() {
       }
     }
   }
-
-  private static void downloadNewFiles() {
-    DownloaderProvider downloadProvider= new DownloaderProvider();
-    //if (!downloadProvider.downloadPDFs()) Printer.printNoNewFiles();
+  protected static void changeDownloadFolder() {
+    Printer.printNewDownloadLocAsking();
+    String givenPath = handleLine();
+    Path path = Path.of(givenPath);
+    if (Files.notExists(path)) {
+      Printer.printPathNotEists();
+      return;
+    }
+    ConfigProvider configProvider = new ConfigProvider();
+    configProvider.setDownloadFolder(givenPath);
   }
 
-  private static void update() {
+  protected static void update() {
     if (Updater.update()) Printer.printUpdaterNewFiles();
     else Printer.printNoNewFiles();
   }
 
-  protected static int handleIntEntered() {
+  protected static int handleInt() {
     Scanner scanner = new Scanner(System.in);
     return scanner.nextInt();
+  }
+
+  protected static String handleLine() {
+    Scanner scanner = new Scanner(System.in);
+    return scanner.nextLine();
   }
 }

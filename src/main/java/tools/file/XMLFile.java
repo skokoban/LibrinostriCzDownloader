@@ -1,6 +1,8 @@
 package tools.file;
 
+import java.io.IOException;
 import java.nio.file.Path;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import javax.xml.xpath.XPath;
@@ -13,7 +15,6 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 import tools.Downloader;
 import tools.config.ConfigProvider;
-import tools.config.PropertiesProvider;
 
 public class XMLFile extends File {
 /*=================================================================================================
@@ -23,7 +24,6 @@ public class XMLFile extends File {
   private long checksum;
   private final String URL;
   private final String PATH;
-  private static final String PROPERTY_CHECKSUM_KEY = "checksum";
   private final XPath xpath = XPathFactory.newInstance().newXPath();
   private static final String RSS_CHANNEL_ITEM = "/rss/channel/item";
   private static final String TITLE = "title";
@@ -59,7 +59,7 @@ public class XMLFile extends File {
     return checksum;
   }
 
-  public int parseXML() {
+  public Map<String, String> parseXML() {
     InputSource xml = new InputSource(PATH);
     NodeList nodeList;
     XPathExpression expressionTitle;
@@ -69,7 +69,7 @@ public class XMLFile extends File {
       expressionLink = xpath.compile(LINK);
       nodeList = (NodeList) xpath.evaluate(RSS_CHANNEL_ITEM, xml, XPathConstants.NODESET);
     } catch (XPathExpressionException e) {
-      return 0;
+      return Collections.emptyMap();
     }
     int itemsCount = nodeList.getLength();
     books = new HashMap<>(itemsCount);
@@ -85,11 +85,18 @@ public class XMLFile extends File {
       }
       books.put(title, link);
     }
-    return books.size();
+    return books;
   }
 
   public void saveChecksum(ConfigProvider configProvider) {
     String mChecksum = String.valueOf(checksum);
     configProvider.setChecksum(mChecksum);
+  }
+
+  public void deleteXML() {
+    try {
+      deleteFile(PATH);
+    } catch (IOException ignore) {
+    }
   }
 }

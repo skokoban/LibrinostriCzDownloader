@@ -104,4 +104,7 @@ public class Printer {
   public static void printUnknownArgumentError() {
     System.out.println(Strings.UNKNOWN_ARGUMENT_ERROR.getText());
   }
+  public static void printPathNotEists() {
+    System.out.println(Strings.BAD_PATH_ENTERED.getText());
+  }
 }

@@ -53,7 +53,7 @@ public class Executor {
     return books;
   }*/
 
-  private static List<Book> findDownloadLinks(List<Book> books) {
+  /*private static List<Book> findDownloadLinks(List<Book> books) {
     for (Book book : books) {
       String link = book.getLINK();
       ArrayList<String> downloadLinks;
@@ -67,7 +67,7 @@ public class Executor {
       book.setDownloadLinks(downloadLinks);
     }
     return books;
-  }
+  }*/
 
 /*  private static void saveChecksum() {
     long mchecksum = 0;
