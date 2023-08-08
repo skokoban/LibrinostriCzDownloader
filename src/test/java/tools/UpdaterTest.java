@@ -8,7 +8,7 @@ import tools.config.ConfigProvider;
 
 class UpdaterTest {
 
-  @Test
+/*  @Test
   void update() {
     ConfigProvider mockConfig = Mockito.mock(ConfigProvider.class);
     Mockito.when(mockConfig.getChecksum()).thenReturn(123l);
@@ -17,5 +17,5 @@ class UpdaterTest {
     //boolean result = updater.update();
 
     //assertTrue(result);
-  }
+  }*/
 }

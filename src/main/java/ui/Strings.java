@@ -31,7 +31,7 @@ public enum Strings {
              Usage: command"""),
 
   ABOUT("""
-            Librinosti.cz PDF File downloader v.0.22.12.18
+            Librinosti.cz PDF File downloader v.1.0
             created by Marcel Dorušák."""),
 
   OK(" OK"),
@@ -56,7 +56,7 @@ public enum Strings {
             2. download new pdf files from website\s
             3. change folder for downloaded books\s
             4. show folder for downloaded books\s
-            5. help\s
+            \s
             6. about\s
             7. exit
             ==============================================================================================="""),

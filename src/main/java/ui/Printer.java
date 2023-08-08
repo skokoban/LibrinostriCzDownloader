@@ -48,16 +48,7 @@ public class Printer {
     System.out.println(Strings.ABOUT.getText());
   }
 
-  public static void printNamesOfDownlaodedPDFs(Map<String, File> fileMap) {
-    for (Map.Entry<String, File> pdf: fileMap.entrySet()) {
-      String fileURL  = pdf.getKey();
-      int lastDivider = fileURL.lastIndexOf("/");
-      String fileName = fileURL.substring(lastDivider+1);
-      System.out.println(fileName);
-    }
-  }
-
-  public static void printOK() {
+    public static void printOK() {
     System.out.println(Strings.OK.getText());
   }
 

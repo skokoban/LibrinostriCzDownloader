@@ -3,7 +3,7 @@ plugins {
 }
 
 group 'sk.dorusak'
-version '0.2'
+version '1.0'
 
 repositories {
     mavenCentral()

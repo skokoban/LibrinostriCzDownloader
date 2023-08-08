@@ -1,7 +1,6 @@
 package main;
 
 import java.nio.file.Files;
-import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.util.Scanner;
 import tools.Updater;
@@ -29,8 +28,8 @@ private Menu() {
         case 1 -> update();
         case 2 -> Downloader.download();
         case 3 -> changeDownloadFolder();
-        //case 4 -> showDownloadFolder();
-        case 5 -> Printer.printHelp();
+        case 4 -> showDownloadFolder();
+        case 5 -> Printer.printUnknownMenuOptionError();
         case 6 -> Printer.printAbout();
         case 7 -> {return;}
         default -> Printer.printUnknownMenuOptionError();
@@ -47,6 +46,11 @@ private Menu() {
     }
     ConfigProvider configProvider = new ConfigProvider();
     configProvider.setDownloadFolder(givenPath);
+  }
+
+  protected static void showDownloadFolder() {
+    ConfigProvider configProvider = new ConfigProvider();
+    System.out.println(configProvider.getDownloadFolder());
   }
 
   protected static void update() {
