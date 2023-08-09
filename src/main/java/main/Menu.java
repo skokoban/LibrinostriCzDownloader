@@ -5,6 +5,7 @@ import java.nio.file.Path;
 import java.util.Scanner;
 import tools.Updater;
 import tools.config.ConfigProvider;
+import tools.downloader.Downloader;
 import ui.Printer;
 
 public class Menu {
@@ -26,7 +27,7 @@ private Menu() {
       int menuOption = handleInt();
       switch (menuOption) {
         case 1 -> update();
-        case 2 -> Downloader.download();
+        case 2 -> Downloader.downloadNewFiles();
         case 3 -> changeDownloadFolder();
         case 4 -> showDownloadFolder();
         case 5 -> Printer.printUnknownMenuOptionError();

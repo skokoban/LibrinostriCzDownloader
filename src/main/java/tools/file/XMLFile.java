@@ -10,10 +10,10 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
 import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
+import tools.downloader.Downloader;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-import tools.Downloader;
 import tools.config.ConfigProvider;
 
 public class XMLFile extends File {

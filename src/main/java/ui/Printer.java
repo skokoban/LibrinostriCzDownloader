@@ -1,17 +1,18 @@
 package ui;
 
-import java.io.File;
-import java.util.Map;
-
+/**
+ * This class represents methods for central managed printing texts to output.
+ */
 public class Printer {
-
-/*--------------------------------------------------------------------------------------------------
-                                            Methods
---------------------------------------------------------------------------------------------------*/
-
-  public static void printText(String text) {
-    System.out.println(text);
+/*=================================================================================================
+                                           Constructors
+=================================================================================================*/
+  private Printer() {
+    throw new IllegalStateException("Utility class");
   }
+/*=================================================================================================
+                                            Methods
+=================================================================================================*/
   public static void printMenu() {
     System.out.println(Strings.MENU.getText());
   }
@@ -48,12 +49,12 @@ public class Printer {
     System.out.println(Strings.ABOUT.getText());
   }
 
-    public static void printOK() {
+  public static void printOK() {
     System.out.println(Strings.OK.getText());
   }
 
-  public static void printDownloading(String PDFFileName) {
-    System.out.print(Strings.DOWNLOADING.getText() + PDFFileName);
+  public static void printDownloading(String pdfFilename) {
+    System.out.print(Strings.DOWNLOADING.getText() + pdfFilename);
   }
 
   public static void printNewDownloadLocAsking() {
@@ -72,7 +73,7 @@ public class Printer {
     System.out.println(Strings.ERROR_INVALID_MENU_OPTION.getText());
   }
 
-  public static void printCannotSetPropertyBadFile() {
+  public static void printCannotAccessToConfigFile() {
     System.out.println(Strings.CANNOT_READ_FROM_FILE.getText());
   }
 

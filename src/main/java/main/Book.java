@@ -2,9 +2,6 @@ package main;
 
 import java.util.List;
 import java.util.Objects;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
 import tools.string.StringManipulator;
 
 /**
@@ -49,9 +46,6 @@ public class Book {
     return LINK;
   }
 
-  public List<String> parseDownloadLinks() {
-    return downloadLinks;
-  }
   public String getPATH() {
     return PATH;
   }

@@ -1,13 +1,16 @@
 package tools.config;
-
+// hotové, testy ok
 import java.io.File;
 import java.io.IOException;
 
+/**
+ * Represents methods for operation with configuration file. It allows to create new
+ * configuration file if none exists.
+ */
 public class Config {
-
-  /*=================================================================================================
-                                             Attributes
-  =================================================================================================*/
+/*=================================================================================================
+                                           Attributes
+=================================================================================================*/
   private static final String REASON_NULL_EXCEPTION = "Instance cannot be created because "
       + "file you provided points to null";
   private static final String CHECKSUM_KEY = "checksum";
@@ -15,9 +18,9 @@ public class Config {
   private static final String RSS_URL_VALUE = "https://librinostri.catholica.cz/rss.php";
   private static final String RSS_TEMP_LOCATION_KEY = "rssLocation";
   private static final String RSS_FILE_NAME_VALUE = "rss.php";
-  public static final String TMPDIR = "java.io.tmpdir";
-  private static Config instance;
+  private static final String TMPDIR = "java.io.tmpdir";
   private static final String PROPERTY_DOWNLOAD_FOLDER_KEY = "downloadFolder";
+  private static Config instance;
   private File configFile;
 /*=================================================================================================
                                              Constructor
@@ -28,6 +31,12 @@ public class Config {
 /*=================================================================================================
                                              Methods
 =================================================================================================*/
+  /**
+   * Returns instance of class Config.
+   * @param config file where properties in key-value pairs are stored
+   * @return instance of class config
+   * @throws NullPointerException if given file points to null.
+   */
   public static Config getInstance(File config) throws NullPointerException {
     if (config == null) throw new NullPointerException(REASON_NULL_EXCEPTION);
     if (instance == null) instance = new Config(config);
@@ -35,8 +44,8 @@ public class Config {
   }
 
   /**
-   * Create directory and file for specified config file path of instance.
-   * @throws IOException if default file cannot be created.
+   * Create necessary directories and file where configuration will be stored.
+   * @throws IOException if creation of file failed.
    */
   public void createConfigFile() throws IOException {
     File configDir = createDirectoryPath();
@@ -49,8 +58,8 @@ public class Config {
   }
 
   /**
-   * Create Path object with path to directory where config file be located.
-   * @return the path
+   * Create necessary directories in path for new configuration file.
+   * @return the file.
    */
   protected File createDirectoryPath() {
     String config = configFile.toString();
@@ -62,12 +71,11 @@ public class Config {
   /**
    * Fill default values to newly created empty config file.
    * @param propertiesProvider interface for working with properties.
-   * @param locationProvider provider for locations on filesystem.
    */
   public void fillDefaultValues(PropertiesProvider propertiesProvider) {
     String downloadLocation = LocationProvider.defaultDownloadLocation();
     propertiesProvider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocation);
-    propertiesProvider.setProperty(CHECKSUM_KEY, " ");
+    propertiesProvider.setProperty(CHECKSUM_KEY, " "); // because no checksum was counted so far
     propertiesProvider.setProperty(RSS_URL_KEY, RSS_URL_VALUE);
     String rssFileLocation = System.getProperty(TMPDIR) + File.separator + RSS_FILE_NAME_VALUE;
     propertiesProvider.setProperty(RSS_TEMP_LOCATION_KEY, rssFileLocation);

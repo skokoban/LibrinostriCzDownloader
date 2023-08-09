@@ -1,10 +1,15 @@
-package main;
+package tools.downloader;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import main.Book;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -28,7 +33,21 @@ public class Downloader {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-  public static void download() {
+public static long download(String link, String path) {
+  Path mPath = Path.of(path);
+  URL url;
+  long length;
+  try {
+    url = new URL(link);
+    InputStream inputStream = url.openStream();
+    length = Files.copy(inputStream, mPath);
+  } catch (IOException e) {
+    length = 0;
+  }
+  return length;
+}
+
+  public static void downloadNewFiles() {
       // stiahnut xml
     ConfigProvider config = new ConfigProvider();
     String url = config.getRSSURL();
@@ -67,7 +86,7 @@ public class Downloader {
         String name = retrieveName(link);
         Printer.printDownloading(name);
         String filePath = book.getPATH() + File.separator + name;
-        if (tools.Downloader.download(link, filePath) > 0) {
+        if (download(link, filePath) > 0) {
           Printer.printOK();
         } else {
           Printer.printFileAlreadyDownloaded();

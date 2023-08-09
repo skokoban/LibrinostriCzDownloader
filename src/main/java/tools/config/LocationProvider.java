@@ -1,13 +1,18 @@
 package tools.config;
-
+// hotové, testy netreba
 import java.io.File;
-
 /**
  * This class provide methods for retrieving necessarry locations in filesystem.
  */
 public class LocationProvider {
 /*=================================================================================================
-                                                Attributes
+                                            Constructors
+=================================================================================================*/
+  private LocationProvider() {
+    throw new IllegalStateException("Utility class");
+  }
+/*=================================================================================================
+                                              Attributes
 =================================================================================================*/
   private static final String LIBRI_NOSTI_FOLDER_NAME = "librinostri-downloader";
   private static final String PROPERTY_USER_HOME = "user.home";

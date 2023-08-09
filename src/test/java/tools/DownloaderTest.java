@@ -1,11 +1,7 @@
 package tools;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.Test;
 import tools.config.ConfigProvider;
-import tools.config.PropertiesFactory;
-import tools.config.PropertiesProvider;
 import tools.file.XMLFile;
 
 class DownloaderTest {
