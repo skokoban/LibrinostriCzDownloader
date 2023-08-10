@@ -1,5 +1,5 @@
 package tools.downloader;
-
+//hotovo, chýba test na changedownloadfolder
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -7,6 +7,7 @@ import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -16,7 +17,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import tools.config.PropertiesProvider;
-import tools.config.LocationProvider;
 import tools.file.XMLFile;
 import ui.Printer;
 
@@ -56,23 +56,28 @@ public class Downloader {
   return length;
 }
 
-  public static void downloadNewFiles() {
-      // stiahnut xml
-    File configFile = LocationProvider.configFile();
-    PropertiesProvider config = new PropertiesProvider(configFile);
-    String url = config.getRSSURL();
-    String path = config.getRSSLocation();
+  /**
+   * From actual remote XML file parses information abou books.
+   * @param url to access application properties.
+   * @path
+   */
+  public static Map<String, String> getBooksInfo(String url, String path) {
     XMLFile xml = new XMLFile(url, path);
     if (!xml.download()) {
-      Printer.printDownloadingError();
-      return;
+      return new HashMap<>();
     }
-      // najst linky na knihy z xml
     Map<String, String> booksMap;
     booksMap = xml.parseXML();
-      // vytvoriť objekty knih
-    ArrayList<Book> books = new ArrayList<>();
-    String downloadFolder = config.getDownloadFolder();
+    return booksMap;
+  }
+
+  /**
+   * From given title, link, and path creates object Book.
+   * @param booksMap with information about each book. Title and link to book.
+   * @param downloadFolder where pdf files related to book will be stored.
+   */
+  public static List<Book> createBooks(Map<String, String> booksMap, String downloadFolder) {
+    List<Book> books = new ArrayList<>();
     int size = downloadFolder.length();
     String lastChar = downloadFolder.substring(size-1);
     if (!"/".equals(lastChar)) {
@@ -84,41 +89,42 @@ public class Downloader {
       String folderPath = downloadFolder + name;
       Book book = new Book(name, link, folderPath);
       books.add(book);
-    }
-      // z linkov nájsť downloadlinky
-
-    for (Book book : books) {
-      String linkToBook = book.getLINK();
-      Document html = getHTMLDocument(linkToBook);
-      List<String> downloadLinks = findDownloadLinks(html);
-        // vytvorit cesty z linkov
-      for (String link : downloadLinks) {
-        String name = retrieveName(link);
-        Printer.printDownloading(name);
-        String filePath = book.getPATH() + File.separator + name;
-        if (download(link, filePath) > 0) {
-          Printer.printOK();
-        } else {
-          Printer.printFileAlreadyDownloaded();
-        }
-      }
 
     }
+    return books;
   }
 
   /**
-   * Provides html file as Document.
-   * @param link to remote desired ftml file.
-   * @return the documennt.
+   * Downloads html file and parses it.
+   * @param book object with information about book.
    */
-  public static Document getHTMLDocument(String link) {
+  public static Document getHtmlDocument(Book book) {
+      String linkToBook = book.getLINK();
     Document html;
     try {
-      html = Jsoup.connect(link).get();
+      html = Jsoup.connect(linkToBook).get();
     } catch (IOException e) {
-      return null;
+      throw new RuntimeException(e);
     }
     return html;
+  }
+
+  /**
+   *From given list of links to remote files copies these to book´s path.
+   * @param downloadLinks list of links that should be copied
+   * @param book object related to links.
+   */
+  public static void downloadFiles(List<String> downloadLinks, Book book) {
+    for (String link : downloadLinks) {
+      String name = retrieveName(link);
+      Printer.printDownloading(name);
+      String filePath = book.getPATH() + File.separator + name;
+      if (download(link, filePath) > 0) {
+        Printer.printOK();
+      } else {
+        Printer.printFileAlreadyDownloaded();
+      }
+    }
   }
 
   /**
@@ -126,7 +132,7 @@ public class Downloader {
    * @param html document for parsing
    * @return list of strings contains links.
    */
-  protected static List<String> findDownloadLinks(Document html) {
+  public static List<String> findDownloadLinks(Document html) {
     List<String> downloadLinks = new ArrayList<>();
     Elements elements = html.select(CSS_QUERY_DOWNLOAD);
     for (Element element: elements) {
@@ -144,9 +150,8 @@ public class Downloader {
   /**
    * Given string entered to input stores to configuration file.
    */
-  public static void changeDownloadFolder(PropertiesProvider properties) {
+  public static void changeDownloadFolder(PropertiesProvider properties, String givenPath) {
     Printer.printNewDownloadLocAsking();
-    String givenPath = getNextLine();
     Path path = Path.of(givenPath);
     if (Files.notExists(path)) {
       Printer.printPathNotEists();
@@ -154,11 +159,4 @@ public class Downloader {
     }
     properties.setDownloadFolder(givenPath);
   }
-
-  private static String getNextLine() {
-    Scanner scanner = new Scanner(System.in);
-    return scanner.nextLine();
-  }
-
-
 }

@@ -8,11 +8,12 @@ import tools.config.Config;
 import tools.config.PropertiesProvider;
 import tools.config.LocationProvider;
 import tools.config.Properties;
+import tools.downloader.DownloadBooksFacade;
 import tools.downloader.Downloader;
 import ui.Printer;
 
 public class Main {
-
+//todo pri spustení programu a vybrani update sa nič nevytlačí na obrazovku.
   private static File configFile = LocationProvider.configFile();
   /**
    * Check if there was given arguments or not with running application from CLI.
@@ -58,8 +59,8 @@ public class Main {
       int menuOption = scanner.nextInt();
       switch (menuOption) {
         case 1 -> Updater.update();
-        case 2 -> Downloader.downloadNewFiles();
-        case 3 -> Downloader.changeDownloadFolder(propertiesProvider);
+        case 2 -> DownloadBooksFacade.download(propertiesProvider);
+        case 3 -> Downloader.changeDownloadFolder(propertiesProvider, getNextLine());
         case 4 -> System.out.println(propertiesProvider.getDownloadFolder());
         case 5 -> Printer.printUnknownMenuOptionError();
         case 6 -> Printer.printAbout();
@@ -67,5 +68,10 @@ public class Main {
         default -> Printer.printUnknownMenuOptionError();
       }
     }
+  }
+
+  private static String getNextLine() {
+    Scanner scanner = new Scanner(System.in);
+    return scanner.nextLine();
   }
 }

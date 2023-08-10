@@ -39,6 +39,7 @@ public class Updater {
       xml.saveChecksum(config);
       Printer.printUpdaterNewFiles();
     }
+    Printer.printNoNewFiles();
     xml.deleteXML();
   }
 }

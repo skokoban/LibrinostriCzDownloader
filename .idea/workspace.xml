@@ -8,23 +8,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add config test and properties test">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/Properties.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tools/file/XMLFileTest.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add xml file tests">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadBooksFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Menu.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Updater.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/BooksProviderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/UpdaterTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/BooksProviderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,8 +52,8 @@
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -179,100 +174,101 @@
       <recent name="tools.parser.XMLParser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.XMLFileTest">
-    <configuration name="XMLFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.DownloaderTest.passWhenLinkIsSuccessfullyParsed">
+    <configuration name="DownloaderTest.passWhenBookLinkCreatedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="XMLFileTest.passWhenCountOfEntriesIsTwenty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tools.file.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
-      <option name="METHOD_NAME" value="passWhenCountOfEntriesIsTwenty" />
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenBookLinkCreatedCorrectly" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XMLFileTest.passWhenMapSizeAccordingElementsInXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloaderTest.passWhenBookPathCreatedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
-      <option name="METHOD_NAME" value="passWhenMapSizeAccordingElementsInXML" />
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenBookPathCreatedCorrectly" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XMLFileTest.passWhenXMLParsedSuccesfullyWithValidXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
-      <option name="METHOD_NAME" value="passWhenXMLParsedSuccesfullyWithValidXML" />
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenBookPathWithSlashCreatedCorrectly" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="XMLFileTest.passWhenXpathErrorWhenInValidXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloaderTest.passWhenCountOfLinksIsOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.file.*" />
+          <option name="PATTERN" value="tools.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.file" />
-      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
-      <option name="METHOD_NAME" value="passWhenXpathErrorWhenInValidXML" />
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenCountOfLinksIsOk" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DownloaderTest.passWhenLinkIsSuccessfullyParsed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools" />
+      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenLinkIsSuccessfullyParsed" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.XMLFileTest" />
-      <item itemvalue="JUnit.XMLFileTest.passWhenCountOfEntriesIsTwenty" />
-      <item itemvalue="JUnit.XMLFileTest.passWhenMapSizeAccordingElementsInXML" />
-      <item itemvalue="JUnit.XMLFileTest.passWhenXMLParsedSuccesfullyWithValidXML" />
-      <item itemvalue="JUnit.XMLFileTest.passWhenXpathErrorWhenInValidXML" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenBookLinkCreatedCorrectly" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenBookPathCreatedCorrectly" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenCountOfLinksIsOk" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenLinkIsSuccessfullyParsed" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.XMLFileTest" />
-        <item itemvalue="JUnit.XMLFileTest.passWhenMapSizeAccordingElementsInXML" />
-        <item itemvalue="JUnit.XMLFileTest.passWhenCountOfEntriesIsTwenty" />
-        <item itemvalue="JUnit.XMLFileTest.passWhenXpathErrorWhenInValidXML" />
-        <item itemvalue="JUnit.XMLFileTest.passWhenXMLParsedSuccesfullyWithValidXML" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenLinkIsSuccessfullyParsed" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenCountOfLinksIsOk" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenBookPathCreatedCorrectly" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenBookLinkCreatedCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -611,7 +607,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691584712803</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="add xml file tests">
+      <option name="closed" value="true" />
+      <created>1691657740124</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1691657740124</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -671,7 +675,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modified whole project 3.03.2023." />
     <MESSAGE value="fix properties default file" />
     <MESSAGE value="fix properties default file again" />
     <MESSAGE value="create interface for connection" />
@@ -696,7 +699,8 @@
     <MESSAGE value="finished updater" />
     <MESSAGE value="add downloader" />
     <MESSAGE value="add config test and properties test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add config test and properties test" />
+    <MESSAGE value="add xml file tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add xml file tests" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
