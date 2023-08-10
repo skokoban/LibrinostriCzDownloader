@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.zip.CRC32;
-import tools.config.LocationProvider;
-import tools.config.PropertiesProvider;
 
 public class File {
 

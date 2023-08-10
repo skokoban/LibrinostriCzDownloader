@@ -1,15 +1,18 @@
 package tools;
-
+// hotové, otestovať sa nedá
+import java.io.File;
 import java.util.Objects;
-import tools.config.ConfigProvider;
+import tools.config.PropertiesProvider;
+import tools.config.LocationProvider;
 import tools.file.XMLFile;
+import ui.Printer;
 
+/**
+ * Include method for evaluate if target website has changed.
+ */
 public class Updater {
 /*=================================================================================================
                                                 Attributes
-=================================================================================================*/
-/*=================================================================================================
-                                                Constructor
 =================================================================================================*/
   private Updater() {
     throw new IllegalStateException("Utility class");
@@ -17,23 +20,25 @@ public class Updater {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-  public static boolean update() {
-      // retrieve crc checksum from properties file as string
-    ConfigProvider config = new ConfigProvider();
+
+  /**
+   * Compares actual checksum against old checksum from previous update stored in configuration.
+   */
+  public static void update() {
+    File configFile = LocationProvider.configFile();
+    PropertiesProvider config = new PropertiesProvider(configFile);
     long oldChecksum = config.getChecksum();
-      // download actual xml file
+
     String url = config.getRSSURL();
     String path = config.getRSSLocation();
     XMLFile xml = new XMLFile(url, path);
     xml.download();
     long newChecksum = xml.countChecksum();
-      // check if checksums are equals or not
+
     if (!Objects.equals(oldChecksum, newChecksum)) {
       xml.saveChecksum(config);
-      xml.deleteXML();
-      return true;
+      Printer.printUpdaterNewFiles();
     }
     xml.deleteXML();
-    return false;
   }
 }

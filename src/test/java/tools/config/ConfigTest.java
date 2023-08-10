@@ -76,10 +76,10 @@ public class ConfigTest {
     testFileDir.mkdirs();
     testFile.createNewFile();
     Config instance = Config.getInstance(testFile);
-    PropertiesProvider mockPropertiesProvider = new PropertiesProvider(testFile);
-    instance.fillDefaultValues(mockPropertiesProvider);
+    Properties mockProperties = new Properties(testFile);
+    instance.fillDefaultValues(mockProperties);
 
-    String result = mockPropertiesProvider.getProperty("downloadFolder");
+    String result = mockProperties.getProperty("downloadFolder");
 
     assertEquals("/home/marceld/librinostri-downloader", result);
   }
@@ -89,10 +89,10 @@ public class ConfigTest {
     testFileDir.mkdirs();
     testFile.createNewFile();
     Config instance = Config.getInstance(testFile);
-    PropertiesProvider mockPropertiesProvider = new PropertiesProvider(testFile);
-    instance.fillDefaultValues(mockPropertiesProvider);
+    Properties mockProperties = new Properties(testFile);
+    instance.fillDefaultValues(mockProperties);
 
-    String result = mockPropertiesProvider.getProperty("rssLocation");
+    String result = mockProperties.getProperty("rssLocation");
 
     assertEquals("/tmp/rss.php", result);
   }

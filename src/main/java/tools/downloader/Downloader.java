@@ -9,12 +9,14 @@ import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Scanner;
 import main.Book;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import tools.config.ConfigProvider;
+import tools.config.PropertiesProvider;
+import tools.config.LocationProvider;
 import tools.file.XMLFile;
 import ui.Printer;
 
@@ -33,7 +35,14 @@ public class Downloader {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-public static long download(String link, String path) {
+
+  /**
+   * Copy remote file to local drive.
+   * @param link to source file that should be copied
+   * @param path to target file
+   * @return count of bytes copied
+   */
+  public static long download(String link, String path) {
   Path mPath = Path.of(path);
   URL url;
   long length;
@@ -49,7 +58,8 @@ public static long download(String link, String path) {
 
   public static void downloadNewFiles() {
       // stiahnut xml
-    ConfigProvider config = new ConfigProvider();
+    File configFile = LocationProvider.configFile();
+    PropertiesProvider config = new PropertiesProvider(configFile);
     String url = config.getRSSURL();
     String path = config.getRSSLocation();
     XMLFile xml = new XMLFile(url, path);
@@ -96,6 +106,11 @@ public static long download(String link, String path) {
     }
   }
 
+  /**
+   * Provides html file as Document.
+   * @param link to remote desired ftml file.
+   * @return the documennt.
+   */
   public static Document getHTMLDocument(String link) {
     Document html;
     try {
@@ -106,6 +121,11 @@ public static long download(String link, String path) {
     return html;
   }
 
+  /**
+   * In html document finds elements download and there attribute link.
+   * @param html document for parsing
+   * @return list of strings contains links.
+   */
   protected static List<String> findDownloadLinks(Document html) {
     List<String> downloadLinks = new ArrayList<>();
     Elements elements = html.select(CSS_QUERY_DOWNLOAD);
@@ -120,4 +140,25 @@ public static long download(String link, String path) {
     int lastSlash = link.lastIndexOf("/");
     return link.substring(lastSlash + 1);
   }
+
+  /**
+   * Given string entered to input stores to configuration file.
+   */
+  public static void changeDownloadFolder(PropertiesProvider properties) {
+    Printer.printNewDownloadLocAsking();
+    String givenPath = getNextLine();
+    Path path = Path.of(givenPath);
+    if (Files.notExists(path)) {
+      Printer.printPathNotEists();
+      return;
+    }
+    properties.setDownloadFolder(givenPath);
+  }
+
+  private static String getNextLine() {
+    Scanner scanner = new Scanner(System.in);
+    return scanner.nextLine();
+  }
+
+
 }

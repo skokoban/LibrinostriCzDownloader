@@ -1,5 +1,5 @@
 package tools.file;
-
+// hotové, možno doplniť testy či xpath dokáže spracovať viac titulov. otestovaný je iba jeden.
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Collections;
@@ -14,13 +14,16 @@ import tools.downloader.Downloader;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
-import tools.config.ConfigProvider;
+import tools.config.PropertiesProvider;
 
+/**
+ * Represents XML file. This file is consists information about new books added on website
+ * librinostri.catholica.cz. Provides methods for operation with this file.
+ */
 public class XMLFile extends File {
 /*=================================================================================================
                                                 Attributes
 =================================================================================================*/
-  private Map<String, String> books;
   private long checksum;
   private final String URL;
   private final String PATH;
@@ -36,29 +39,32 @@ public class XMLFile extends File {
     PATH = path;
   }
 /*=================================================================================================
-                                                Getters
-=================================================================================================*/
-  public Map<String, String> getBooks() {
-    return books;
-  }
-
-  public long getChecksum() {
-    return checksum;
-  }
-/*=================================================================================================
                                                 Methods
 =================================================================================================*/
+
+  /**
+   * Copy remote content to local file.
+   * @return true if at least one byte was transfered, false otherwise.
+   */
   public boolean download() {
     long result = Downloader.download(URL, PATH);
     return result > 0;
   }
 
+  /**
+   * Count CRC32 sum of local XML file.
+   * @return the checksum.
+   */
   public long countChecksum() {
     Path mPath = Path.of(PATH);
     checksum = checksum(mPath);
     return checksum;
   }
 
+  /**
+   * From XML file look for books names and links to these books.
+   * @return map consists books name and apropriated URLs.
+   */
   public Map<String, String> parseXML() {
     InputSource xml = new InputSource(PATH);
     NodeList nodeList;
@@ -72,7 +78,7 @@ public class XMLFile extends File {
       return Collections.emptyMap();
     }
     int itemsCount = nodeList.getLength();
-    books = new HashMap<>(itemsCount);
+    Map<String, String> books = new HashMap<>(itemsCount);
     for (int i = 0; i < itemsCount; i++) {
       Node node = nodeList.item(i);
       String title;
@@ -88,15 +94,21 @@ public class XMLFile extends File {
     return books;
   }
 
-  public void saveChecksum(ConfigProvider configProvider) {
+  /**
+   * Strore checksum to config file.
+   * @param propertiesProvider provider to work with configuration file.
+   */
+  public void saveChecksum(PropertiesProvider propertiesProvider) {
     String mChecksum = String.valueOf(checksum);
-    configProvider.setChecksum(mChecksum);
+    propertiesProvider.setChecksum(mChecksum);
   }
 
-  public void deleteXML() {
+  public boolean deleteXML() {
     try {
       deleteFile(PATH);
-    } catch (IOException ignore) {
+    } catch (IOException e) {
+      return false;
     }
+    return true;
   }
 }

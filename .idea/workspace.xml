@@ -8,26 +8,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add downloader">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add config test and properties test">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tools/config/Properties.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/tools/file/XMLFileTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/executor/Executor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Librinostri.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/Downloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/main/Menu.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/Updater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/Updater.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/LocationProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/LocationProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/ConfigProvider.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/PDFFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/File.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Printer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Printer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/main/LibrinostriTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/UpdaterTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/ConfigTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/config/PropertiesTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -61,8 +57,8 @@
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -176,113 +172,107 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="tools.file" />
       <recent name="tools" />
       <recent name="main" />
-      <recent name="tools.file" />
       <recent name="tools.parser.linksParser" />
       <recent name="tools.parser.XMLParser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ConfigTest">
-    <configuration name="LibrinostriCzDownloader [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="build" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ConfigTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.XMLFileTest">
+    <configuration name="XMLFileTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.config.*" />
+          <option name="PATTERN" value="tools.file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools.config" />
-      <option name="MAIN_CLASS_NAME" value="tools.config.ConfigTest" />
+      <option name="PACKAGE_NAME" value="tools.file" />
+      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.download" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="XMLFileTest.passWhenCountOfEntriesIsTwenty" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="download" />
+      <option name="PACKAGE_NAME" value="tools.file" />
+      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
+      <option name="METHOD_NAME" value="passWhenCountOfEntriesIsTwenty" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="XMLFileTest.passWhenMapSizeAccordingElementsInXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="PACKAGE_NAME" value="tools.file" />
+      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
+      <option name="METHOD_NAME" value="passWhenMapSizeAccordingElementsInXML" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UpdaterTest.update" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="XMLFileTest.passWhenXMLParsedSuccesfullyWithValidXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.file.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.UpdaterTest" />
-      <option name="METHOD_NAME" value="update" />
+      <option name="PACKAGE_NAME" value="tools.file" />
+      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
+      <option name="METHOD_NAME" value="passWhenXMLParsedSuccesfullyWithValidXML" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="XMLFileTest.passWhenXpathErrorWhenInValidXML" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LibrinostriCzDownloader.test" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tools.file.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tools.file" />
+      <option name="MAIN_CLASS_NAME" value="tools.file.XMLFileTest" />
+      <option name="METHOD_NAME" value="passWhenXpathErrorWhenInValidXML" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
-      <item itemvalue="JUnit.ConfigTest" />
-      <item itemvalue="JUnit.DownloaderTest.download" />
-      <item itemvalue="JUnit.DownloaderTest.test" />
-      <item itemvalue="JUnit.UpdaterTest.update" />
+      <item itemvalue="JUnit.XMLFileTest" />
+      <item itemvalue="JUnit.XMLFileTest.passWhenCountOfEntriesIsTwenty" />
+      <item itemvalue="JUnit.XMLFileTest.passWhenMapSizeAccordingElementsInXML" />
+      <item itemvalue="JUnit.XMLFileTest.passWhenXMLParsedSuccesfullyWithValidXML" />
+      <item itemvalue="JUnit.XMLFileTest.passWhenXpathErrorWhenInValidXML" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConfigTest" />
-        <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
-        <item itemvalue="JUnit.DownloaderTest.test" />
-        <item itemvalue="JUnit.DownloaderTest.download" />
-        <item itemvalue="JUnit.UpdaterTest.update" />
+        <item itemvalue="JUnit.XMLFileTest" />
+        <item itemvalue="JUnit.XMLFileTest.passWhenMapSizeAccordingElementsInXML" />
+        <item itemvalue="JUnit.XMLFileTest.passWhenCountOfEntriesIsTwenty" />
+        <item itemvalue="JUnit.XMLFileTest.passWhenXpathErrorWhenInValidXML" />
+        <item itemvalue="JUnit.XMLFileTest.passWhenXMLParsedSuccesfullyWithValidXML" />
       </list>
     </recent_temporary>
   </component>
@@ -613,7 +603,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691475987359</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="add config test and properties test">
+      <option name="closed" value="true" />
+      <created>1691584712803</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1691584712803</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -673,7 +671,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="modified whole project 17.01.2023." />
     <MESSAGE value="modified whole project 3.03.2023." />
     <MESSAGE value="fix properties default file" />
     <MESSAGE value="fix properties default file again" />
@@ -698,7 +695,8 @@
     <MESSAGE value="new clas XMLFile" />
     <MESSAGE value="finished updater" />
     <MESSAGE value="add downloader" />
-    <option name="LAST_COMMIT_MESSAGE" value="add downloader" />
+    <MESSAGE value="add config test and properties test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add config test and properties test" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

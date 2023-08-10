@@ -70,14 +70,14 @@ public class Config {
 
   /**
    * Fill default values to newly created empty config file.
-   * @param propertiesProvider interface for working with properties.
+   * @param properties interface for working with properties.
    */
-  public void fillDefaultValues(PropertiesProvider propertiesProvider) {
+  public void fillDefaultValues(Properties properties) {
     String downloadLocation = LocationProvider.defaultDownloadLocation();
-    propertiesProvider.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocation);
-    propertiesProvider.setProperty(CHECKSUM_KEY, " "); // because no checksum was counted so far
-    propertiesProvider.setProperty(RSS_URL_KEY, RSS_URL_VALUE);
+    properties.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocation);
+    properties.setProperty(CHECKSUM_KEY, " "); // because no checksum was counted so far
+    properties.setProperty(RSS_URL_KEY, RSS_URL_VALUE);
     String rssFileLocation = System.getProperty(TMPDIR) + File.separator + RSS_FILE_NAME_VALUE;
-    propertiesProvider.setProperty(RSS_TEMP_LOCATION_KEY, rssFileLocation);
+    properties.setProperty(RSS_TEMP_LOCATION_KEY, rssFileLocation);
   }
 }

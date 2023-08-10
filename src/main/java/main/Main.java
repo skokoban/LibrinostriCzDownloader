@@ -2,12 +2,18 @@ package main;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Scanner;
+import tools.Updater;
 import tools.config.Config;
-import tools.config.LocationProvider;
 import tools.config.PropertiesProvider;
+import tools.config.LocationProvider;
+import tools.config.Properties;
+import tools.downloader.Downloader;
 import ui.Printer;
 
 public class Main {
+
+  private static File configFile = LocationProvider.configFile();
   /**
    * Check if there was given arguments or not with running application from CLI.
    * If there were arguments given then prints error message. In any case displays menu.
@@ -18,17 +24,16 @@ public class Main {
       Printer.printUnknownArgumentError();
     }
     checkConfig();
-    Menu.process();
+    process();
   }
 
   /**
    * Checks if config file already exists. If not, then new config file will be created.
    * This new file will be filled wit default values. Location of configuration file
    * is given from special class which is determined for providing locations needed
-   * for this applivation.
+   * for this application.
    */
   private static void checkConfig() {
-    File configFile = LocationProvider.configFile();
     Config config = Config.getInstance(configFile);
     if (Boolean.FALSE.equals(config.exists())) {
       try {
@@ -37,8 +42,30 @@ public class Main {
         Printer.printCannotCreateConfigFile();
         System.exit(0);
       }
+      Properties properties = new Properties(configFile);
+      config.fillDefaultValues(properties);
+    }
+  }
+
+  /**
+   * Shows menu options and execute apropriate task.
+   */
+  public static void process() {
+    while (true) {
+      Printer.printMenu();
       PropertiesProvider propertiesProvider = new PropertiesProvider(configFile);
-      config.fillDefaultValues(propertiesProvider);
+      Scanner scanner = new Scanner(System.in);
+      int menuOption = scanner.nextInt();
+      switch (menuOption) {
+        case 1 -> Updater.update();
+        case 2 -> Downloader.downloadNewFiles();
+        case 3 -> Downloader.changeDownloadFolder(propertiesProvider);
+        case 4 -> System.out.println(propertiesProvider.getDownloadFolder());
+        case 5 -> Printer.printUnknownMenuOptionError();
+        case 6 -> Printer.printAbout();
+        case 7 -> {return;}
+        default -> Printer.printUnknownMenuOptionError();
+      }
     }
   }
 }

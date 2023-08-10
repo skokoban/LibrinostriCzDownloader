@@ -8,7 +8,6 @@ import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.Properties;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -24,14 +23,14 @@ class PropertiesTest {
   @Test
   void passWhenPropertyReadSuccesfully() throws IOException {
     createTempConfigFile();
-    Properties properties = new Properties();
+    java.util.Properties properties = new java.util.Properties();
     properties.setProperty("testKey", "testValue");
     try(FileWriter fileWriter = new FileWriter(tempConfigFile)) {
       properties.store(fileWriter, "test");
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile);
+    Properties propertiesProvider = new Properties(tempConfigFile);
 
     String testProperty = propertiesProvider.getProperty("testKey");
 
@@ -41,7 +40,7 @@ class PropertiesTest {
   @Test
   void passWhenTwoPropertiesReadSuccesfully() throws IOException {
     createTempConfigFile();
-    Properties properties = new Properties();
+    java.util.Properties properties = new java.util.Properties();
     properties.setProperty("testKey", "testValue");
     properties.setProperty("testKey2", "testValue2");
     try(FileWriter fileWriter = new FileWriter(tempConfigFile)) {
@@ -49,7 +48,7 @@ class PropertiesTest {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile);
+    Properties propertiesProvider = new Properties(tempConfigFile);
     String testValue = "testValue";
     String testValue2 = "testValue2";
     String[] testValues = {testValue, testValue2};
@@ -66,10 +65,10 @@ class PropertiesTest {
   @Test
   void passWhenPropertyWrittenSuccesfully() throws IOException {
     createTempConfigFile();
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile);
-    propertiesProvider.setProperty("testKey", "testValue");
+    Properties properties = new Properties(tempConfigFile);
+    properties.setProperty("testKey", "testValue");
 
-    String testProperty = propertiesProvider.getProperty("testKey");
+    String testProperty = properties.getProperty("testKey");
 
     assertEquals("testValue", testProperty);
   }
@@ -77,11 +76,11 @@ class PropertiesTest {
   @Test
   void passWhenAfterAddingNewPropertyOldOnesPersits() throws IOException {
     createTempConfigFile();
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile);
-    propertiesProvider.setProperty("testKey", "testValue");
-    propertiesProvider.setProperty("testKey2", "testValue2");
-    String firstProperty = propertiesProvider.getProperty("testKey");
-    String secondProperty = propertiesProvider.getProperty("testKey2");
+    Properties properties = new Properties(tempConfigFile);
+    properties.setProperty("testKey", "testValue");
+    properties.setProperty("testKey2", "testValue2");
+    String firstProperty = properties.getProperty("testKey");
+    String secondProperty = properties.getProperty("testKey2");
 
     boolean isNull = firstProperty.equals("null");
 
@@ -90,63 +89,63 @@ class PropertiesTest {
 
   @Test
   void passWhenNullInputStreamReturnsEmptyString() {
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile) {
+    Properties properties = new Properties(tempConfigFile) {
       @Override
       protected FileInputStream getFileInputStream(File configFile) {
         return null;
       }
     };
 
-    String result = propertiesProvider.getProperty("testKey");
+    String result = properties.getProperty("testKey");
 
     assertEquals("", result);
   }
 
   @Test
   void passWhenIOErrorReturnsEmptyString() {
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile) {
+    Properties properties = new Properties(tempConfigFile) {
       @Override
       protected FileInputStream getFileInputStream(File configFile) throws IOException {
         throw new IOException("Simulated IOException.");
       }
     };
 
-    String result = propertiesProvider.getProperty("testKey");
+    String result = properties.getProperty("testKey");
 
     assertEquals("", result);
   }
 
   @Test
   void passWhenNullLoadPropertiesReturnsEmptyString() {
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile) {
+    Properties properties = new Properties(tempConfigFile) {
       @Override
-      protected void loadProperties(Properties prop, FileInputStream Stream) throws IOException {
+      protected void loadProperties(java.util.Properties prop, FileInputStream Stream) throws IOException {
         throw new IOException("Simulated loadProperties error.");
       }
     };
 
-    String result = propertiesProvider.getProperty("testKey");
+    String result = properties.getProperty("testKey");
 
     assertEquals("", result);
   }
 
   @Test
   void passWhenPropertyWasSetSuccesfully() {
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile);
-    propertiesProvider.setProperty("testKey", "testValue");
+    Properties properties = new Properties(tempConfigFile);
+    properties.setProperty("testKey", "testValue");
 
-    String resultValue = propertiesProvider.getProperty("testKey");
+    String resultValue = properties.getProperty("testKey");
 
     assertEquals("testValue", resultValue);
   }
 
   @Test
   void passWhenPropertyWasUpdatedSuccesfully() {
-    PropertiesProvider propertiesProvider = new PropertiesProvider(tempConfigFile);
-    propertiesProvider.setProperty("testKey", "testValue");
-    propertiesProvider.setProperty("testKey2", "testValue2");
+    Properties properties = new Properties(tempConfigFile);
+    properties.setProperty("testKey", "testValue");
+    properties.setProperty("testKey2", "testValue2");
 
-    String resultValue = propertiesProvider.getProperty("testKey2");
+    String resultValue = properties.getProperty("testKey2");
 
     assertEquals("testValue2", resultValue);
   }
