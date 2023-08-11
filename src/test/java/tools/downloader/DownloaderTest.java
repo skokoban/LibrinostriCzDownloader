@@ -1,4 +1,4 @@
-package tools;
+package tools.downloader;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -13,7 +13,6 @@ import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import tools.config.PropertiesProvider;
-import tools.downloader.Downloader;
 
 class DownloaderTest {
 

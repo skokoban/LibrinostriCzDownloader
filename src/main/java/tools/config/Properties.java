@@ -74,7 +74,8 @@ public class Properties {
     return true;
   }
 
-  protected void loadProperties(java.util.Properties prop, FileInputStream inputStream) throws IOException {
+  protected void loadProperties(java.util.Properties prop, FileInputStream inputStream)
+      throws IOException {
     prop.load(inputStream);
   }
 
