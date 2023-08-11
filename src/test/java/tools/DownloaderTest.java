@@ -11,6 +11,8 @@ import main.Book;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
+import tools.config.PropertiesProvider;
 import tools.downloader.Downloader;
 
 class DownloaderTest {
@@ -87,5 +89,25 @@ class DownloaderTest {
     String result = links.get(3);
 
     assertEquals("https://librinostri.catholica.cz/download/nasinec-1921-r.pdf", result);
+  }
+
+  @Test
+  void passWhenDownloadFolderSuccessfullyWithValidPath() {
+    PropertiesProvider mockPropertiesProvider = Mockito.mock(PropertiesProvider.class);
+    String testPath = "/tmp";
+
+    Downloader.changeDownloadFolder(mockPropertiesProvider, testPath);
+
+    Mockito.verify(mockPropertiesProvider).setDownloadFolder(testPath);
+  }
+
+  @Test
+  void passWhenDownloadFolderNotChangedWithInvalidPath() {
+    PropertiesProvider mockPropertiesProvider = Mockito.mock(PropertiesProvider.class);
+    String testPath = "/test/test";
+
+    Downloader.changeDownloadFolder(mockPropertiesProvider, testPath);
+
+    Mockito.verify(mockPropertiesProvider, Mockito.never()).setDownloadFolder(Mockito.any());
   }
 }
