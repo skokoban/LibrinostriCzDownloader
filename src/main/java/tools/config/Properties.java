@@ -10,6 +10,7 @@ import java.io.OutputStream;
  * Provides manipulation with key-value pairs. These pairs are stored in text file. Gives ability
  * to set pairs and to search for value for given key.
  */
+@SuppressWarnings("UnusedReturnValue")
 public class Properties {
 /*=================================================================================================
                                                 Attributess

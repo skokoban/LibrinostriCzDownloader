@@ -1,5 +1,5 @@
 package tools.file;
-// hotové, možno doplniť testy či xpath dokáže spracovať viac titulov. otestovaný je iba jeden.
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.Collections;
@@ -20,6 +20,7 @@ import tools.config.PropertiesProvider;
  * Represents XML file. This file is consists information about new books added on website
  * librinostri.catholica.cz. Provides methods for operation with this file.
  */
+@SuppressWarnings("UnusedReturnValue")
 public class XMLFile extends File {
 /*=================================================================================================
                                                 Attributes

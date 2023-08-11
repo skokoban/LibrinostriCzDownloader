@@ -21,12 +21,12 @@ public class Config {
   private static final String TMPDIR = "java.io.tmpdir";
   private static final String PROPERTY_DOWNLOAD_FOLDER_KEY = "downloadFolder";
   private static Config instance;
-  private File configFile;
+  private final File CONFIG_FILE;
 /*=================================================================================================
                                              Constructor
 =================================================================================================*/
-  private Config(File configFile) {
-    this.configFile = configFile;
+  private Config(File CONFIG_FILE) {
+    this.CONFIG_FILE = CONFIG_FILE;
   }
 /*=================================================================================================
                                              Methods
@@ -50,11 +50,11 @@ public class Config {
   public void createConfigFile() throws IOException {
     File configDir = createDirectoryPath();
     configDir.mkdirs();
-    configFile.createNewFile();
+    CONFIG_FILE.createNewFile();
   }
 
   public boolean exists() {
-    return configFile.exists();
+    return CONFIG_FILE.exists();
   }
 
   /**
@@ -62,7 +62,7 @@ public class Config {
    * @return the file.
    */
   protected File createDirectoryPath() {
-    String config = configFile.toString();
+    String config = CONFIG_FILE.toString();
     int lastSlash = config.lastIndexOf("/");
     String configDir = config.substring(0, lastSlash);
     return new File(configDir);

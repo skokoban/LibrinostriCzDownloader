@@ -1,6 +1,5 @@
 package tools.file;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -13,7 +12,6 @@ import org.junit.jupiter.api.Test;
 class FileTest {
 
   private String testPath;
-/*
   @Test
     void passWhenCreatedPathIsNotNull() throws IOException {
       testPath = "test.txt";
@@ -49,36 +47,7 @@ class FileTest {
       assertTrue(Files.isRegularFile(result));
 
       Files.deleteIfExists(result);
-    }*/
-
-/*
-  @Test
-    void passWhenFromUrlWithOneSlashIsSucsesfullyNameCreated() {
-      String testUrl= "http://www.test.com/test.pdf";
-
-      String result = Book.retrieveName(testUrl);
-
-      assertEquals("test.pdf", result);
     }
-
-  @Test
-    void passWhenFromUrlWithMultipleSlashesIsSucsesfullyNameCreated() {
-      String testUrl= "http://www.test.com//files/old/test.pdf";
-
-      String result = Book.retrieveName(testUrl);
-
-      assertEquals("test.pdf", result);
-    }
-
-  @Test
-    void passWhenNoNameAfterSlashReturnEmptyString() {
-      String testUrl= "http://www.test.com/";
-
-      String result = Book.retrieveName(testUrl);
-
-      assertEquals("", result);
-    }
-*/
 
   @Test
     void passWhenReturnsSomeChecksum() throws IOException {

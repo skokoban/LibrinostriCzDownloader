@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 import main.Book;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
@@ -59,7 +58,7 @@ public class Downloader {
   /**
    * From actual remote XML file parses information abou books.
    * @param url to access application properties.
-   * @path
+   * @param path to xml file.
    */
   public static Map<String, String> getBooksInfo(String url, String path) {
     XMLFile xml = new XMLFile(url, path);

@@ -13,8 +13,8 @@ import tools.downloader.Downloader;
 import ui.Printer;
 
 public class Main {
-//todo pri spustení programu a vybrani update sa nič nevytlačí na obrazovku.
-  private static File configFile = LocationProvider.configFile();
+
+  private static final File CONFIG_FILE = LocationProvider.configFile();
   /**
    * Check if there was given arguments or not with running application from CLI.
    * If there were arguments given then prints error message. In any case displays menu.
@@ -35,7 +35,7 @@ public class Main {
    * for this application.
    */
   private static void checkConfig() {
-    Config config = Config.getInstance(configFile);
+    Config config = Config.getInstance(CONFIG_FILE);
     if (Boolean.FALSE.equals(config.exists())) {
       try {
         config.createConfigFile();
@@ -43,7 +43,7 @@ public class Main {
         Printer.printCannotCreateConfigFile();
         System.exit(0);
       }
-      Properties properties = new Properties(configFile);
+      Properties properties = new Properties(CONFIG_FILE);
       config.fillDefaultValues(properties);
     }
   }
@@ -54,7 +54,7 @@ public class Main {
   public static void process() {
     while (true) {
       Printer.printMenu();
-      PropertiesProvider propertiesProvider = new PropertiesProvider(configFile);
+      PropertiesProvider propertiesProvider = new PropertiesProvider(CONFIG_FILE);
       Scanner scanner = new Scanner(System.in);
       int menuOption = scanner.nextInt();
       switch (menuOption) {

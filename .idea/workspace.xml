@@ -2,24 +2,17 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
-    <option name="SCOPE_TYPE" value="3" />
+    <option name="SCOPE_TYPE" value="4" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add xml file tests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/DownloadBooksFacade.java" afterDir="false" />
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add downloader tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/BooksProviderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloadTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/DownloaderTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/RSSDownloaderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/XMLParser/BooksProviderTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tools/parser/linksParser/DownloadLinksParserTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +101,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -174,19 +167,16 @@
       <recent name="tools.parser.XMLParser" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DownloaderTest.passWhenLinkIsSuccessfullyParsed">
-    <configuration name="DownloaderTest.passWhenBookLinkCreatedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="main.Main" />
+      <module name="LibrinostriCzDownloader.main" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="main.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenBookLinkCreatedCorrectly" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -256,7 +246,7 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.DownloaderTest.passWhenBookLinkCreatedCorrectly" />
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.DownloaderTest.passWhenBookPathCreatedCorrectly" />
       <item itemvalue="JUnit.DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" />
       <item itemvalue="JUnit.DownloaderTest.passWhenCountOfLinksIsOk" />
@@ -264,11 +254,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DownloaderTest.passWhenLinkIsSuccessfullyParsed" />
         <item itemvalue="JUnit.DownloaderTest.passWhenCountOfLinksIsOk" />
         <item itemvalue="JUnit.DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" />
         <item itemvalue="JUnit.DownloaderTest.passWhenBookPathCreatedCorrectly" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenBookLinkCreatedCorrectly" />
       </list>
     </recent_temporary>
   </component>
@@ -615,7 +605,15 @@
       <option name="project" value="LOCAL" />
       <updated>1691657740124</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="add downloader tests">
+      <option name="closed" value="true" />
+      <created>1691676762168</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1691676762168</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -675,7 +673,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix properties default file" />
     <MESSAGE value="fix properties default file again" />
     <MESSAGE value="create interface for connection" />
     <MESSAGE value="create interface for connection 2" />
@@ -700,7 +697,8 @@
     <MESSAGE value="add downloader" />
     <MESSAGE value="add config test and properties test" />
     <MESSAGE value="add xml file tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add xml file tests" />
+    <MESSAGE value="add downloader tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add downloader tests" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
