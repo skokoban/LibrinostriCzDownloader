@@ -1,5 +1,5 @@
 package tools.config;
-// hotové, testy netreba
+
 import java.io.File;
 /**
  * This class provide methods for retrieving necessarry locations in filesystem.

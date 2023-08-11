@@ -3,7 +3,7 @@ package main;
 import java.io.File;
 import java.io.IOException;
 import java.util.Scanner;
-import tools.Updater;
+import tools.downloader.Updater;
 import tools.config.Config;
 import tools.config.PropertiesProvider;
 import tools.config.LocationProvider;

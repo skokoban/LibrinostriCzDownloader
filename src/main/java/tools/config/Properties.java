@@ -1,5 +1,5 @@
 package tools.config;
-// hotové, testy ok
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -51,10 +51,6 @@ public class Properties {
     return new FileInputStream(configFile);
   }
 
-  protected void loadProperties(java.util.Properties prop, FileInputStream inputStream) throws IOException {
-    prop.load(inputStream);
-  }
-
   /**
    * Create or update key-value pair. Create new pair if given key not exists. Update value
    * for already existing key.
@@ -76,6 +72,10 @@ public class Properties {
       return false;
     }
     return true;
+  }
+
+  protected void loadProperties(java.util.Properties prop, FileInputStream inputStream) throws IOException {
+    prop.load(inputStream);
   }
 
   protected FileOutputStream getOutputStream() throws IOException {

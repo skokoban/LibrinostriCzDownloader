@@ -1,5 +1,5 @@
 package tools.config;
-// hotové, testy ok
+
 import java.io.File;
 import java.io.IOException;
 
@@ -75,7 +75,7 @@ public class Config {
   public void fillDefaultValues(Properties properties) {
     String downloadLocation = LocationProvider.defaultDownloadLocation();
     properties.setProperty(PROPERTY_DOWNLOAD_FOLDER_KEY, downloadLocation);
-    properties.setProperty(CHECKSUM_KEY, " "); // because no checksum was counted so far
+    properties.setProperty(CHECKSUM_KEY, " "); // empty because no checksum was counted so far
     properties.setProperty(RSS_URL_KEY, RSS_URL_VALUE);
     String rssFileLocation = System.getProperty(TMPDIR) + File.separator + RSS_FILE_NAME_VALUE;
     properties.setProperty(RSS_TEMP_LOCATION_KEY, rssFileLocation);

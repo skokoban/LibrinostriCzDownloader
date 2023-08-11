@@ -1,4 +1,4 @@
-package tools;
+package tools.downloader;
 // hotové, otestovať sa nedá
 import java.io.File;
 import java.util.Objects;

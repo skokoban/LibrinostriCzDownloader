@@ -1,5 +1,5 @@
 package tools.config;
-// hotové, netreba testovať
+
 import java.io.File;
 
 public class PropertiesProvider {

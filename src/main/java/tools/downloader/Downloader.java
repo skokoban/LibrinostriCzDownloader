@@ -1,5 +1,5 @@
 package tools.downloader;
-//hotovo, chýba test na changedownloadfolder
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +34,6 @@ public class Downloader {
 /*=================================================================================================
                                                 Methods
 =================================================================================================*/
-
   /**
    * Copy remote file to local drive.
    * @param link to source file that should be copied

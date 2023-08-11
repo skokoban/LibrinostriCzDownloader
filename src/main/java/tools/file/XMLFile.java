@@ -1,10 +1,12 @@
 package tools.file;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.zip.CRC32;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathExpression;
@@ -20,8 +22,7 @@ import tools.config.PropertiesProvider;
  * Represents XML file. This file is consists information about new books added on website
  * librinostri.catholica.cz. Provides methods for operation with this file.
  */
-@SuppressWarnings("UnusedReturnValue")
-public class XMLFile extends File {
+public class XMLFile {
 /*=================================================================================================
                                                 Attributes
 =================================================================================================*/
@@ -53,13 +54,20 @@ public class XMLFile extends File {
   }
 
   /**
-   * Count CRC32 sum of local XML file.
-   * @return the checksum.
+   * Count checksum for given file. Returns 0 if file is empty.
+   * @return value of CRC32 checksum. Returns 0 if checksum cannot be counted.
    */
   public long countChecksum() {
     Path mPath = Path.of(PATH);
-    checksum = checksum(mPath);
-    return checksum;
+    byte[] fileBytes;
+    try {
+      fileBytes = Files.readAllBytes(mPath);
+    } catch (IOException e) {
+      return 0;
+    }
+    CRC32 rssFileCrc32 = new CRC32();
+    rssFileCrc32.update(fileBytes);
+    return rssFileCrc32.getValue();
   }
 
   /**
@@ -104,9 +112,14 @@ public class XMLFile extends File {
     propertiesProvider.setChecksum(mChecksum);
   }
 
+  /**
+   * Remove the XML file.
+   * @return true if operation was successfully, false otherwise.
+   */
   public boolean deleteXML() {
+    Path mPath = Path.of(PATH);
     try {
-      deleteFile(PATH);
+      Files.deleteIfExists(mPath);
     } catch (IOException e) {
       return false;
     }

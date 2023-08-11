@@ -1,8 +1,12 @@
 package tools.file;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -43,5 +47,18 @@ class XMLFileTest {
     }
 
     assertEquals(20, result);
+  }
+
+  @Test
+  void passWhenReturnsSomeChecksum() throws IOException {
+    byte[] fileBytes = {1, 2, 3, 4, 5};
+    Path tempFile = Files.createTempFile("test", ".txt");
+    Files.write(tempFile, fileBytes);
+
+    long result = xmlFile.countChecksum();
+
+    assertNotEquals(0, result);
+
+    Files.deleteIfExists(tempFile);
   }
 }
