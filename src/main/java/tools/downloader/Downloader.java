@@ -136,8 +136,6 @@ public class Downloader {
       }
       if (length > 0) {
         Printer.printOK();
-      } else {
-        Printer.printFileAlreadyDownloaded();
       }
     }
   }
