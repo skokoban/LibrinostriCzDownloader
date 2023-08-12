@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -39,8 +40,9 @@ public class Downloader {
    * @param link to source file that should be copied
    * @param path to target file
    * @return count of bytes copied
+   * @throws FileAlreadyExistsException when file already exists.
    */
-  public static long download(String link, String path) {
+  public static long download(String link, String path) throws FileAlreadyExistsException {
   Path mPath = Path.of(path);
   URL url;
   long length;
@@ -48,7 +50,10 @@ public class Downloader {
     url = new URL(link);
     InputStream inputStream = url.openStream();
     length = Files.copy(inputStream, mPath);
-  } catch (IOException e) {
+  } catch (FileAlreadyExistsException e) {
+    throw new FileAlreadyExistsException("/tmp/rss.php have to be removed");
+  }
+  catch (IOException e) {
     length = 0;
   }
   return length;
@@ -116,8 +121,20 @@ public class Downloader {
     for (String link : downloadLinks) {
       String name = retrieveName(link);
       Printer.printDownloading(name);
-      String filePath = book.getPATH() + File.separator + name;
-      if (download(link, filePath) > 0) {
+      String filePath = book.getPATH();
+      try {
+        Files.createDirectories(Path.of(filePath));
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+      filePath = filePath + File.separator + name;
+      long length = 0;
+      try {
+        length = download(link, filePath);
+      } catch (FileAlreadyExistsException e) {
+        Printer.printFileAlreadyDownloaded();
+      }
+      if (length > 0) {
         Printer.printOK();
       } else {
         Printer.printFileAlreadyDownloaded();

@@ -1,9 +1,14 @@
 package tools.downloader;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -108,5 +113,43 @@ class DownloaderTest {
     Downloader.changeDownloadFolder(mockPropertiesProvider, testPath);
 
     Mockito.verify(mockPropertiesProvider, Mockito.never()).setDownloadFolder(Mockito.any());
+  }
+
+  @Test
+  void passWhenDownloadMethodReturnsNotZeroBytes() throws IOException {
+    long result = Downloader.download("https://librinostri.catholica.cz/download/PitHaliIVaKlaPri-z.pdf",
+        "/tmp/PitHaliIVaKlaPri-z.pdf");
+
+    assertNotEquals(0, result);
+
+    Files.deleteIfExists(Path.of("/tmp/PitHaliIVaKlaPri-z.pdf"));
+  }
+
+  @Test
+  void passWhenDownloadMethodReturnZeroBytes() throws FileAlreadyExistsException {
+    long result = Downloader.download("https://librinostri.catholica.cz/download/PitHaliIVaKlaPri-z.pdf",
+        "/tmp/test/test.test");
+
+    assertEquals(0, result);
+  }
+
+  @Test
+  void passWhenDocmentReturned() {
+    Book book = new Book("test",
+        "https://librinostri.catholica.cz/kniha/1954-spor-dvou-monsignoru-a-emeritniho-presidenta",
+        "test");
+    Document testDocument = Downloader.getHtmlDocument(book);
+
+    int result = testDocument.childNodeSize();
+
+    assertEquals(2, result);
+  }
+
+  @Test
+  void passWhenRuntimeEceptionThrown() {
+    Book book = new Book("test",
+        "https://librinori.cholica.sk",
+        "test");
+    assertThrows(RuntimeException.class, () -> Downloader.getHtmlDocument(book));
   }
 }

@@ -8,11 +8,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="add downloader tests">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="minor updates.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/config/PropertiesProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tools/downloader/DownloaderTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,15 +47,15 @@
         <option value="Enum" />
         <option value="JUnit4 Test Class" />
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="dev-improve" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -73,12 +75,12 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="dev-improve" />
-                    <option name="lastUsedInstant" value="1691225539" />
+                    <option name="branchName" value="master" />
+                    <option name="lastUsedInstant" value="1691765596" />
                   </RecentBranch>
                   <RecentBranch>
-                    <option name="branchName" value="dev" />
-                    <option name="lastUsedInstant" value="1691225538" />
+                    <option name="branchName" value="dev-improve" />
+                    <option name="lastUsedInstant" value="1691225539" />
                   </RecentBranch>
                 </list>
               </option>
@@ -118,6 +120,8 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-Vcs Important Messages&quot;: &quot;VCS important messages&quot;,
+    &quot;Notification.DoNotAsk-Vcs Important Messages&quot;: &quot;true&quot;,
     &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
     &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
     &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
@@ -130,8 +134,8 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-improve&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/marceld/Dokumenty/programovanie/IdeaProjects/Junior_2&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/marceld/Dokumenty/programovanie/AndroidStudioProjects/Android-Clean-Boilerplate&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.4204436&quot;,
@@ -160,14 +164,14 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="main" />
+      <recent name="tools.string" />
       <recent name="tools.file" />
       <recent name="tools" />
-      <recent name="main" />
       <recent name="tools.parser.linksParser" />
-      <recent name="tools.parser.XMLParser" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.LibrinostriCzDownloader [build]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Main" />
       <module name="LibrinostriCzDownloader.main" />
@@ -181,65 +185,71 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.passWhenBookPathCreatedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="LibrinostriCzDownloader [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="build" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="DownloaderTest.passWhenDownloadMethodReturnZeroBytes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.downloader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenBookPathCreatedCorrectly" />
+      <option name="PACKAGE_NAME" value="tools.downloader" />
+      <option name="MAIN_CLASS_NAME" value="tools.downloader.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenDownloadMethodReturnZeroBytes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloaderTest.passWhenDownloadMethodReturnsNotZeroBytes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.downloader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenBookPathWithSlashCreatedCorrectly" />
+      <option name="PACKAGE_NAME" value="tools.downloader" />
+      <option name="MAIN_CLASS_NAME" value="tools.downloader.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenDownloadMethodReturnsNotZeroBytes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DownloaderTest.passWhenCountOfLinksIsOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DownloaderTest.passWhenRuntimeEceptionThrown" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LibrinostriCzDownloader.test" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tools.*" />
+          <option name="PATTERN" value="tools.downloader.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenCountOfLinksIsOk" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DownloaderTest.passWhenLinkIsSuccessfullyParsed" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LibrinostriCzDownloader.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tools.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tools" />
-      <option name="MAIN_CLASS_NAME" value="tools.DownloaderTest" />
-      <option name="METHOD_NAME" value="passWhenLinkIsSuccessfullyParsed" />
+      <option name="PACKAGE_NAME" value="tools.downloader" />
+      <option name="MAIN_CLASS_NAME" value="tools.downloader.DownloaderTest" />
+      <option name="METHOD_NAME" value="passWhenRuntimeEceptionThrown" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -247,18 +257,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenBookPathCreatedCorrectly" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenCountOfLinksIsOk" />
-      <item itemvalue="JUnit.DownloaderTest.passWhenLinkIsSuccessfullyParsed" />
+      <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenDownloadMethodReturnZeroBytes" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenRuntimeEceptionThrown" />
+      <item itemvalue="JUnit.DownloaderTest.passWhenDownloadMethodReturnsNotZeroBytes" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.LibrinostriCzDownloader [build]" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenDownloadMethodReturnZeroBytes" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenDownloadMethodReturnsNotZeroBytes" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenLinkIsSuccessfullyParsed" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenCountOfLinksIsOk" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenBookPathWithSlashCreatedCorrectly" />
-        <item itemvalue="JUnit.DownloaderTest.passWhenBookPathCreatedCorrectly" />
+        <item itemvalue="JUnit.DownloaderTest.passWhenRuntimeEceptionThrown" />
       </list>
     </recent_temporary>
   </component>
@@ -453,14 +463,6 @@
       <option name="project" value="LOCAL" />
       <updated>1687029380929</updated>
     </task>
-    <task id="LOCAL-00027" summary="Add DownloadLinksParserTest">
-      <option name="closed" value="true" />
-      <created>1688057270394</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1688057270394</updated>
-    </task>
     <task id="LOCAL-00028" summary="Add FileTest.">
       <option name="closed" value="true" />
       <created>1688241295097</created>
@@ -613,7 +615,39 @@
       <option name="project" value="LOCAL" />
       <updated>1691676762168</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="remove warnings.">
+      <option name="closed" value="true" />
+      <created>1691757823397</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1691757823397</updated>
+    </task>
+    <task id="LOCAL-00048" summary="add test for changeDownloadFolder metod">
+      <option name="closed" value="true" />
+      <created>1691758991536</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1691758991536</updated>
+    </task>
+    <task id="LOCAL-00049" summary="minor updates.">
+      <option name="closed" value="true" />
+      <created>1691763655986</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1691763655986</updated>
+    </task>
+    <task id="LOCAL-00050" summary="minor updates.">
+      <option name="closed" value="true" />
+      <created>1691764437060</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1691764437061</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -652,7 +686,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="dev-improve" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -673,9 +707,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix properties default file again" />
-    <MESSAGE value="create interface for connection" />
-    <MESSAGE value="create interface for connection 2" />
     <MESSAGE value="Add tests for PropertiesProvider." />
     <MESSAGE value="Add tests for Config." />
     <MESSAGE value="Modify Config Class." />
@@ -698,9 +729,21 @@
     <MESSAGE value="add config test and properties test" />
     <MESSAGE value="add xml file tests" />
     <MESSAGE value="add downloader tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="add downloader tests" />
+    <MESSAGE value="remove warnings." />
+    <MESSAGE value="add test for changeDownloadFolder metod" />
+    <MESSAGE value="minor updates." />
+    <option name="LAST_COMMIT_MESSAGE" value="minor updates." />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/main/Main.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.jsoup.nodes.Document" memberName="shadowChildrenRef" />

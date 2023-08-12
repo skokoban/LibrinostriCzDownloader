@@ -1,6 +1,7 @@
 package tools.file;
 
 import java.io.IOException;
+import java.nio.file.FileAlreadyExistsException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
@@ -49,7 +50,16 @@ public class XMLFile {
    * @return true if at least one byte was transfered, false otherwise.
    */
   public boolean download() {
-    long result = Downloader.download(URL, PATH);
+    long result = 0;
+    try {
+      result = Downloader.download(URL, PATH);
+    } catch (FileAlreadyExistsException e) {
+      if (deleteXML()) {
+        download();
+      } else {
+        return false;
+      }
+    }
     return result > 0;
   }
 
