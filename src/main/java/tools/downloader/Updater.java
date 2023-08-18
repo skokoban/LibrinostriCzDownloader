@@ -38,8 +38,9 @@ public class Updater {
     if (!Objects.equals(oldChecksum, newChecksum)) {
       xml.saveChecksum(config);
       Printer.printUpdaterNewFiles();
+    } else {
+      Printer.printNoNewFiles();
     }
-    Printer.printNoNewFiles();
     xml.deleteXML();
   }
 }

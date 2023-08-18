@@ -71,6 +71,7 @@ public class Downloader {
     }
     Map<String, String> booksMap;
     booksMap = xml.parseXML();
+    xml.deleteXML();
     return booksMap;
   }
 
