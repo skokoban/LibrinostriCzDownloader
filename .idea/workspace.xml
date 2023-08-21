@@ -8,9 +8,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="fix error when temp file rss.php was not removed.">
+    <list default="true" id="e8cc949c-4d88-41e4-95e6-b70fb6bf87c1" name="Changes" comment="fix printed text when update.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/downloader/Downloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tools/file/XMLFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ui/Strings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ui/Strings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +133,7 @@
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4&quot;: &quot;&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/marceld/Dokumenty/programovanie/AndroidStudioProjects/Android-Clean-Boilerplate&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/marceld/Dokumenty/programovanie/IdeaProjects/LibrinostriCzDownloader&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.4204436&quot;,
@@ -459,22 +461,6 @@
       <option name="project" value="LOCAL" />
       <updated>1687029380929</updated>
     </task>
-    <task id="LOCAL-00030" summary="code executor">
-      <option name="closed" value="true" />
-      <created>1690204348039</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1690204348039</updated>
-    </task>
-    <task id="LOCAL-00031" summary="code executor again">
-      <option name="closed" value="true" />
-      <created>1690208843498</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1690208843498</updated>
-    </task>
     <task id="LOCAL-00032" summary="fix error when diectory for files was not created">
       <option name="closed" value="true" />
       <created>1690302741419</created>
@@ -643,7 +629,23 @@
       <option name="project" value="LOCAL" />
       <updated>1691852374485</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="fix printed text when update.">
+      <option name="closed" value="true" />
+      <created>1692362188350</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1692362188350</updated>
+    </task>
+    <task id="LOCAL-00054" summary="fix printed text when update.">
+      <option name="closed" value="true" />
+      <created>1692362320924</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1692362320924</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -703,7 +705,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add tests for Config." />
     <MESSAGE value="Modify Config Class." />
     <MESSAGE value="Add tests to ConfigTest.java" />
     <MESSAGE value="Add another tests to ConfigTest.java" />
@@ -728,7 +729,8 @@
     <MESSAGE value="add test for changeDownloadFolder metod" />
     <MESSAGE value="minor updates." />
     <MESSAGE value="fix error when temp file rss.php was not removed." />
-    <option name="LAST_COMMIT_MESSAGE" value="fix error when temp file rss.php was not removed." />
+    <MESSAGE value="fix printed text when update." />
+    <option name="LAST_COMMIT_MESSAGE" value="fix printed text when update." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -77,7 +77,8 @@ public class XMLFile {
     }
     CRC32 rssFileCrc32 = new CRC32();
     rssFileCrc32.update(fileBytes);
-    return rssFileCrc32.getValue();
+    checksum = rssFileCrc32.getValue();
+    return checksum;
   }
 
   /**

@@ -24,7 +24,7 @@ public enum Strings {
              
              Usage: command"""),
   ABOUT("""
-            Librinosti.cz PDF File downloader v 1.2
+            Librinosti.cz PDF File downloader v 1.3
             created by Marcel Dorušák.
             mdorusak@gmail.com"""),
   OK(" OK"),
