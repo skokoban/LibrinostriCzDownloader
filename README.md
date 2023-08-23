@@ -5,7 +5,7 @@ Application for batch downloading PDF files from website librinostri.catholica.c
 1. Download LibrinostriCzDownloader from release section https://github.com/skokoban/LibrinostriCzDownloader/releases/tag/Librinostri.
 2. Launch command line.
 3. cd to folder where .jar file was downloaded.
-4. Run command java -jar LibrinostriCzDownloader-1.0.jar. Note you need to have java installed on your computer.
+4. Run command java -jar LibrinostriCzDownloader-1.3.jar. Note you need to have java installed on your computer.
 
 # Usage
 Set folder where PDF files be downloaded with menu option 3, otherwise files will be stored to your home folder. Then choose option 2 for download all newly added 
