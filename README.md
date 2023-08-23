@@ -1,7 +1,7 @@
 # LibrinostriCzDownloader
 Application for batch downloading PDF files from website librinostri.catholica.cz. Not all files are downloaded from website, just files included in newest 10 books added.
 
-# Instalation
+# Run
 1. Download LibrinostriCzDownloader from release section https://github.com/skokoban/LibrinostriCzDownloader/releases/tag/update3.
 2. Launch command line.
 3. cd to folder where .jar file was downloaded.
